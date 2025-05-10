@@ -1,0 +1,627 @@
+fileFormatVersion: 2
+guid: 246cc1879cc856c4daf639bd014df650
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4556591007703994082
+    second: StonePathSpriteSheet_0
+  - first:
+      213: 4037464558293900188
+    second: StonePathSpriteSheet_1
+  - first:
+      213: 1783123260500010691
+    second: StonePathSpriteSheet_2
+  - first:
+      213: 7343061420489718721
+    second: StonePathSpriteSheet_3
+  - first:
+      213: -8176230041324346266
+    second: StonePathSpriteSheet_4
+  - first:
+      213: -8440442099170113890
+    second: StonePathSpriteSheet_5
+  - first:
+      213: 7481564597535204756
+    second: StonePathSpriteSheet_6
+  - first:
+      213: -1000057909521494637
+    second: StonePathSpriteSheet_7
+  - first:
+      213: 4638973667532511089
+    second: StonePathSpriteSheet_8
+  - first:
+      213: 7899713808353391402
+    second: StonePathSpriteSheet_9
+  - first:
+      213: 7861185133549736168
+    second: StonePathSpriteSheet_10
+  - first:
+      213: 7397824714833810901
+    second: StonePathSpriteSheet_11
+  - first:
+      213: 823363642730122868
+    second: StonePathSpriteSheet_12
+  - first:
+      213: 6610870856920982888
+    second: StonePathSpriteSheet_13
+  - first:
+      213: 7582710634701907657
+    second: StonePathSpriteSheet_14
+  - first:
+      213: -919515759888439169
+    second: StonePathSpriteSheet_15
+  - first:
+      213: 1017940647658161796
+    second: StonePathSpriteSheet_16
+  - first:
+      213: -9022270705397559755
+    second: StonePathSpriteSheet_17
+  - first:
+      213: -3179699773665496412
+    second: StonePathSpriteSheet_18
+  - first:
+      213: 9194636036563485341
+    second: StonePathSpriteSheet_19
+  - first:
+      213: 2045232484769607980
+    second: StonePathSpriteSheet_20
+  - first:
+      213: -1249414608274751060
+    second: StonePathSpriteSheet_21
+  - first:
+      213: 7960233011320032210
+    second: StonePathSpriteSheet_22
+  - first:
+      213: 3122303882679152834
+    second: StonePathSpriteSheet_23
+  - first:
+      213: -3503514089290669263
+    second: StonePathSpriteSheet_24
+  - first:
+      213: 8592733352329827539
+    second: StonePathSpriteSheet_25
+  - first:
+      213: -7854866786361234830
+    second: StonePathSpriteSheet_26
+  - first:
+      213: -3600770467381267815
+    second: StonePathSpriteSheet_27
+  - first:
+      213: -8357354033324791578
+    second: StonePathSpriteSheet_28
+  - first:
+      213: -3592809169939342010
+    second: StonePathSpriteSheet_29
+  - first:
+      213: 7300446617583689424
+    second: StonePathSpriteSheet_30
+  - first:
+      213: 1212068184229405725
+    second: StonePathSpriteSheet_31
+  - first:
+      213: -382033222728806927
+    second: StonePathSpriteSheet_32
+  - first:
+      213: -1767577502411077612
+    second: StonePathSpriteSheet_33
+  - first:
+      213: -7439129089425111563
+    second: StonePathSpriteSheet_34
+  - first:
+      213: 7333176115636761236
+    second: StonePathSpriteSheet_35
+  - first:
+      213: 1395667222868342799
+    second: StonePathSpriteSheet_36
+  - first:
+      213: -63532007933503381
+    second: StonePathSpriteSheet_37
+  - first:
+      213: 6901115137023898723
+    second: StonePathSpriteSheet_38
+  - first:
+      213: 878055243416370453
+    second: StonePathSpriteSheet_39
+  - first:
+      213: 1768980375990364840
+    second: StonePathSpriteSheet_40
+  - first:
+      213: -5755723889682053625
+    second: StonePathSpriteSheet_41
+  - first:
+      213: 3916518978947525816
+    second: StonePathSpriteSheet_42
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e11701fce9cb3c0c0800000000000000
+      internalID: -4556591007703994082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9b5656df94f70830800000000000000
+      internalID: 4037464558293900188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6e6d4782deeb810800000000000000
+      internalID: 1783123260500010691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cb3a2ce47bc7e560800000000000000
+      internalID: 7343061420489718721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6642cf0d812388e80800000000000000
+      internalID: -8176230041324346266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9686b351a68dda80800000000000000
+      internalID: -8440442099170113890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4956938cc5bd3d760800000000000000
+      internalID: 7481564597535204756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39dc62c31a41f12f0800000000000000
+      internalID: -1000057909521494637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1779aa7e8f1f06040800000000000000
+      internalID: 4638973667532511089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a23f62eaadb61ad60800000000000000
+      internalID: 7899713808353391402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e050d68a3a881d60800000000000000
+      internalID: 7861185133549736168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d5564ef16a5aa660800000000000000
+      internalID: 7397824714833810901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47e86e5eedc2d6b00800000000000000
+      internalID: 823363642730122868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 865e1cab4088ebb50800000000000000
+      internalID: 6610870856920982888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c6ebf7b5233b3960800000000000000
+      internalID: 7582710634701907657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StonePathSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f78e976c9493d33f0800000000000000
+      internalID: -919515759888439169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b12fb58108e9b7644a763d4a8f57e456
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      StonePathSpriteSheet_0: -4556591007703994082
+      StonePathSpriteSheet_1: 4037464558293900188
+      StonePathSpriteSheet_10: 7861185133549736168
+      StonePathSpriteSheet_11: 7397824714833810901
+      StonePathSpriteSheet_12: 823363642730122868
+      StonePathSpriteSheet_13: 6610870856920982888
+      StonePathSpriteSheet_14: 7582710634701907657
+      StonePathSpriteSheet_15: -919515759888439169
+      StonePathSpriteSheet_2: 1783123260500010691
+      StonePathSpriteSheet_3: 7343061420489718721
+      StonePathSpriteSheet_4: -8176230041324346266
+      StonePathSpriteSheet_5: -8440442099170113890
+      StonePathSpriteSheet_6: 7481564597535204756
+      StonePathSpriteSheet_7: -1000057909521494637
+      StonePathSpriteSheet_8: 4638973667532511089
+      StonePathSpriteSheet_9: 7899713808353391402
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

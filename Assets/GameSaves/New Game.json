@@ -1,0 +1,747 @@
+{
+    "Name": "New Game",
+    "CurrentLevelName": "GameScene",
+    "timeSaveData": {
+        "<Id>k__BackingField": {
+            "Part1": 625814693,
+            "Part2": 1105290544,
+            "Part3": 2392339116,
+            "Part4": 3283836093
+        },
+        "timestamp": {
+            "<Day>k__BackingField": 0,
+            "<Days>k__BackingField": 7,
+            "<Year>k__BackingField": 0,
+            "<Season>k__BackingField": 0,
+            "<Hour>k__BackingField": 4,
+            "<Minute>k__BackingField": 10,
+            "<TotalMinutes>k__BackingField": 250,
+            "<DayOfTheYear>k__BackingField": 0
+        }
+    },
+    "playerSaveData": {
+        "<Id>k__BackingField": {
+            "Part1": 3801595523,
+            "Part2": 1146616407,
+            "Part3": 376583042,
+            "Part4": 1849939537
+        },
+        "Position": {
+            "x": 0.28312307596206667,
+            "y": 0.09757289290428162,
+            "z": -2.236034631729126
+        },
+        "FactingDirections": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": -1.0
+        }
+    },
+    "constructionlayerSaveData": [],
+    "weatherSaveData": {
+        "weatherDictionary": [
+            2,
+            2,
+            1,
+            1,
+            0,
+            1,
+            2,
+            3,
+            1,
+            1,
+            2,
+            3,
+            1,
+            3,
+            1,
+            3,
+            2,
+            2,
+            3,
+            2,
+            3,
+            2,
+            0,
+            2,
+            2,
+            0,
+            2,
+            0
+        ],
+        "currentWeather": 2
+    },
+    "inventorySavaDatas": [
+        {
+            "itemSaveDatas": [
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 49626
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "Item_Radish",
+                    "amount": 1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                }
+            ],
+            "heldMoney": 0,
+            "<Id>k__BackingField": {
+                "Part1": 2961021952,
+                "Part2": 1097363185,
+                "Part3": 445508236,
+                "Part4": 1523647486
+            }
+        },
+        {
+            "itemSaveDatas": [
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                },
+                {
+                    "item": {
+                        "<ItemData>k__BackingField": {
+                            "instanceID": 0
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "empty",
+                    "amount": -1
+                }
+            ],
+            "heldMoney": 0,
+            "<Id>k__BackingField": {
+                "Part1": 3986771330,
+                "Part2": 1116491488,
+                "Part3": 1659293373,
+                "Part4": 970803622
+            }
+        }
+    ],
+    "buildingsSaveData": {
+        "<Id>k__BackingField": {
+            "Part1": 605947101,
+            "Part2": 1332340018,
+            "Part3": 1037001368,
+            "Part4": 446273766
+        },
+        "BuildablesData": [
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 1,
+                    "y": -3,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Chest",
+                "<Id>k__BackingField": {
+                    "Part1": 4070840457,
+                    "Part2": 1108491316,
+                    "Part3": 2490990779,
+                    "Part4": 1247770045
+                }
+            }
+        ]
+    },
+    "droppedItemSaveData": {
+        "droppedItems": [],
+        "collectedWorldSpawnItems": [
+            {
+                "Part1": 750537439,
+                "Part2": 1127083763,
+                "Part3": 3274018959,
+                "Part4": 1156381147
+            },
+            {
+                "Part1": 750537439,
+                "Part2": 1127083763,
+                "Part3": 3274018959,
+                "Part4": 1156381147
+            }
+        ],
+        "<Id>k__BackingField": {
+            "Part1": 936460396,
+            "Part2": 1242422689,
+            "Part3": 3055217833,
+            "Part4": 3483623740
+        }
+    },
+    "shopSystemSaveData": []
+}
