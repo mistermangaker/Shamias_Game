@@ -100,8 +100,8 @@ namespace GameSystems.Inventory
         {
             //return AddToInventory(item.ItemType, amount, out remainder);
             remainder = 0;
-            int itemMaxStackSize = item.ItemData.MaxStackSize;
-            if (ContainsItem(item.ItemData, out List<InventorySlot> invSlot) && itemMaxStackSize>1) // check if item exists in inventory
+            int itemMaxStackSize = item.GameItemData.MaxStackSize;
+            if (ContainsItem(item.GameItemData, out List<InventorySlot> invSlot) && itemMaxStackSize>1) // check if item exists in inventory
             {
                 foreach (InventorySlot slot in invSlot)
                 {
@@ -138,7 +138,7 @@ namespace GameSystems.Inventory
 
         public bool ContainsItem(GameItem itemToAdd, out List<InventorySlot> inventorySlot)
         {
-            inventorySlot = InventorySlots.Where(i => i.GameItem.ItemData == itemToAdd.ItemData).ToList();
+            inventorySlot = InventorySlots.Where(i => i.GameItem.GameItemData == itemToAdd.GameItemData).ToList();
             return inventorySlot.Count >= 1 ? true : false;
         }
 
@@ -156,7 +156,7 @@ namespace GameSystems.Inventory
 
         public bool HasFreeSlot(out InventorySlot freeSlot)
         {
-            freeSlot = InventorySlots.FirstOrDefault(i => i.GameItem.ItemData == null);
+            freeSlot = InventorySlots.FirstOrDefault(i => i.GameItem.GameItemData == null);
             return freeSlot == null ? false : true;
         }
 

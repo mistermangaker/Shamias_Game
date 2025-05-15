@@ -4,7 +4,7 @@ using GameSystems.Inventory;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(BuildingSaveData))]
+[RequireComponent(typeof(BuildingSerializableGUID))]
 public abstract class PlantBase : BuildingBase
 {
 
@@ -15,7 +15,7 @@ public abstract class PlantBase : BuildingBase
 
     [SerializeField] protected GameItem harvestItem;
 
-    protected GrowthStage currentGrowthstage => building.BuildableType.GrowthStage.GetGrowthStageAtIndex(growthStageIndex);
+    protected GrowthStage currentGrowthstage => building.BuildableData.GrowthStage.GetGrowthStageAtIndex(growthStageIndex);
     public GrowthStage CurrentGrowthstage => currentGrowthstage;
 
     protected int harvestableGrowthStage;

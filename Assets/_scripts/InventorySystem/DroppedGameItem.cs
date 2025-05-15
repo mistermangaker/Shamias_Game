@@ -32,7 +32,7 @@ public class DroppedGameItem : MonoBehaviour
 
     public void Init(GameItem item, int amount, bool value =false)
     {
-        ItemData = item.ItemData;
+        ItemData = item.GameItemData;
         GameItem = item;
         this.amount = amount;
         CanBePickedUp = value;

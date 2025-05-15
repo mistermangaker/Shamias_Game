@@ -13,10 +13,11 @@ namespace GameSystems.SaveLoad
     {
         public string Name;
         public string CurrentLevelName;
+        public GameMetaData metaData;
         public TimeSaveData timeSaveData;
         public PlayerSaveData playerSaveData;
         //public LevelSaveData levelSaveData;
-        public List<ConstructionLayerSavedata> constructionlayerSaveData = new List<ConstructionLayerSavedata>();
+        //public List<ConstructionLayerSavedata> constructionlayerSaveData = new List<ConstructionLayerSavedata>();
         public WeatherSaveData weatherSaveData;
         public List<InventorySavaData> inventorySavaDatas = new List<InventorySavaData>();
         public BuildingsSaveData buildingsSaveData;
@@ -38,7 +39,13 @@ namespace GameSystems.SaveLoad
         }
     }
 
-   // public interface IBindBroady<>
+    [Serializable]
+    public class GameMetaData
+    {
+        public string SaveName;
+        public int Seed;
+        public string CurrentLevelName;
+    }
 
  
 }

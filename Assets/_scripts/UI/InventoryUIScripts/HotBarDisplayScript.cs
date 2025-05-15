@@ -54,7 +54,12 @@ public class HotBarDisplayScript : StaticInventoryDisplay
             _currentIndex = _maxIndexSize;
         }
         slots[_currentIndex].ToggleHightLight();
-        PlayerController.Instance.SetCurrentlyHeldItem(slots[_currentIndex].AssignedInventorySlot);
+        EventBus<OnPlayerEquipedItemChanged>.Raise(new OnPlayerEquipedItemChanged
+        {
+            Slot = slots[_currentIndex].AssignedInventorySlot,
+            Item = _currentlyHeldgameItem,
+        }) ;
+        //PlayerController.Instance.SetCurrentlyHeldItem(slots[_currentIndex].AssignedInventorySlot);
        // ConstructionLayerManager.Instance.SetActiveBuildable(_currentlyHeldgameItem.ItemData?.Buildable);
     }
 

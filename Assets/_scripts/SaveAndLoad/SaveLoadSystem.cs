@@ -43,21 +43,26 @@ namespace GameSystems.SaveLoad
             dataService = new FileDataService(new JsonSerializer());
         }
 
+       
         private void OnEnable() => SceneManager.sceneLoaded += SceneManager_sceneLoaded;
         private void OnDisable() => SceneManager.sceneLoaded -= SceneManager_sceneLoaded;
+
        
         // this method fires with every new scene loaded;
         // todo seperate scene amanagement from the save feature
         private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
         {
+            GenerateNewGameStat(gameData);
+           
             BindInformation();
         }
 
         private void BindInformation()
         {
+           
             Bind<TimeManager, TimeSaveData>(gameData.timeSaveData);
             Bind<PlayerController, PlayerSaveData>(gameData.playerSaveData);
-            //Bind<ConstructionLayer, ConstructionLayerSavedata>(gameData.constructionlayerSaveData);
+           
             Bind<ConstructionLayerManager, BuildingsSaveData>(gameData.buildingsSaveData);
             Bind<WeatherManager, WeatherSaveData>(gameData.weatherSaveData);    
             Bind<InventoryHolder, InventorySavaData>(gameData.inventorySavaDatas);
@@ -115,16 +120,34 @@ namespace GameSystems.SaveLoad
             
         }
 
-
+        
 
         public void NewGame()
         {
-            gameData = new GameData {
+            gameData = new GameData
+            {
                 Name = "New Game",
                 CurrentLevelName = "GameScene"
             };
-            Debug.Log("started new game");
+            GenerateNewGameStat(gameData);
             SceneManager.LoadScene(gameData.CurrentLevelName);
+        }
+        private void GenerateNewGameStat(GameData data)
+        {
+            Debug.Log(data.metaData.Seed);
+            if (data.metaData.Seed != 0) return;
+            Debug.Log("starting NewGame");
+           
+            int gameseed = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
+
+            GameMetaData metaData = new GameMetaData
+            {
+                SaveName = "New Game",
+                Seed = gameseed,
+                CurrentLevelName = "GameScene"
+            };
+            data.metaData = metaData;
+            Debug.Log("started new game");
         }
 
         public void SaveGame()
@@ -145,8 +168,7 @@ namespace GameSystems.SaveLoad
         {
             Save<TimeManager, TimeSaveData>(ref gameData.timeSaveData);
             Save<PlayerController, PlayerSaveData>(ref gameData.playerSaveData);
-            //Save<LevelManager, LevelSaveData>(ref gameData.levelSaveData);
-            //Save<ConstructionLayer, ConstructionLayerSavedata>(ref gameData.constructionlayerSaveData);
+           
             Save<ConstructionLayerManager, BuildingsSaveData>(ref gameData.buildingsSaveData);
             Save<WeatherManager, WeatherSaveData>(ref gameData.weatherSaveData);
             Save<InventoryHolder, InventorySavaData>(ref gameData.inventorySavaDatas);

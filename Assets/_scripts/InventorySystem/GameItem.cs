@@ -19,24 +19,24 @@ namespace GameSystems.Inventory
         public string ItemTypeID { 
             get
             {
-                if (ItemData != null)
+                if (GameItemData != null)
                 {
-                   return ItemData.ItemId;
+                   return GameItemData.ItemId;
                 }
                 else { return EmptyItemData; }
             }
            
         }
-        [field: SerializeField] public ItemData ItemData { get; private set; }
-        [field: SerializeField] public int Durability { get; private set; }
+        [field: SerializeField] public ItemData GameItemData { get; private set; }
+        [field: SerializeField] public int Durability { get; private set; } 
         [field: SerializeField] public DateTimeStamp CreationTime { get; private set; }
 
-        public InteractionIntent InteractionIntent => ItemData != null? ItemData.InteractionIntent : InteractionIntent.None;
-        public bool IsConsumeable => ItemData != null? ItemData.ConsumeableOnUse : false;
+        public List<InteractionIntent> InteractionIntents =>  GameItemData != null? GameItemData.PrimaryInteractionIntents : new List<InteractionIntent>();
+        public bool IsConsumeable => GameItemData != null? GameItemData.ConsumeableOnUse : false;
 
         public void SetItemData(ItemData data)
         {
-            ItemData = data;
+            GameItemData = data;
         }
         public static GameItem DefaultItem(ItemData ItemType) { return new Builder().Build(ItemType); }
         public static GameItem DefaultItem(string TypeID) {  return new Builder().Build(TypeID); }
@@ -51,7 +51,7 @@ namespace GameSystems.Inventory
 
         private bool Equals(GameItem other)
         {
-            return CreationTime.Equals(other.CreationTime, DateTimeStamp.ComparisionTo.ToDay) && other.ItemData == this.ItemData;
+            return CreationTime.Equals(other.CreationTime, DateTimeStamp.ComparisionTo.ToDay) && other.GameItemData == this.GameItemData;
         }
 
         public override int GetHashCode()
@@ -88,7 +88,8 @@ namespace GameSystems.Inventory
             }
             public GameItem Build(string itemName)
             {
-                ItemData itemData = DataBaseManager.Instance.ItemDataBase.GetItem(itemName);
+                ItemData itemData = DataBase.GetItem(itemName);
+                    //DataBaseManager.Instance.ItemDataBase.GetItem(itemName);
                 return Build(itemData);
             }
 
@@ -96,7 +97,7 @@ namespace GameSystems.Inventory
             {
                 GameItem gameItem = new GameItem
                 {
-                    ItemData = baseItemData
+                    GameItemData = baseItemData
                 };
                 if (baseItemData != null)
                 {

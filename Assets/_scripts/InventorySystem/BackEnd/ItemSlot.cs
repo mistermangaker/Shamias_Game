@@ -10,10 +10,10 @@ public abstract class ItemSlot
     
     [SerializeField] protected GameItem _gameItem;
     [SerializeField] protected int _stackSize;
-    [SerializeField] protected string itemName => _gameItem.ItemData != null ? _gameItem.ItemTypeID : EMPTYITEMNAME;
+    [SerializeField] protected string itemName => _gameItem.GameItemData != null ? _gameItem.ItemTypeID : EMPTYITEMNAME;
 
     public GameItem GameItem => _gameItem;
-    public ItemData ItemData => _gameItem.ItemData;
+    public ItemData ItemData => _gameItem.GameItemData;
     public int StackSize => _stackSize;
     public string ItemName => itemName;
 

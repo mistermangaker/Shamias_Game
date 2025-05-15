@@ -109,7 +109,8 @@ public class OnGroundItemManager : MonoBehaviour, IBind<DroppedItemSaveData>
         foreach (DroppedItems item in data.droppedItems)
         {
             GameItem itemToDrop = item.Item;
-            ItemData itemdata = DataBaseManager.Instance.ItemDataBase.GetItem(item.ItemName);
+            ItemData itemdata = DataBase.GetItem(item.ItemName);
+                                //DataBaseManager.Instance.ItemDataBase.GetItem(item.ItemName);
             if(itemdata != null)
             {
                 itemToDrop.SetItemData(itemdata);

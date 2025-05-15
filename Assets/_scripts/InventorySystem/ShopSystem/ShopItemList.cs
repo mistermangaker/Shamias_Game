@@ -8,6 +8,7 @@ namespace GameSystems.ShopSystem
     public class ShopItemList : ScriptableObject
     {
         [field:SerializeField] private List<ShopItem> _items;
+      
         public List<ShopItem> Items => _items;
         [SerializeField] private int _maxAllowedGold;
         public int MaxAllowedGold => _maxAllowedGold;
@@ -21,6 +22,7 @@ namespace GameSystems.ShopSystem
     public struct ShopItem
     {
         public bool purchasesOnly;
+        public ItemData BasicItem;
         public GameItem Item;
         public int amount;
         public int price;

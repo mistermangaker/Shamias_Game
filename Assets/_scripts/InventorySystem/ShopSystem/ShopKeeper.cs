@@ -23,8 +23,10 @@ namespace GameSystems.ShopSystem
 
             foreach (var item in _shopItemsHeld.Items)
             {
+                GameItem itemToAdd = item.Item;
+                if(item.BasicItem !=null) itemToAdd = GameItem.DefaultItem(item.BasicItem);
                 //Debug.Log(item.Item.ItemTypeID);
-                _shopSystem.AddToShop(item.Item, item.amount);
+                _shopSystem.AddToShop(itemToAdd, item.amount);
             }
         }
 
@@ -53,30 +55,32 @@ namespace GameSystems.ShopSystem
             else _shopSystem.SetGold(data.heldMoney);
 
 
-            foreach (var item in data.itemSaveDatas)
-            {
-                Debug.Log(item.name);
-            }
+            //foreach (var item in data.itemSaveDatas)
+            //{
+            //    Debug.Log(item.name);
+            //}
 
             if (data.itemSaveDatas.Count > 0)
             {
+                //Debug.Log("yep");
                 _shopSystem = new ShopSystem(data.itemSaveDatas.Count, data.heldMoney, _shopItemsHeld.BuyMarkup, _shopItemsHeld.SellMarkup);
                 
                 foreach (var item in data.GetAllItems())
                 {
+                    //Debug.Log($"item to add is {item.item.ItemTypeID}");
                     _shopSystem.AddToShop(item.item, item.amount);
                 }
                 //for (int i = 0; i < data.itemSaveDatas.Count; i++)
                 //{
+                //    GameItem item = _shopSystemSaveData.GetGameItemAtPosition
+                //    //GameItem gameItem = _shopSystemSaveData.itemSaveDatas[i].item;
+                //    //ItemData item = DataBaseManager.Instance.ItemDataBase.GetItem(_shopSystemSaveData.itemSaveDatas[i].name);
+                //    //if (item != null)
+                //    //{
+                //    //    gameItem.SetItemData(item);
+                //    //    _shopSystem.AddToShop(gameItem, _shopSystemSaveData.itemSaveDatas[i].amount);
+                //    //}
 
-                //    GameItem gameItem = _shopSystemSaveData.itemSaveDatas[i].item;
-                //    ItemData item = DataBaseManager.Instance.ItemDataBase.GetItem(_shopSystemSaveData.itemSaveDatas[i].name);
-                //    if (item != null)
-                //    {
-                //        gameItem.SetItemData(item);
-                //        _shopSystem.AddToShop(gameItem, _shopSystemSaveData.itemSaveDatas[i].amount);
-                //    }
-                   
                 //}
             }
            

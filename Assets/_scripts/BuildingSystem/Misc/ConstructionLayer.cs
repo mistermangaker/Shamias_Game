@@ -10,65 +10,21 @@ namespace GameSystems.BuildingSystem
 {
     public class ConstructionLayer : TileMapLayer
     {
-        //[Obsolete]
-        //private Dictionary<Vector3Int, Buildable> buildablesDictionary = new Dictionary<Vector3Int, Buildable>(); 
-
-        //[field: SerializeField] private ConstructionLayerSavedata saveData;
-        //[Obsolete]
-        //[SerializeField] private CollisionLayer collisionLayer;
-
-        //[field: SerializeField] public SerializableGuid Id { get; set; } = SerializableGuid.NewGuid();
-
-        //public void Bind(ConstructionLayerSavedata data)
-        //{
-        //    foreach (var position in buildablesDictionary)
-        //    {
-        //        DestroyTile(position.Key);
-        //    }
-            
-        //    foreach (var tileSaveData in data.buidableTileSaveDatas)
-        //    {
-        //        BuildableTiles tile = DataBaseManager.Instance.BuildablesDataBase.GetBuildable(tileSaveData.buildableTileType);
-        //        if(tile != null)
-        //        {
-        //            BuildTile((Vector3)tileSaveData.position, tile, out Buildable buildable);
-        //            buildable.SetOrAddGameObjectSerializableGuid(tileSaveData.Id);
-        //        }
-                
-        //    }
-        //    saveData = data;
-        //    data.Id = Id;
-        //}
-
-       // private ConstructionLayerManager _constructionLayerManager;
-        protected override void Awake()
+        private Dictionary<Vector3Int, Buildable> buildablesDictionary = new Dictionary<Vector3Int, Buildable>();
+        public void BuildTile(BuildingSuggestion suggestion)
         {
-            base.Awake();
-            //saveData = new ConstructionLayerSavedata();
-           // buildablesDictionary = GetComponentInParent<ConstructionLayerManager>().GetBuildablesDictionary();
+            BuildTile(suggestion, out Buildable newBuildable);
         }
-
-        private void Start()
+        public void BuildTile(BuildingSuggestion suggestion, out Buildable newBuildable)
         {
-            //_constructionLayerManager = ConstructionLayerManager.Instance;
-        }
-
-        //public void Save(ref ConstructionLayerSavedata data)
-        //{
-        //    //saveData = data;
-        //    //data.Id = Id;
-        //}
-        public void BuildTile(Vector3 worldCoords, BuildableTiles item)
-        {
-            BuildTile(worldCoords, item, out Buildable buildable);
-        }
-
-        public void BuildTile(Vector3 worldCoords, BuildableTiles item, out Buildable newBuildable)
-        {
+            newBuildable = null;    
+            Vector3 worldCoords = suggestion.position;
+            BuildableTiles item = suggestion.BuildableTiles;
             GameObject itemObject = null;
             var coords = TileMap.WorldToCell(worldCoords);
-            
-            
+
+            var buildingType = suggestion.type;
+
             if (item.TileToPlace != null)
             {
                 var tileChangeData = new TileChangeData(
@@ -80,14 +36,16 @@ namespace GameSystems.BuildingSystem
 
                 TileMap.SetTile(tileChangeData, false);
             }
-            if(item.BuildableGameObject != null)
+            if (item.BuildableGameObject != null)
             {
+                float offset = TileMap.cellSize.x / 2;
+                Vector3 worldoffset = new Vector3(offset, offset, offset);
                 itemObject = Instantiate(
                     item.BuildableGameObject,
-                    TileMap.CellToWorld(coords) + TileMap.cellSize / 2 + (Vector3)item.TileOffset, Quaternion.identity
-                    ) ;
+                    TileMap.CellToWorld(coords) + worldoffset + (Vector3)item.TileOffset, Quaternion.identity
+                    );
             }
-            var buildable = new Buildable(item, coords, TileMap, itemObject);
+            var buildable = new Buildable(item, coords, TileMap, itemObject, buildingType);
             if (buildable.BuildableGameObject != null)
             {
                 buildable.InitializeNewBuildableGameObjectSerializableGuid();
@@ -96,59 +54,28 @@ namespace GameSystems.BuildingSystem
                 {
                     building.InitializeBuilding(buildable);
                 }
-                //PlantBase plant = buildable.BuildableGameObject.GetComponent<PlantBase>();
-                //if (plant != null)
-                //{
-                //    plant.SetUpPlant(buildable);
-                //}
-
             }
-            if(item.UseCustomCollisionSpace)
-            {
-                ConstructionLayerManager.Instance.SetCollisions(buildable, true);
-                //collisionLayer.SetCollisions(buildable, true);
-                RegisterBuildableCollisionSpace(buildable);
-            }
-            else
-            {
-                ConstructionLayerManager.Instance.AddToBuildablesDictionary(coords, buildable, this);
-                //buildablesDictionary.Add(coords, buildable);
-            }
-            
-            //saveData.AddBuildable(buildable);
+            buildablesDictionary.Add(coords, buildable);
+            ConstructionLayerManager.Instance.AddToBuildablesSaveData(coords, buildable, this);
             newBuildable = buildable;
-
         }
 
         public void DestroyTile(Vector3 worldCoords)
         {
             var coords = TileMap.WorldToCell(worldCoords);
-            if (!ConstructionLayerManager.Instance.ContainsCoords(coords))
+           
+            if (!buildablesDictionary.ContainsKey(coords))
             {
                 TileMap.SetTile(coords, null);
                 return;
             }
-            var buildable = ConstructionLayerManager.Instance.GetBuildableFromCoords(coords);
-            if (buildable.BuildableType.UseCustomCollisionSpace)
-            {
-                ConstructionLayerManager.Instance.SetCollisions(buildable, false);
-                //collisionLayer.SetCollisions(buildable, false);
-                UnRegisterBuildableCollisionSpace(buildable);
-            }
-            ConstructionLayerManager.Instance.RemoveFromBuildablesList(coords);
+            var buildable = buildablesDictionary[coords];
+               
+            if (buildable == null) return;
+           
+            buildablesDictionary.Remove(coords);
+            ConstructionLayerManager.Instance.RemoveFromSaveData(coords,this);
     
-            //if (!buildablesDictionary.ContainsKey(coords)) 
-            //{ 
-            //    TileMap.SetTile(coords, null);
-            //    return; 
-            //} 
-            //var buildable = buildablesDictionary[coords];
-            //if (buildable.BuildableType.UseCustomCollisionSpace)
-            //{
-            //    collisionLayer.SetCollisions(buildable, false);
-            //    UnRegisterBuildableCollisionSpace(buildable);
-            //}
-            //buildablesDictionary.Remove(coords);
             buildable.Destroy();
         }
 
@@ -156,30 +83,8 @@ namespace GameSystems.BuildingSystem
         {
             var coords = TileMap.WorldToCell(worldCoords);
 
-            if (!collisionSpace.Equals(default))
-            {
-                return !IsRectOccupied(coords, collisionSpace);
-            }
-
-            return !ConstructionLayerManager.Instance.ContainsCoords(coords) && TileMap.GetTile(coords) == null;
-        }
-
-        private bool IsRectOccupied(Vector3Int coords, RectInt rect)
-        {
-            return rect.Iterate(coords, tileCoords => ConstructionLayerManager.Instance.ContainsCoords(tileCoords));
-        }
-
-        private void RegisterBuildableCollisionSpace(Buildable buildable)
-        {
-            buildable.IterateCollisionSpace(tilecoords => ConstructionLayerManager.Instance.AddToBuildablesDictionary(tilecoords, buildable, this));
-        }
-
-        private void UnRegisterBuildableCollisionSpace(Buildable buildable)
-        {
-            buildable.IterateCollisionSpace(tilecoords => {
-                ConstructionLayerManager.Instance.RemoveFromBuildablesList(tilecoords);
-                //buildablesDictionary.Remove(tilecoords);
-            });
+            return !buildablesDictionary.ContainsKey(coords) && TileMap.GetTile(coords) == null;
+           
         }
 
     }

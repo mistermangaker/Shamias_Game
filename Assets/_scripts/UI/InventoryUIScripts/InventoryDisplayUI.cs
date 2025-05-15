@@ -46,11 +46,11 @@ public abstract class InventoryDisplayUI : MonoBehaviour
             }
             else if(!mouseInventory.IsEmpty && !slotClicked.IsEmpty)
             {
-                if (mouseInventory.SlotItem.ItemData == slotClicked.SlotItem.ItemData)
+                if (mouseInventory.SlotItem.GameItemData == slotClicked.SlotItem.GameItemData)
                 {
                     TryAddItem(slotClicked, mouseInventory.StackSize);
                 }
-                else if(mouseInventory.SlotItem.ItemData != slotClicked.SlotItem.ItemData)
+                else if(mouseInventory.SlotItem.GameItemData != slotClicked.SlotItem.GameItemData)
                 {
                     SwapSlots(slotClicked);
                 }
@@ -79,11 +79,11 @@ public abstract class InventoryDisplayUI : MonoBehaviour
             }
             else if (!mouseInventory.IsEmpty && !slotClicked.IsEmpty)
             {
-                if (mouseInventory.SlotItem.ItemData == slotClicked.SlotItem.ItemData)
+                if (mouseInventory.SlotItem.GameItemData == slotClicked.SlotItem.GameItemData)
                 {
                     TryAddItem(slotClicked, 1);
                 }
-                if(mouseInventory.SlotItem.ItemData != slotClicked.SlotItem.ItemData)
+                if(mouseInventory.SlotItem.GameItemData != slotClicked.SlotItem.GameItemData)
                 {
                     if(mouseInventory.StackSize == 1)
                     {

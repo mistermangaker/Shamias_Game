@@ -1,3 +1,4 @@
+using GameSystems.Inventory;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,9 +13,12 @@ public class BuildableTiles : ScriptableObject
     [field:SerializeField] public Sprite DisplaySprite { get; private set; }
     [field:SerializeField] public Vector2 TileOffset {  get; private set; }
     [field:SerializeField] public GameObject BuildableGameObject { get; private set; }
-    [field:SerializeField] public bool UseCustomCollisionSpace { get; private set; }
-    [field:SerializeField] public RectInt CollisionSpace { get; private set; }
+   
     [field: SerializeField] public GrowthStages GrowthStage { get; private set; }
-   
-   
+    [field: SerializeField] public bool IsPlantableOnSoil { get; private set; }
+    [field: SerializeField] public List<ItemData> ItemsToDropOnDestroy { get; private set; }
+    [field: SerializeField] public int BuildingHealth { get; private set; }
+    
 }
+
+

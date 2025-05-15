@@ -51,7 +51,7 @@ public class MouseObjectUI : MonoBehaviour
     {
         get
         {
-            return SlotItem.ItemData == null;
+            return SlotItem.GameItemData == null;
            //return InventorySlot.ItemData == null;
         }
     }
@@ -102,7 +102,7 @@ public class MouseObjectUI : MonoBehaviour
         {
             if (StackSize > 0)
             {
-                if (slot.SlotItem.ItemData != null)
+                if (slot.SlotItem.GameItemData != null)
                 {
                     int amountSlotCanTake = slot.AssignedInventorySlot.GetAmountToAdd(AmountToAddPerSlot);
                     if (amountSlotCanTake > 0)
@@ -133,7 +133,7 @@ public class MouseObjectUI : MonoBehaviour
 
     public void AddSlotUI(InventorySlotUI slot, MouseButton mouseButton = MouseButton.Left)
     {
-        if(SlotItem.ItemData != null && !selectedSlots.Contains(slot))
+        if(SlotItem.GameItemData != null && !selectedSlots.Contains(slot))
         {
             selectedSlots.Add(slot);
             DraggingSlots = true;
@@ -201,10 +201,10 @@ public class MouseObjectUI : MonoBehaviour
 
     public void UpdateUI()
     {
-        if(SlotItem.ItemData != null)
+        if(SlotItem.GameItemData != null)
         {
             ItemSprite.color = Color.white;
-            ItemSprite.sprite = SlotItem.ItemData.Icon;
+            ItemSprite.sprite = SlotItem.GameItemData.Icon;
             ItemCountText.text = InventorySlot.StackSize.ToString();    
         }
         else
@@ -219,7 +219,7 @@ public class MouseObjectUI : MonoBehaviour
 
     private void DropItem(int amount)
     {
-        if (SlotItem.ItemData == null) return;
+        if (SlotItem.GameItemData == null) return;
         OnGroundItemManager.Instance.DropItem(SlotItem, PlayerController.Instance.transform.position, amount);
         //DroppedGameItem item = Instantiate(ItemContainer, PlayerController.Instance.transform.position, Quaternion.identity).GetComponent<DroppedGameItem>();
         //if (item != null)
@@ -276,7 +276,7 @@ public class MouseObjectUI : MonoBehaviour
                 
             }
         }
-        if(SlotItem.ItemData != null && !HandlingSlots && !DraggingSlots && !IsPointerOverUIObject())
+        if(SlotItem.GameItemData != null && !HandlingSlots && !DraggingSlots && !IsPointerOverUIObject())
         {
             if (Mouse.current.leftButton.wasPressedThisFrame)
             {

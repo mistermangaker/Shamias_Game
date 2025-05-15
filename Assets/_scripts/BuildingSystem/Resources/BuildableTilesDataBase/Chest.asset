@@ -18,13 +18,7 @@ MonoBehaviour:
   <DisplaySprite>k__BackingField: {fileID: 7698019027471470886, guid: 8342a2096fdc459459df4e32dd96a550, type: 3}
   <TileOffset>k__BackingField: {x: 0, y: 0}
   <BuildableGameObject>k__BackingField: {fileID: 4114736482457951865, guid: 126250340f2a7db418fae6315c7c0b23, type: 3}
-  <HasBuildingStages>k__BackingField: 0
-  <BuildingStages>k__BackingField: 0
-  <UseCustomCollisionSpace>k__BackingField: 0
-  <CollisionSpace>k__BackingField:
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  <IsPlant>k__BackingField: 0
   <GrowthStage>k__BackingField: {fileID: 0}
+  <IsPlantableOnSoil>k__BackingField: 0
+  <ItemsToDropOnDestroy>k__BackingField: []
+  <BuildingHealth>k__BackingField: 50

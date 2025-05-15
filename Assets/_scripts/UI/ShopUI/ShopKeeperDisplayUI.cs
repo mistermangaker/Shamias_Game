@@ -89,7 +89,7 @@ public class ShopKeeperDisplayUI : MonoBehaviour
             _shoppingCart[data] += amount;
         }
         var price = GetModifiedPrice(data, amount, item.MarkUp);
-        var newString = $"{data.ItemData.DisplayName} ${price} X {_shoppingCart[data]}";
+        var newString = $"{data.GameItemData.DisplayName} ${price} X {_shoppingCart[data]}";
         
         _shoppingCartUI[data].SetItemText(newString);
         _basketTotal += price;
@@ -117,7 +117,7 @@ public class ShopKeeperDisplayUI : MonoBehaviour
 
     public static int GetModifiedPrice(GameItem data, int amount, float markUp)
     {
-        var basevalue = data.ItemData.DefaultSellPrice * amount;
+        var basevalue = data.GameItemData.DefaultSellPrice * amount;
         return Mathf.RoundToInt(basevalue + basevalue*markUp);
     }
 
@@ -129,7 +129,7 @@ public class ShopKeeperDisplayUI : MonoBehaviour
         _shoppingCart[data] -= amount;
 
         var price = GetModifiedPrice(data, amount, item.MarkUp);
-        var newString = $"{data.ItemData.DisplayName} ${price} X {_shoppingCart[data]}";
+        var newString = $"{data.GameItemData.DisplayName} ${price} X {_shoppingCart[data]}";
         _shoppingCartUI[data].SetItemText(newString);
         _basketTotal -= price;
         _basketTotalText.text = $"Total: ${_basketTotal}";
@@ -157,7 +157,7 @@ public class ShopKeeperDisplayUI : MonoBehaviour
 
     private void UpdateItemPreview(GameItem item)
     {
-        var data = item.ItemData;
+        var data = item.GameItemData;
         _itemNameText.text = data.DisplayName;
         _itemDescriptionText.text = data.ItemDescription;
         _itemIcon.sprite = data.Icon;

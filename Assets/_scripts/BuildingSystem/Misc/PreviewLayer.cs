@@ -10,7 +10,9 @@ namespace GameSystems.BuildingSystem
         {
             var coords = TileMap.WorldToCell(worldCoords);
             _previewRenderer.enabled = true;
-            _previewRenderer.transform.position = TileMap.CellToWorld(coords) + TileMap.cellSize / 2 + (Vector3)item.TileOffset;
+            float offset = TileMap.cellSize.x / 2;
+            Vector3 worldoffset = new Vector3(offset, offset, offset);
+            _previewRenderer.transform.position = TileMap.CellToWorld(coords) + worldoffset + (Vector3)item.TileOffset;
             _previewRenderer.sprite = item.DisplaySprite;
             _previewRenderer.color = isValid ? new Color(0, 1, 0, 0.5f) : new Color(1, 0, 0, 0.5f);
         }

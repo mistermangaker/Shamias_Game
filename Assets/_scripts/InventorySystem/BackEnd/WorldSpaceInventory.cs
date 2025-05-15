@@ -12,7 +12,7 @@ namespace GameSystems.Inventory
         protected override void Awake()
         {
             base.Awake();
-            Id = GetComponent<BuildingSaveData>().Id;
+            Id = GetComponent<BuildingSerializableGUID>().Id;
             
         }
 

@@ -4,6 +4,7 @@ using GameSystems.Inventory;
 using UnityEngine;
 
 
+
 public class GardenPlantObject : BuildingBase
 {
     [SerializeField] protected SpriteRenderer spriteRenderer;
@@ -13,7 +14,7 @@ public class GardenPlantObject : BuildingBase
 
     [SerializeField] protected GameItem harvestItem;
 
-    protected GrowthStage currentGrowthstage => building.BuildableType.GrowthStage.GetGrowthStageAtIndex(growthStageIndex);
+    protected GrowthStage currentGrowthstage => building.BuildableData.GrowthStage.GetGrowthStageAtIndex(growthStageIndex);
     public GrowthStage CurrentGrowthstage => currentGrowthstage;
 
     protected int harvestableGrowthStage;
@@ -58,8 +59,8 @@ public class GardenPlantObject : BuildingBase
     {
         base.InitializeBuilding(plantType);
         plantedTime = TimeManager.Instance.CurrentGameTime;
-        harvestItem = plantType.BuildableType.GrowthStage.harvestableGameItemToDrop;
-        harvestableGrowthStage = plantType.BuildableType.GrowthStage.HarvestableGrowDays;
+        harvestItem = plantType.BuildableData.GrowthStage.harvestableGameItemToDrop;
+        harvestableGrowthStage = plantType.BuildableData.GrowthStage.HarvestableGrowDays;
         UpdateVisuals();
      
     }
@@ -76,18 +77,19 @@ public class GardenPlantObject : BuildingBase
     }
     public override bool Interact(InteractionAttempt interactionAttempt)
     {
+        int damage = interactionAttempt.Item.GameItemData?.ItemAttackDamage ?? 0;
+       
         Debug.Log("interact");
         if(interactionAttempt.Intents.Contains(InteractionIntent.Harvest_Plants))
         {
             if (growthStageIndex >= harvestableGrowthStage)
             {
-                //do something here
                 Harvest();
                 return true;
             }
             else
             {
-                RemoveBuilding();
+                DamageBuilding(damage*2);
                 return true;
             }
         }
@@ -95,14 +97,13 @@ public class GardenPlantObject : BuildingBase
         {
             if (growthStageIndex >= harvestableGrowthStage)
             {
-                //do something here
                 Harvest();
                 return true;
             }
         }
         else if (interactionAttempt.Intents.Contains(InteractionIntent.Attack))
         {
-            RemoveBuilding();
+            DamageBuilding(damage);
         }
         return false;
     }

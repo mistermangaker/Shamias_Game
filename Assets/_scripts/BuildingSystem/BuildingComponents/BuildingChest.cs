@@ -6,28 +6,31 @@ public class BuildingChest : BuildingBase
 
     public override bool Interact(InteractionAttempt interactor)
     {
-        if(interactor.Intents.Contains(InteractionIntent.Interact))
+        if (interactor.Intents.Contains(InteractionIntent.Attack)||interactor.Intents.Contains(InteractionIntent.Harvest_Wood))
         {
-            if (buildingInventory != null)
-            {
-                buildingInventory.Interact(interactor.interactor);
-            }
+            int damage = interactor.Item.GameItemData?.ItemAttackDamage ?? 0;
+            DamageBuilding(damage);
         }
         else if (interactor.Intents.Contains(InteractionIntent.InsertItem))
         {
             if (buildingInventory != null)
             {
-                if(buildingInventory.InventorySystem.AddToInventory(interactor.Item, 1, out int remainder))
+                if (buildingInventory.InventorySystem.AddToInventory(interactor.Item, 1, out int remainder))
                 {
                     return true;
                 }
                 return false;
             }
         }
-        else if(interactor.Intents.Contains(InteractionIntent.Attack))
+        else if (interactor.Intents.Contains(InteractionIntent.Interact))
         {
-            RemoveBuilding();
+            if (buildingInventory != null)
+            {
+                buildingInventory.Interact(interactor.interactor);
+            }
         }
+        
+       
        return false ;
     }
 

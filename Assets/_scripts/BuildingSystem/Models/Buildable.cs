@@ -10,23 +10,30 @@ namespace GameSystems.BuildingSystem
         //[field: SerializeField] public string ItemIdentifierName { get; private set; }
 
         [field: SerializeField] public Tilemap ParentTileMap {  get; private set; }
-        [field: SerializeField] public BuildableTiles BuildableType { get; private set; }
+        [field: SerializeField] public BuildableTiles BuildableData { get; private set; }
         [field: SerializeField] public GameObject BuildableGameObject { get; private set; }
 
         [field: SerializeField] public Vector3Int Coordinates { get; private set; }
 
-        [field: SerializeField] public TileBase InConstructionTile { get; private set; }
-        [SerializeField] public Vector3 CooridinatesInWorldSpace => ParentTileMap.CellToWorld(Coordinates) + ParentTileMap.cellSize / 2 + (Vector3)BuildableType.TileOffset;
+        [SerializeField] public Vector3 CooridinatesInWorldSpace => ParentTileMap.CellToWorld(Coordinates) + ParentTileMap.cellSize / 2 + (Vector3)BuildableData.TileOffset;
 
+        public BuildingType buildingSpawnType { get; private set; }
 
+        public BuildingLayer buildingLayer { get; private set; }
 
-        public Buildable(BuildableTiles buildableType, Vector3Int coordinates, Tilemap parentTileMap, GameObject buildableGameObject = null, TileBase inConstructionTile = null)
+        public void SetBuildingLayer(BuildingLayer layer)
         {
-            this.BuildableType = buildableType;
+            buildingLayer = layer;
+        }
+
+        public Buildable(BuildableTiles buildableType, Vector3Int coordinates, Tilemap parentTileMap, GameObject buildableGameObject = null, BuildingType buildingType = BuildingType.Spawned, BuildingLayer layer = BuildingLayer.OnGround)
+        {
+            this.BuildableData = buildableType;
             this.Coordinates = coordinates;
             this.ParentTileMap = parentTileMap;
             this.BuildableGameObject = buildableGameObject;
-            this.InConstructionTile = inConstructionTile;
+            this.buildingLayer = layer;
+            this.buildingSpawnType = buildingType;
         }
         public void RemoveInConstructionTile()
         {
@@ -37,7 +44,7 @@ namespace GameSystems.BuildingSystem
             SerializableGuid id = default;
             if(BuildableGameObject != null)
             {
-                id = BuildableGameObject.GetOrAddComponent<BuildingSaveData>().Id;
+                id = BuildableGameObject.GetOrAddComponent<BuildingSerializableGUID>().Id;
             }
             return id;
         }
@@ -45,7 +52,7 @@ namespace GameSystems.BuildingSystem
         {
             if (BuildableGameObject != null)
             {
-                BuildingSaveData data = BuildableGameObject.GetOrAddComponent<BuildingSaveData>();
+                BuildingSerializableGUID data = BuildableGameObject.GetOrAddComponent<BuildingSerializableGUID>();
                 data.SetNewId();
             }
         }
@@ -54,7 +61,7 @@ namespace GameSystems.BuildingSystem
         {
             if (BuildableGameObject != null)
             {
-                BuildingSaveData data = BuildableGameObject.GetOrAddComponent<BuildingSaveData>();
+                BuildingSerializableGUID data = BuildableGameObject.GetOrAddComponent<BuildingSerializableGUID>();
                 data.Id = id;
             }
         }
@@ -68,15 +75,7 @@ namespace GameSystems.BuildingSystem
             ParentTileMap.SetTile(Coordinates, null);
         }
 
-        public void IterateCollisionSpace(RectIntExtensions.RectAction action)
-        {
-            BuildableType.CollisionSpace.Iterate(Coordinates, action);
-        }
-
-        public bool IterateCollisionSpace(RectIntExtensions.RectActionBool action)
-        {
-             return BuildableType.CollisionSpace.Iterate(Coordinates, action);
-        }
+       
     }
 
 }

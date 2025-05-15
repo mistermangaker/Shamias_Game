@@ -12,19 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b61635e17356c6409b5932ed500c59d, type: 3}
   m_Name: Radish
   m_EditorClassIdentifier: 
-  <TileName>k__BackingField: 
+  <TileName>k__BackingField: Building_Radish
   <TileToPlace>k__BackingField: {fileID: 0}
   <IsFloorTile>k__BackingField: 0
-  <DisplaySprite>k__BackingField: {fileID: 0}
+  <DisplaySprite>k__BackingField: {fileID: 4104515310885792914, guid: 38ce0f88f0a7fd74e91a2b324efeb7dc, type: 3}
   <TileOffset>k__BackingField: {x: 0, y: 0}
   <BuildableGameObject>k__BackingField: {fileID: 8833922371450963870, guid: c7368876b71ecb2408de6e9806abc511, type: 3}
-  <HasBuildingStages>k__BackingField: 0
-  <BuildingStages>k__BackingField: 0
-  <UseCustomCollisionSpace>k__BackingField: 0
-  <CollisionSpace>k__BackingField:
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  <IsPlant>k__BackingField: 1
   <GrowthStage>k__BackingField: {fileID: 11400000, guid: 8ebdb18f9e8723641a6ea685f4ed592f, type: 2}
+  <IsPlantableOnSoil>k__BackingField: 1
+  <ItemsToDropOnDestroy>k__BackingField: []
+  <BuildingHealth>k__BackingField: 5

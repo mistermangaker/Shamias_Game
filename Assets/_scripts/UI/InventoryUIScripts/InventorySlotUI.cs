@@ -39,7 +39,7 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnte
     {
         get
         {
-            return SlotItem.ItemData == null;
+            return SlotItem.GameItemData == null;
            // return ItemData == null;
         }
     }
@@ -133,10 +133,10 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnte
         if (_isSelected) quantityText.faceColor = Color.white;
             else quantityText.faceColor = Color.black;
 
-        if (SlotItem.ItemData != null)
+        if (SlotItem.GameItemData != null)
         {
             quantityText.text = (assignedInventorySlot.StackSize > 1) ? AssignedInventorySlot.StackSize.ToString() : string.Empty;
-            itemRenderer.sprite = SlotItem.ItemData.Icon;
+            itemRenderer.sprite = SlotItem.GameItemData.Icon;
             itemRenderer.color = Color.white;
 
         }
@@ -180,7 +180,7 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnte
     {
         int slotDisplayAmount = (assignedInventorySlot.StackSize != -1)? assignedInventorySlot.StackSize + amount: amount;
         quantityText.text = slotDisplayAmount.ToString();
-        itemRenderer.sprite = item.ItemData.Icon;
+        itemRenderer.sprite = item.GameItemData.Icon;
         itemRenderer.color = Color.white;
     }
     
@@ -197,7 +197,7 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnte
         if (mouseObject.DraggingSlots && (eventData.button == PointerEventData.InputButton.Right || eventData.button == PointerEventData.InputButton.Left))
 
         {
-            if (MouseObjectUI.Instance.SlotItem.ItemData == SlotItem.ItemData || IsEmpty)
+            if (MouseObjectUI.Instance.SlotItem.GameItemData == SlotItem.GameItemData || IsEmpty)
             {
                 MouseButton button = eventData.button == PointerEventData.InputButton.Right ? MouseButton.Right : MouseButton.Left;
                 MouseObjectUI.Instance.AddSlotUI(this, button);
@@ -212,7 +212,7 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnte
     {
         _pointerHasEntered = false;
         OnHoverExited?.Invoke();
-        if (mouseObject.DraggingSlots && (MouseObjectUI.Instance.SlotItem.ItemData == SlotItem.ItemData || IsEmpty)) return;
+        if (mouseObject.DraggingSlots && (MouseObjectUI.Instance.SlotItem.GameItemData == SlotItem.GameItemData || IsEmpty)) return;
 
         DeselectSlot();
 
@@ -223,7 +223,7 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnte
     {
         if (eventData.button == PointerEventData.InputButton.Right || eventData.button == PointerEventData.InputButton.Left)
         {
-            if (MouseObjectUI.Instance.SlotItem.ItemData != null)
+            if (MouseObjectUI.Instance.SlotItem.GameItemData != null)
             {
                 MouseButton button = eventData.button == PointerEventData.InputButton.Right ? MouseButton.Right : MouseButton.Left;
                 MouseObjectUI.Instance.AddSlotUI(this, button);

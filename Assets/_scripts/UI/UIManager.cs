@@ -90,6 +90,7 @@ public class UIManager : MonoBehaviour
 
     public void TryScrollHotBar(float amount)
     {
+        //if(amount == 0) return;
         if (CanScrollMouseWheel())
         {
             HotBarDisplayScript.Instance.ChangeIndex((int) amount);

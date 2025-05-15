@@ -22,8 +22,8 @@ public class ItemHoverScript : MonoBehaviour
     public void SetItem(GameItem item)
     {
         gameObject.SetActive(true);
-        itemText.text = item.ItemData.DisplayName;
-        DescriptionText.text = item.ItemData.ItemDescription;
+        itemText.text = item.GameItemData.DisplayName;
+        DescriptionText.text = item.GameItemData.ItemDescription;
     }
     public void ClearItem()
     {

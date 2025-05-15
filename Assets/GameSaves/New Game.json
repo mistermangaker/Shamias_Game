@@ -1,6 +1,11 @@
 {
     "Name": "New Game",
     "CurrentLevelName": "GameScene",
+    "metaData": {
+        "SaveName": "New Game",
+        "Seed": 1114031417,
+        "CurrentLevelName": "GameScene"
+    },
     "timeSaveData": {
         "<Id>k__BackingField": {
             "Part1": 625814693,
@@ -13,9 +18,9 @@
             "<Days>k__BackingField": 7,
             "<Year>k__BackingField": 0,
             "<Season>k__BackingField": 0,
-            "<Hour>k__BackingField": 4,
-            "<Minute>k__BackingField": 10,
-            "<TotalMinutes>k__BackingField": 250,
+            "<Hour>k__BackingField": 0,
+            "<Minute>k__BackingField": 50,
+            "<TotalMinutes>k__BackingField": 50,
             "<DayOfTheYear>k__BackingField": 0
         }
     },
@@ -27,56 +32,55 @@
             "Part4": 1849939537
         },
         "Position": {
-            "x": 0.28312307596206667,
+            "x": 0.0,
             "y": 0.09757289290428162,
-            "z": -2.236034631729126
+            "z": 2.1665533215552685e-18
         },
         "FactingDirections": {
             "x": 0.0,
             "y": 0.0,
-            "z": -1.0
+            "z": 0.0
         }
     },
-    "constructionlayerSaveData": [],
     "weatherSaveData": {
         "weatherDictionary": [
+            1,
+            0,
+            2,
+            1,
+            2,
+            3,
+            2,
+            3,
+            1,
+            1,
             2,
             2,
+            1,
+            1,
             1,
             1,
             0,
-            1,
-            2,
             3,
-            1,
-            1,
             2,
-            3,
             1,
             3,
-            1,
             3,
             2,
             2,
+            2,
+            2,
             3,
-            2,
-            3,
-            2,
-            0,
-            2,
-            2,
-            0,
-            2,
-            0
+            2
         ],
-        "currentWeather": 2
+        "currentWeather": 1
     },
     "inventorySavaDatas": [
         {
             "itemSaveDatas": [
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -96,27 +100,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 49626
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "Item_Radish",
-                    "amount": 1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -136,7 +120,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -156,7 +140,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -176,7 +160,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -196,7 +180,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -216,7 +200,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -236,7 +220,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -256,7 +240,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -276,7 +260,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -296,7 +280,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -316,7 +300,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -336,7 +320,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -356,7 +340,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -376,87 +360,7 @@
                 },
                 {
                     "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
+                        "<GameItemData>k__BackingField": {
                             "instanceID": 0
                         },
                         "<Durability>k__BackingField": 0,
@@ -475,223 +379,12 @@
                     "amount": -1
                 }
             ],
-            "heldMoney": 0,
+            "heldMoney": 500,
             "<Id>k__BackingField": {
                 "Part1": 2961021952,
                 "Part2": 1097363185,
                 "Part3": 445508236,
                 "Part4": 1523647486
-            }
-        },
-        {
-            "itemSaveDatas": [
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                },
-                {
-                    "item": {
-                        "<ItemData>k__BackingField": {
-                            "instanceID": 0
-                        },
-                        "<Durability>k__BackingField": 0,
-                        "<CreationTime>k__BackingField": {
-                            "<Day>k__BackingField": 0,
-                            "<Days>k__BackingField": 0,
-                            "<Year>k__BackingField": 0,
-                            "<Season>k__BackingField": 0,
-                            "<Hour>k__BackingField": 0,
-                            "<Minute>k__BackingField": 0,
-                            "<TotalMinutes>k__BackingField": 0,
-                            "<DayOfTheYear>k__BackingField": 0
-                        }
-                    },
-                    "name": "empty",
-                    "amount": -1
-                }
-            ],
-            "heldMoney": 0,
-            "<Id>k__BackingField": {
-                "Part1": 3986771330,
-                "Part2": 1116491488,
-                "Part3": 1659293373,
-                "Part4": 970803622
             }
         }
     ],
@@ -702,40 +395,1602 @@
             "Part3": 1037001368,
             "Part4": 446273766
         },
-        "BuildablesData": [
+        "groundBuildablesSaveData": [],
+        "tillingGroundSavedata": [],
+        "AboveGroundBuildablesData": [
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 13,
+                    "y": -7,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1469630302,
+                    "Part2": 1232291009,
+                    "Part3": 1466057656,
+                    "Part4": 1117068534
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -9,
+                    "y": 11,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 437809949,
+                    "Part2": 1156690101,
+                    "Part3": 1964245935,
+                    "Part4": 881061991
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -8,
+                    "y": 8,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 788320460,
+                    "Part2": 1124380148,
+                    "Part3": 3234011520,
+                    "Part4": 1970168614
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 17,
+                    "y": 1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 794195847,
+                    "Part2": 1232383954,
+                    "Part3": 2279882404,
+                    "Part4": 3610776666
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -22,
+                    "y": 7,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2410048498,
+                    "Part2": 1244482668,
+                    "Part3": 1381625511,
+                    "Part4": 639038054
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 15,
+                    "y": -3,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3389792646,
+                    "Part2": 1289354301,
+                    "Part3": 3115480196,
+                    "Part4": 264076943
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -20,
+                    "y": -2,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2751831275,
+                    "Part2": 1333606654,
+                    "Part3": 2589435568,
+                    "Part4": 1591870483
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 10,
+                    "y": -6,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3424966057,
+                    "Part2": 1302432557,
+                    "Part3": 2885887105,
+                    "Part4": 381350396
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 3,
+                    "y": -1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1663528721,
+                    "Part2": 1264301498,
+                    "Part3": 967627919,
+                    "Part4": 649586560
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -10,
+                    "y": 1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 619025554,
+                    "Part2": 1126432975,
+                    "Part3": 1460304527,
+                    "Part4": 4279985208
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -6,
+                    "y": 8,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1115700412,
+                    "Part2": 1189703074,
+                    "Part3": 1164435614,
+                    "Part4": 613850428
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -10,
+                    "y": 11,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3164906784,
+                    "Part2": 1136114911,
+                    "Part3": 3344234130,
+                    "Part4": 3394977334
+                }
+            },
             {
                 "Layer": 1,
                 "position": {
                     "x": 1,
+                    "y": 4,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3027750056,
+                    "Part2": 1260265727,
+                    "Part3": 1356452008,
+                    "Part4": 3075492955
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -11,
+                    "y": 5,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2885831921,
+                    "Part2": 1154380360,
+                    "Part3": 578264709,
+                    "Part4": 3194456786
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -11,
+                    "y": 9,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 115930553,
+                    "Part2": 1135208370,
+                    "Part3": 814313616,
+                    "Part4": 212961563
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 14,
+                    "y": -4,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 30540276,
+                    "Part2": 1119114784,
+                    "Part3": 2766101663,
+                    "Part4": 3909760063
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -18,
+                    "y": 12,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3476995493,
+                    "Part2": 1159905387,
+                    "Part3": 3847299257,
+                    "Part4": 722035068
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -17,
+                    "y": 4,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 114754462,
+                    "Part2": 1240896962,
+                    "Part3": 1021627793,
+                    "Part4": 2004757528
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 0,
+                    "y": -8,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2836426770,
+                    "Part2": 1167948622,
+                    "Part3": 1580881796,
+                    "Part4": 1758163330
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -11,
+                    "y": 6,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 4085727212,
+                    "Part2": 1314091022,
+                    "Part3": 426513590,
+                    "Part4": 3710660496
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 14,
+                    "y": -7,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1233326159,
+                    "Part2": 1086776570,
+                    "Part3": 1818225049,
+                    "Part4": 543129928
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -7,
+                    "y": 2,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2918017517,
+                    "Part2": 1150359979,
+                    "Part3": 2055813536,
+                    "Part4": 40980743
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -16,
+                    "y": 0,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 119361589,
+                    "Part2": 1310082023,
+                    "Part3": 3253141180,
+                    "Part4": 4096123756
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -23,
+                    "y": 4,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2817239451,
+                    "Part2": 1239642325,
+                    "Part3": 3095904139,
+                    "Part4": 60950969
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 2,
+                    "y": -4,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3320198121,
+                    "Part2": 1149359162,
+                    "Part3": 2815172501,
+                    "Part4": 3413776670
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 4,
+                    "y": 0,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 4162819173,
+                    "Part2": 1215719986,
+                    "Part3": 3099870355,
+                    "Part4": 984026294
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 3,
+                    "y": 0,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1586653200,
+                    "Part2": 1118608033,
+                    "Part3": 1072815501,
+                    "Part4": 3781550180
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -17,
+                    "y": 3,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3082258749,
+                    "Part2": 1120885054,
+                    "Part3": 3284207006,
+                    "Part4": 1594778398
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 15,
+                    "y": -1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2804916476,
+                    "Part2": 1202624485,
+                    "Part3": 1638188428,
+                    "Part4": 4067194361
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 2,
+                    "y": -8,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 865574852,
+                    "Part2": 1147466247,
+                    "Part3": 3667925429,
+                    "Part4": 2300813594
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -12,
+                    "y": 12,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 70411759,
+                    "Part2": 1088993179,
+                    "Part3": 342333859,
+                    "Part4": 1873929181
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -7,
+                    "y": -2,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 503932789,
+                    "Part2": 1300656529,
+                    "Part3": 81139897,
+                    "Part4": 3493799023
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 6,
+                    "y": -9,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1708118282,
+                    "Part2": 1308046915,
+                    "Part3": 3666833324,
+                    "Part4": 1957548057
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -10,
+                    "y": -1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1531169334,
+                    "Part2": 1192025547,
+                    "Part3": 2631345552,
+                    "Part4": 2916097606
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -21,
+                    "y": 0,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 188391058,
+                    "Part2": 1322504414,
+                    "Part3": 2940596877,
+                    "Part4": 2997539877
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -14,
+                    "y": 9,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1575670461,
+                    "Part2": 1227158132,
+                    "Part3": 4112629919,
+                    "Part4": 4293311669
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -18,
+                    "y": 5,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2344907316,
+                    "Part2": 1091104867,
+                    "Part3": 2755797640,
+                    "Part4": 3804510877
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -17,
+                    "y": 1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 4126978149,
+                    "Part2": 1239773355,
+                    "Part3": 3117142963,
+                    "Part4": 336426890
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -17,
+                    "y": 8,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3635016409,
+                    "Part2": 1159078954,
+                    "Part3": 3304702086,
+                    "Part4": 2328612655
+                }
+            }
+        ],
+        "transitoryBuildablesData": [
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 13,
+                    "y": -7,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1469630302,
+                    "Part2": 1232291009,
+                    "Part3": 1466057656,
+                    "Part4": 1117068534
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -9,
+                    "y": 11,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 437809949,
+                    "Part2": 1156690101,
+                    "Part3": 1964245935,
+                    "Part4": 881061991
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -8,
+                    "y": 8,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 788320460,
+                    "Part2": 1124380148,
+                    "Part3": 3234011520,
+                    "Part4": 1970168614
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 17,
+                    "y": 1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 794195847,
+                    "Part2": 1232383954,
+                    "Part3": 2279882404,
+                    "Part4": 3610776666
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -22,
+                    "y": 7,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2410048498,
+                    "Part2": 1244482668,
+                    "Part3": 1381625511,
+                    "Part4": 639038054
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 15,
                     "y": -3,
                     "z": 0
                 },
-                "buildableTileType": "Building_Chest",
+                "buildableTileType": "Building_Radish",
+                "type": 1,
                 "<Id>k__BackingField": {
-                    "Part1": 4070840457,
-                    "Part2": 1108491316,
-                    "Part3": 2490990779,
-                    "Part4": 1247770045
+                    "Part1": 3389792646,
+                    "Part2": 1289354301,
+                    "Part3": 3115480196,
+                    "Part4": 264076943
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -20,
+                    "y": -2,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2751831275,
+                    "Part2": 1333606654,
+                    "Part3": 2589435568,
+                    "Part4": 1591870483
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 10,
+                    "y": -6,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3424966057,
+                    "Part2": 1302432557,
+                    "Part3": 2885887105,
+                    "Part4": 381350396
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 3,
+                    "y": -1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1663528721,
+                    "Part2": 1264301498,
+                    "Part3": 967627919,
+                    "Part4": 649586560
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -10,
+                    "y": 1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 619025554,
+                    "Part2": 1126432975,
+                    "Part3": 1460304527,
+                    "Part4": 4279985208
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -6,
+                    "y": 8,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1115700412,
+                    "Part2": 1189703074,
+                    "Part3": 1164435614,
+                    "Part4": 613850428
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -10,
+                    "y": 11,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3164906784,
+                    "Part2": 1136114911,
+                    "Part3": 3344234130,
+                    "Part4": 3394977334
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 1,
+                    "y": 4,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3027750056,
+                    "Part2": 1260265727,
+                    "Part3": 1356452008,
+                    "Part4": 3075492955
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -11,
+                    "y": 5,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2885831921,
+                    "Part2": 1154380360,
+                    "Part3": 578264709,
+                    "Part4": 3194456786
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -11,
+                    "y": 9,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 115930553,
+                    "Part2": 1135208370,
+                    "Part3": 814313616,
+                    "Part4": 212961563
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 14,
+                    "y": -4,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 30540276,
+                    "Part2": 1119114784,
+                    "Part3": 2766101663,
+                    "Part4": 3909760063
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -18,
+                    "y": 12,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3476995493,
+                    "Part2": 1159905387,
+                    "Part3": 3847299257,
+                    "Part4": 722035068
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -17,
+                    "y": 4,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 114754462,
+                    "Part2": 1240896962,
+                    "Part3": 1021627793,
+                    "Part4": 2004757528
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 0,
+                    "y": -8,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2836426770,
+                    "Part2": 1167948622,
+                    "Part3": 1580881796,
+                    "Part4": 1758163330
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -11,
+                    "y": 6,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 4085727212,
+                    "Part2": 1314091022,
+                    "Part3": 426513590,
+                    "Part4": 3710660496
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 14,
+                    "y": -7,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1233326159,
+                    "Part2": 1086776570,
+                    "Part3": 1818225049,
+                    "Part4": 543129928
+                }
+            }
+        ],
+        "_allBuidablesdata": [
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 13,
+                    "y": -7,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1469630302,
+                    "Part2": 1232291009,
+                    "Part3": 1466057656,
+                    "Part4": 1117068534
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -9,
+                    "y": 11,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 437809949,
+                    "Part2": 1156690101,
+                    "Part3": 1964245935,
+                    "Part4": 881061991
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -8,
+                    "y": 8,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 788320460,
+                    "Part2": 1124380148,
+                    "Part3": 3234011520,
+                    "Part4": 1970168614
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 17,
+                    "y": 1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 794195847,
+                    "Part2": 1232383954,
+                    "Part3": 2279882404,
+                    "Part4": 3610776666
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -22,
+                    "y": 7,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2410048498,
+                    "Part2": 1244482668,
+                    "Part3": 1381625511,
+                    "Part4": 639038054
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 15,
+                    "y": -3,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3389792646,
+                    "Part2": 1289354301,
+                    "Part3": 3115480196,
+                    "Part4": 264076943
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -20,
+                    "y": -2,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2751831275,
+                    "Part2": 1333606654,
+                    "Part3": 2589435568,
+                    "Part4": 1591870483
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 10,
+                    "y": -6,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3424966057,
+                    "Part2": 1302432557,
+                    "Part3": 2885887105,
+                    "Part4": 381350396
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 3,
+                    "y": -1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1663528721,
+                    "Part2": 1264301498,
+                    "Part3": 967627919,
+                    "Part4": 649586560
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -10,
+                    "y": 1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 619025554,
+                    "Part2": 1126432975,
+                    "Part3": 1460304527,
+                    "Part4": 4279985208
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -6,
+                    "y": 8,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1115700412,
+                    "Part2": 1189703074,
+                    "Part3": 1164435614,
+                    "Part4": 613850428
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -10,
+                    "y": 11,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3164906784,
+                    "Part2": 1136114911,
+                    "Part3": 3344234130,
+                    "Part4": 3394977334
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 1,
+                    "y": 4,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3027750056,
+                    "Part2": 1260265727,
+                    "Part3": 1356452008,
+                    "Part4": 3075492955
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -11,
+                    "y": 5,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2885831921,
+                    "Part2": 1154380360,
+                    "Part3": 578264709,
+                    "Part4": 3194456786
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -11,
+                    "y": 9,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 115930553,
+                    "Part2": 1135208370,
+                    "Part3": 814313616,
+                    "Part4": 212961563
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 14,
+                    "y": -4,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 30540276,
+                    "Part2": 1119114784,
+                    "Part3": 2766101663,
+                    "Part4": 3909760063
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -18,
+                    "y": 12,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3476995493,
+                    "Part2": 1159905387,
+                    "Part3": 3847299257,
+                    "Part4": 722035068
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -17,
+                    "y": 4,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 114754462,
+                    "Part2": 1240896962,
+                    "Part3": 1021627793,
+                    "Part4": 2004757528
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 0,
+                    "y": -8,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2836426770,
+                    "Part2": 1167948622,
+                    "Part3": 1580881796,
+                    "Part4": 1758163330
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -11,
+                    "y": 6,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 4085727212,
+                    "Part2": 1314091022,
+                    "Part3": 426513590,
+                    "Part4": 3710660496
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 14,
+                    "y": -7,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Radish",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1233326159,
+                    "Part2": 1086776570,
+                    "Part3": 1818225049,
+                    "Part4": 543129928
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -7,
+                    "y": 2,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2918017517,
+                    "Part2": 1150359979,
+                    "Part3": 2055813536,
+                    "Part4": 40980743
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -16,
+                    "y": 0,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 119361589,
+                    "Part2": 1310082023,
+                    "Part3": 3253141180,
+                    "Part4": 4096123756
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -23,
+                    "y": 4,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2817239451,
+                    "Part2": 1239642325,
+                    "Part3": 3095904139,
+                    "Part4": 60950969
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 2,
+                    "y": -4,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3320198121,
+                    "Part2": 1149359162,
+                    "Part3": 2815172501,
+                    "Part4": 3413776670
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 4,
+                    "y": 0,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 4162819173,
+                    "Part2": 1215719986,
+                    "Part3": 3099870355,
+                    "Part4": 984026294
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 3,
+                    "y": 0,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1586653200,
+                    "Part2": 1118608033,
+                    "Part3": 1072815501,
+                    "Part4": 3781550180
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -17,
+                    "y": 3,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3082258749,
+                    "Part2": 1120885054,
+                    "Part3": 3284207006,
+                    "Part4": 1594778398
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 15,
+                    "y": -1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2804916476,
+                    "Part2": 1202624485,
+                    "Part3": 1638188428,
+                    "Part4": 4067194361
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 2,
+                    "y": -8,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 865574852,
+                    "Part2": 1147466247,
+                    "Part3": 3667925429,
+                    "Part4": 2300813594
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -12,
+                    "y": 12,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 70411759,
+                    "Part2": 1088993179,
+                    "Part3": 342333859,
+                    "Part4": 1873929181
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -7,
+                    "y": -2,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 503932789,
+                    "Part2": 1300656529,
+                    "Part3": 81139897,
+                    "Part4": 3493799023
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": 6,
+                    "y": -9,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1708118282,
+                    "Part2": 1308046915,
+                    "Part3": 3666833324,
+                    "Part4": 1957548057
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -10,
+                    "y": -1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1531169334,
+                    "Part2": 1192025547,
+                    "Part3": 2631345552,
+                    "Part4": 2916097606
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -21,
+                    "y": 0,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 188391058,
+                    "Part2": 1322504414,
+                    "Part3": 2940596877,
+                    "Part4": 2997539877
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -14,
+                    "y": 9,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 1575670461,
+                    "Part2": 1227158132,
+                    "Part3": 4112629919,
+                    "Part4": 4293311669
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -18,
+                    "y": 5,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 2344907316,
+                    "Part2": 1091104867,
+                    "Part3": 2755797640,
+                    "Part4": 3804510877
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -17,
+                    "y": 1,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 4126978149,
+                    "Part2": 1239773355,
+                    "Part3": 3117142963,
+                    "Part4": 336426890
+                }
+            },
+            {
+                "Layer": 1,
+                "position": {
+                    "x": -17,
+                    "y": 8,
+                    "z": 0
+                },
+                "buildableTileType": "Building_Tree_VarOne",
+                "type": 1,
+                "<Id>k__BackingField": {
+                    "Part1": 3635016409,
+                    "Part2": 1159078954,
+                    "Part3": 3304702086,
+                    "Part4": 2328612655
                 }
             }
         ]
     },
     "droppedItemSaveData": {
         "droppedItems": [],
-        "collectedWorldSpawnItems": [
-            {
-                "Part1": 750537439,
-                "Part2": 1127083763,
-                "Part3": 3274018959,
-                "Part4": 1156381147
-            },
-            {
-                "Part1": 750537439,
-                "Part2": 1127083763,
-                "Part3": 3274018959,
-                "Part4": 1156381147
-            }
-        ],
+        "collectedWorldSpawnItems": [],
         "<Id>k__BackingField": {
             "Part1": 936460396,
             "Part2": 1242422689,
@@ -743,5 +1998,137 @@
             "Part4": 3483623740
         }
     },
-    "shopSystemSaveData": []
+    "shopSystemSaveData": [
+        {
+            "itemSaveDatas": [
+                {
+                    "item": {
+                        "<GameItemData>k__BackingField": {
+                            "instanceID": 48908
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "Tool_HandAxe",
+                    "amount": 10
+                },
+                {
+                    "item": {
+                        "<GameItemData>k__BackingField": {
+                            "instanceID": 48360
+                        },
+                        "<Durability>k__BackingField": 100,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "Item_Hoe_Basic",
+                    "amount": 10
+                },
+                {
+                    "item": {
+                        "<GameItemData>k__BackingField": {
+                            "instanceID": 48504
+                        },
+                        "<Durability>k__BackingField": 100,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "Item_PickAxe_Basic",
+                    "amount": 10
+                },
+                {
+                    "item": {
+                        "<GameItemData>k__BackingField": {
+                            "instanceID": 48518
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "Item_Scythe_basic",
+                    "amount": 10
+                },
+                {
+                    "item": {
+                        "<GameItemData>k__BackingField": {
+                            "instanceID": 48540
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "Item_WateringCan_Basic",
+                    "amount": 10
+                },
+                {
+                    "item": {
+                        "<GameItemData>k__BackingField": {
+                            "instanceID": 48462
+                        },
+                        "<Durability>k__BackingField": 0,
+                        "<CreationTime>k__BackingField": {
+                            "<Day>k__BackingField": 0,
+                            "<Days>k__BackingField": 0,
+                            "<Year>k__BackingField": 0,
+                            "<Season>k__BackingField": 0,
+                            "<Hour>k__BackingField": 0,
+                            "<Minute>k__BackingField": 0,
+                            "<TotalMinutes>k__BackingField": 0,
+                            "<DayOfTheYear>k__BackingField": 0
+                        }
+                    },
+                    "name": "Item_sword_basic",
+                    "amount": 10
+                }
+            ],
+            "heldMoney": 1000,
+            "<Id>k__BackingField": {
+                "Part1": 3984657802,
+                "Part2": 1337854096,
+                "Part3": 1614792325,
+                "Part4": 2813610782
+            }
+        }
+    ]
 }

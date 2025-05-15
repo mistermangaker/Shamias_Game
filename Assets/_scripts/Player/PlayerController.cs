@@ -1,6 +1,7 @@
 using GameSystems.BuildingSystem;
 using GameSystems.Inventory;
 using GameSystems.SaveLoad;
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,7 +15,7 @@ public class PlayerController : MonoBehaviour, IBind<PlayerSaveData>, IInteracto
     public static UnityAction<InteractionIntent> OnPlayerAction;
 
     public static PlayerController Instance;
-    public BuildableTiles BuildableForVisuals => CurrentlyHeldItem.ItemData?.Buildable;
+    public BuildableTiles BuildableForVisuals => CurrentlyHeldItem.GameItemData?.Buildable;
     private GameItem CurrentlyHeldItem;
     private InventorySlot inventorySlot;
 
@@ -41,6 +42,8 @@ public class PlayerController : MonoBehaviour, IBind<PlayerSaveData>, IInteracto
 
     private IInteractable currentlySelectedInteractable;
 
+    EventBinding<OnPlayerEquipedItemChanged> playerItemChanged;
+
     private void Awake()
     {
         if(Instance != null)
@@ -66,6 +69,9 @@ public class PlayerController : MonoBehaviour, IBind<PlayerSaveData>, IInteracto
 
         rb = GetComponent<Rigidbody>();
         //buildingPlacer = GetComponent<BuildingPlacer>();
+
+        playerItemChanged = new EventBinding<OnPlayerEquipedItemChanged>(HandleNewItemEquiped);
+        EventBus<OnPlayerEquipedItemChanged>.Register(playerItemChanged);
     }
 
     private void OnDestroy()
@@ -76,6 +82,7 @@ public class PlayerController : MonoBehaviour, IBind<PlayerSaveData>, IInteracto
         PlayerInputManager.OnAlternateInteractionPerformed -= PerFormAltInteraction;
 
         PlayerInputManager.OnMouseButtonPerformed -= OnMouseAction;
+        EventBus<OnPlayerEquipedItemChanged>.Deregister(playerItemChanged);
 
     }
 
@@ -105,20 +112,34 @@ public class PlayerController : MonoBehaviour, IBind<PlayerSaveData>, IInteracto
         _lookDirection = new Vector3(dir.x, 0f, dir.y);
     }
 
+
+
     public void OnMouseAction()
     {
-        if(CurrentlyHeldItem.ItemData != null)
+        if(CurrentlyHeldItem.GameItemData != null)
         {
-            OnPlayerAction?.Invoke(CurrentlyHeldItem.InteractionIntent);
-            
-            if(CurrentlyHeldItem.ItemData.Buildable != null && CurrentlyHeldItem.ItemData.InteractionIntents.Contains(InteractionIntent.Build))
+            if (CurrentlyHeldItem.GameItemData.PrimaryInteractionIntents.Contains(InteractionIntent.TillSoil))
             {
-                if (ConstructionLayerManager.Instance.TryBuildBuidling(PlayerInputManager.Instance.MouseToGroundPlane, CurrentlyHeldItem.ItemData.Buildable))
-                {
-                    PlayerInventory.Instance.InventorySystem.RemoveFromInventory(inventorySlot, 1);
-                    OnItemUsed?.Invoke(inventorySlot);
-                }
+                _lookDirection = Vector3.MoveTowards(transform.position, PlayerInputManager.Instance.MouseToGroundPlane, 1f);
+                
+                ConstructionLayerManager.Instance.TryTilGround(interactionSpot.position);
             }
+            
+            if (CurrentlyHeldItem.GameItemData.Buildable != null)
+            {
+                if (CurrentlyHeldItem.GameItemData.PrimaryInteractionIntents.Contains(InteractionIntent.Build))
+                {
+                    if (ConstructionLayerManager.Instance.TryBuildBuidling(PlayerInputManager.Instance.MouseToGroundPlane, CurrentlyHeldItem.GameItemData.Buildable))
+                    {
+                        _lookDirection = Vector3.MoveTowards(transform.position, PlayerInputManager.Instance.MouseToGroundPlane, 1f);
+                        PlayerInventory.Instance.InventorySystem.RemoveFromInventory(inventorySlot, 1);
+                        OnItemUsed?.Invoke(inventorySlot);
+                    }
+                }
+               
+            }
+           
+            
         }
         if(currentlySelectedInteractable != null )
         {
@@ -134,10 +155,11 @@ public class PlayerController : MonoBehaviour, IBind<PlayerSaveData>, IInteracto
         InteractionAttempt interaction = new InteractionAttempt();
         interaction.interactor = this;
        
-        if (CurrentlyHeldItem.ItemData != null)
+        if (CurrentlyHeldItem.GameItemData != null)
         {
             interaction.Item = CurrentlyHeldItem;
-            interaction.Intent = CurrentlyHeldItem.InteractionIntent;
+            //interaction.Intent = CurrentlyHeldItem.InteractionIntent;
+            interaction.Intents = CurrentlyHeldItem.InteractionIntents;
         }
         else
         {
@@ -163,9 +185,9 @@ public class PlayerController : MonoBehaviour, IBind<PlayerSaveData>, IInteracto
         {
             InteractionAttempt interactionAttempt = new InteractionAttempt();
             interactionAttempt.Item = CurrentlyHeldItem;
-            if (CurrentlyHeldItem.ItemData != null)
+            if (CurrentlyHeldItem.GameItemData != null)
             {
-                interactionAttempt.Intents = CurrentlyHeldItem.ItemData.InteractionIntents;
+                interactionAttempt.Intents = CurrentlyHeldItem.GameItemData.PrimaryInteractionIntents;
             }
             else
             {
@@ -182,9 +204,9 @@ public class PlayerController : MonoBehaviour, IBind<PlayerSaveData>, IInteracto
         {
             InteractionAttempt interactionAttempt = new InteractionAttempt();
             interactionAttempt.Item = CurrentlyHeldItem;
-            if(CurrentlyHeldItem.ItemData != null)
+            if(CurrentlyHeldItem.GameItemData != null)
             {
-                interactionAttempt.Intents = CurrentlyHeldItem.ItemData.InteractionIntents;
+                interactionAttempt.Intents = CurrentlyHeldItem.GameItemData.PrimaryInteractionIntents;
             }
             else
             {
@@ -198,14 +220,21 @@ public class PlayerController : MonoBehaviour, IBind<PlayerSaveData>, IInteracto
     }
 
 
+    [Obsolete]
     public void SetCurrentlyHeldItem(InventorySlot slot)
     {
         
         inventorySlot = slot;
         CurrentlyHeldItem = slot.GameItem;
+        
+    }
+    private void HandleNewItemEquiped(OnPlayerEquipedItemChanged item)
+    {
+        inventorySlot = item.Slot;
+        CurrentlyHeldItem = item.Item;
+        //ActiveBuildable = item.Item.GameItemData?.Buildable;
     }
 
-   
 
     public void Bind(PlayerSaveData data)
     {

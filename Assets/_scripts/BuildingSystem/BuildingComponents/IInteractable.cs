@@ -30,6 +30,7 @@ public enum InteractionIntent
     Harvest_Wood,
     Harvest_Stone,
     Harvest_Plants,
+    TillSoil,
     Water,
     None,
     Any,

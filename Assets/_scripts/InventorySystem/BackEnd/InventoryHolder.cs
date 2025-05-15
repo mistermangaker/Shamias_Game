@@ -7,6 +7,7 @@ using System;
 using GameSystems.BuildingSystem;
 using System.Linq;
 using GameSystems.ShopSystem;
+using System.Collections;
 
 namespace GameSystems.Inventory
 {
@@ -14,7 +15,7 @@ namespace GameSystems.Inventory
     public class InventorySavaData :ISaveable
     {
         
-        //[SerializeField] public InventorySystem InventorySystem;
+        
         [SerializeField] public List<ItemSaveData> itemSaveDatas = new List<ItemSaveData>();
 
         public List<ItemStack> GetAllItems()
@@ -22,20 +23,63 @@ namespace GameSystems.Inventory
             List<ItemStack> items = new List<ItemStack>();
             for (int i = 0; i < itemSaveDatas.Count; i++)
             {
-
-                GameItem gameItem = itemSaveDatas[i].item;
-                ItemData item = DataBaseManager.Instance.ItemDataBase.GetItem(itemSaveDatas[i].name);
-                if (item != null)
+                ItemData data = GetItemDataAtPosition(i);
+                if (data != null)
                 {
-                    gameItem.SetItemData(item);
-                    items.Add(new ItemStack(gameItem, itemSaveDatas[i].amount));
+                    GameItem item = GetGameItemAtPosition(i);
+                    ItemStack stack = new ItemStack(item, itemSaveDatas[i].amount);
+                    items.Add(stack);
                 }
+                else
+                {
+                    Debug.Log("item is null");
+                }
+                
+                //Debug.Log(itemSaveDatas[i].name);
+                //GameItem gameItem = itemSaveDatas[i].item;
+                //ItemData item = DataBase.GetItem(itemSaveDatas[i].name);
+                //Debug.Log(item.ItemId);
+                //    //DataBaseManager.Instance.ItemDataBase.GetItem(itemSaveDatas[i].name);
+                //if (item != null)
+                //{
+                //    Debug.Log("item not broke");
+                //    gameItem.SetItemData(item);
+                //    items.Add(new ItemStack(gameItem, itemSaveDatas[i].amount));
+                //}
             }
             return items;
         }
        
+        public ItemData GetItemDataAtPosition(int position)
+        {
+            ItemData item = DataBase.GetItem(itemSaveDatas[position].name);
+            if (item == null) { return null; }
+            return item;
+        }
+        public GameItem GetGameItemAtPosition(int position)
+        {
+            GameItem gameItem = itemSaveDatas[position].item;
+            ItemData item = DataBase.GetItem(itemSaveDatas[position].name);
+            if (item != null)
+            {
+                gameItem.SetItemData(item);
+                
+            }
+            return gameItem;
+        }
 
-       
+        public ItemStack GetItemStackAtPosition(int position)
+        {
+            GameItem? item = GetGameItemAtPosition(position);
+            int amount = itemSaveDatas[position].amount;
+            if(item != null)
+            {
+                return new ItemStack((GameItem)item, amount);
+            }
+            return null;
+        }
+
+
 
         public int heldMoney = -1;
         [field: SerializeField] public SerializableGuid Id { get; set; }
@@ -72,7 +116,7 @@ namespace GameSystems.Inventory
         public ItemSaveData(GameItem item, int amount)
         {
             this.item = item;
-            this.name = item.ItemData !=null? item.ItemTypeID : "empty";
+            this.name = item.GameItemData !=null? item.ItemTypeID : "empty";
             this.amount = amount;
         }
 
@@ -145,17 +189,24 @@ namespace GameSystems.Inventory
             {
                 _inventoryData.Add(InventorySystem.InventorySlots[i].GameItem, InventorySystem.InventorySlots[i].StackSize);
             }
-
+           
             for (int i = 0; i < _inventorySystem.InventorySize; i++)
             {
-               
-                GameItem gameItem = _inventoryData.itemSaveDatas[i].item;
-                ItemData item = DataBaseManager.Instance.ItemDataBase.GetItem(_inventoryData.itemSaveDatas[i].name);
-                if (item != null)
-                {
-                    gameItem.SetItemData(item);
-                }
-                _inventorySystem.SetSlot(gameItem, _inventoryData.itemSaveDatas[i].amount, i);
+                GameItem item = _inventoryData.GetGameItemAtPosition(i);
+                _inventorySystem.SetSlot(item, _inventoryData.itemSaveDatas[i].amount, i);
+                //ItemStack stack = _inventoryData.GetItemStackAtPosition(i);
+                // if(stack != null)
+                // {
+                //     _inventorySystem.SetSlot(stack.item, stack.amount, i);
+                // }
+
+                //GameItem gameItem = _inventoryData.itemSaveDatas[i].item;
+                //ItemData item = DataBase.GetItem(_inventoryData.itemSaveDatas[i].name);
+                //if (item != null)
+                //{
+                //    gameItem.SetItemData(item);
+                //}
+                //_inventorySystem.SetSlot(gameItem, _inventoryData.itemSaveDatas[i].amount, i);
 
             }
             OnInventoryChanged?.Invoke();

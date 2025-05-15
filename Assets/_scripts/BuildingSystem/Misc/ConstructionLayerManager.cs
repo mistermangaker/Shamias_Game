@@ -1,100 +1,29 @@
 
+
 using GameSystems.SaveLoad;
 using System;
 using System.Collections.Generic;
 
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 namespace GameSystems.BuildingSystem
 {
 
-    public enum BuildingLayer
-    {
-        OnGround,
-        AboveGround
-    }
-    [Serializable]
-    public struct BuildablesDictionaryInformation
-    {
-        [SerializeField] public BuildingLayer Layer;
-        [SerializeField] public Vector3Int position;
-        [SerializeField] public string buildableTileType;
-       
-  
-        [field: SerializeField] public SerializableGuid Id { get; set; }
-
-        public BuildablesDictionaryInformation(Vector3Int position, string buildableTileType, SerializableGuid id, BuildingLayer layer)
-        {
-            this.Layer = layer;
-            this.position = position;
-            this.buildableTileType = buildableTileType;
-            Id = id;
-        }
-
-        
-    }
-    [Serializable]
-    public class BuildingsSaveData : ISaveable
-    {
-        [field: SerializeField] public SerializableGuid Id { get; set; }
-        public List<BuildablesDictionaryInformation> BuildablesData = new List<BuildablesDictionaryInformation>();
-       
-
-
-        public bool Contains(Buildable tile)
-        {
-            foreach (var data in BuildablesData)
-            {
-                if (data.buildableTileType == tile.BuildableType.TileName)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public bool Contains(Vector3Int coords)
-        {
-            foreach (var data in BuildablesData)
-            {
-                if (data.position == coords)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public void Add(Buildable buildable, BuildingLayer layer)
-        {
-            BuildablesData.Add(new BuildablesDictionaryInformation(buildable.Coordinates, buildable.BuildableType.TileName, buildable.GetOrAddGameObjectSerializableGuid(), layer));
-        }
-        public void Remove(Vector3Int coords)
-        {
-            foreach (var data in BuildablesData)
-            {
-                if (data.position == coords)
-                {
-                    BuildablesData.Remove(data);
-                    return;
-                }
-            }
-        }
-       
-
-    }
     public class ConstructionLayerManager : MonoBehaviour , IBind<BuildingsSaveData>
     {
        
         public static ConstructionLayerManager Instance { get; private set; }
 
-        private Dictionary<Vector3Int, Buildable> buildablesDictionary = new Dictionary<Vector3Int, Buildable>();
+        //private Dictionary<Vector3Int, Buildable> buildablesDictionaryTillingLayer = new Dictionary<Vector3Int, Buildable>();
+        //private Dictionary<Vector3Int, Buildable> buildablesDictionaryGroundLayer = new Dictionary<Vector3Int, Buildable>();
+        //private Dictionary<Vector3Int, Buildable> buildablesDictionaryAboveGroundLayer = new Dictionary<Vector3Int, Buildable>();
+
         [SerializeField] private BuildingsSaveData buildingsSaveData = new BuildingsSaveData();
        
         
-        public Dictionary<Vector3Int, Buildable> GetBuildablesDictionary()
-        {
-            return buildablesDictionary;
-        }
+        
 
         [SerializeField] private Tilemap TileMap;
         [field: SerializeField] public BuildableTiles ActiveBuildable { get; private set; }
@@ -105,7 +34,6 @@ namespace GameSystems.BuildingSystem
         [SerializeField] private ConstructionLayer _buildingsConstructionLayer;
         [SerializeField] private ConstructionLayer _tillingConstructionLayer;
         [SerializeField] private MaskLayer tillableLayerMask;
-        [SerializeField] private CollisionLayer collisionLayer;
         [SerializeField] private PreviewLayer _previewLayer;
         [SerializeField] private BuildableTiles _tilingTilePrefab;
         
@@ -115,18 +43,86 @@ namespace GameSystems.BuildingSystem
 
         [field: SerializeField] public SerializableGuid Id { get; set; } = SerializableGuid.NewGuid();
 
+        EventBinding<OnBuildingRemovalRequested> buildingRemovalRequested;
+        EventBinding<OnPlayerEquipedItemChanged> playerItemChanged;
+        private EventBinding<OnTrySpawnFolliage> trySpawnForageables;
+        private EventBinding<ClearSpawnForagables> clearForageables;
+
         private void Awake()
         {
             Instance = this;
         }
 
+        private void OnEnable()
+        {
+            clearForageables = new EventBinding<ClearSpawnForagables>(ClearForagables);
+            EventBus<ClearSpawnForagables>.Register(clearForageables);
+            trySpawnForageables = new EventBinding<OnTrySpawnFolliage>(HandleSpawningForagables);
+            EventBus<OnTrySpawnFolliage>.Register(trySpawnForageables);
+            buildingRemovalRequested = new EventBinding<OnBuildingRemovalRequested>(HandleBuildingRemoval);
+            EventBus<OnBuildingRemovalRequested>.Register(buildingRemovalRequested);
+            playerItemChanged = new EventBinding<OnPlayerEquipedItemChanged>(HandleNewItemEquiped);
+            EventBus<OnPlayerEquipedItemChanged>.Register(playerItemChanged);
+        }
+        private void OnDisable()
+        {
+            EventBus<ClearSpawnForagables>.Deregister(clearForageables);
+            EventBus<OnTrySpawnFolliage>.Deregister(trySpawnForageables);
+            EventBus<OnBuildingRemovalRequested>.Deregister(buildingRemovalRequested);
+            EventBus<OnPlayerEquipedItemChanged>.Deregister(playerItemChanged);
+        }
+
+        private void ClearForagables(ClearSpawnForagables foragables)
+        {
+            List<Vector3Int> list = new List<Vector3Int>();
+            foreach(var item in buildingsSaveData.AllBuildingInformationForReference) 
+            {
+                if(item.type == BuildingType.Temporary)
+                {
+                    list.Add(item.position);
+                }
+            }
+
+            foreach(var item in list)
+            {
+                Vector3 newpos = TileMap.CellToWorld(item);
+                RemoveBuilding(newpos);
+            }
+        }
+        private void HandleSpawningForagables(OnTrySpawnFolliage foragable)
+        {
+            if(foragable.BuildableTiles != null)
+            {
+                if (AllRelivateTileMapsAreEmptyATCoords(foragable.spawnPosition))
+                {
+                    BuildingSuggestion buildingSuggestion = new BuildingSuggestion(foragable.spawnPosition, foragable.BuildableTiles, foragable.BuildingType);
+                    BuildTile(buildingSuggestion);
+                }
+            }
+        }
+        private void HandleBuildingRemoval(OnBuildingRemovalRequested building)
+        {
+            RemoveBuilding(building.position);
+        }
+        private void HandleNewItemEquiped(OnPlayerEquipedItemChanged item)
+        {
+            ActiveBuildable = item.Item.GameItemData?.Buildable;
+        }
+
         public bool TryTilGround(Vector3 position)
         {
-            bool canTil = _buildingsConstructionLayer.IsEmpty(position) && _floorConstructionLayer.IsEmpty(position) && _tillingConstructionLayer.IsEmpty(position) && tillableLayerMask.HasTileAtPosition(position);
-
-            if (canTil && IsMouseWithinBuildableRange())
+            bool canTil = _buildingsConstructionLayer.IsEmpty(position) && _floorConstructionLayer.IsEmpty(position) &&  tillableLayerMask.HasTileAtPosition(position);
+            bool _tillingAreaIsEmpty = _tillingConstructionLayer.IsEmpty(position);
+  
+            if (canTil && _tillingAreaIsEmpty)
             {
-                _tillingConstructionLayer.BuildTile(position, _tilingTilePrefab);
+                BuildingSuggestion buildingSuggestion = new BuildingSuggestion(position, _tilingTilePrefab,BuildingType.PlayerPlaced);
+                _tillingConstructionLayer.BuildTile(buildingSuggestion);
+                return true;
+            }
+            else if(!_tillingAreaIsEmpty)
+            {
+                _tillingConstructionLayer.DestroyTile(position);
                 return true;
             }
             return false;
@@ -134,64 +130,40 @@ namespace GameSystems.BuildingSystem
 
         public bool TryBuildBuidling(Vector3 position, BuildableTiles buildable)
         {
-            //Debug.Log(position);
-            //Debug.Log(buildable.BuildableGameObject.name);
-            //Debug.Log("tryig to build");
-            //var rectInt = buildable.UseCustomCollisionSpace ? buildable.CollisionSpace : default;
-            var constructionLayer = buildable.IsFloorTile ? _floorConstructionLayer : _buildingsConstructionLayer;
-
-            //bool tileIsEmpty = AllRelivateTileMapsAreEmptyATCoords(position, rectInt);
-            
             if (SpotIsValidForBuidling(position, buildable))
             {
-                
-                constructionLayer.BuildTile(position, buildable);
+                BuildingSuggestion buildingSuggestion = new BuildingSuggestion(position, buildable, BuildingType.PlayerPlaced);
+                BuildTile(buildingSuggestion);
                 return true;
             }
             return false;
         }
 
-        public void RemoveBuilding(Vector3 posotion)
+        public void RemoveBuilding(Vector3 position)
         {
-            if (!_floorConstructionLayer.IsEmpty(posotion)) _floorConstructionLayer.DestroyTile(posotion);
-            if (!_buildingsConstructionLayer.IsEmpty(posotion)) _buildingsConstructionLayer.DestroyTile(posotion);
+            if (!_floorConstructionLayer.IsEmpty(position)) _floorConstructionLayer.DestroyTile(position);
+            if (!_buildingsConstructionLayer.IsEmpty(position)) _buildingsConstructionLayer.DestroyTile(position);
+            if (!_tillingConstructionLayer.IsEmpty(position)) _tillingConstructionLayer.DestroyTile(position);
         }
-      
-       
+        
+        private void BuildTile(BuildingSuggestion suggestion)
+        {
+            var constructionLayer = suggestion.BuildableTiles.IsFloorTile ? _floorConstructionLayer : _buildingsConstructionLayer;
+            constructionLayer.BuildTile(suggestion);
+        }
 
         private void Update()
         {
-            ActiveBuildable = PlayerController.Instance.BuildableForVisuals;
+            UpdatePreviewImage();
+        }
+
+        private void UpdatePreviewImage()
+        {
             if (!IsMouseWithinBuildableRange() || _buildingsConstructionLayer == null || _floorConstructionLayer == null || ActiveBuildable == null || _playerInputManager == null)
             {
                 _previewLayer.ClearPreview();
                 return;
             }
-            HandlePreviewImage();
-            //var coords = _playerInputManager.MouseToGroundPlane;
-
-            //if (_playerInputManager.IsMouseButtonPressed(MouseButton.Right))
-            //{
-            //    RemoveBuilding(coords);
-            //}
-
-            //if (ActiveBuildable == null)
-            //{
-            //    _previewLayer.ClearPreview();
-            //    return;
-            //}
-            //var rectInt = ActiveBuildable.UseCustomCollisionSpace ? ActiveBuildable.CollisionSpace : default;
-
-            //bool tileIsEmpty = AllRelivateTileMapsAreEmptyATCoords(coords, rectInt) && !IsMousePositionInsidePlayer();
-            //_previewLayer.ShowPreview(ActiveBuildable, coords, tileIsEmpty);
-            //if (_playerInputManager.IsMouseButtonPressed(MouseButton.Left) && tileIsEmpty)
-            //{
-            //    TryBuildBuidling(coords, ActiveBuildable);
-            //}
-        }
-
-        private void HandlePreviewImage()
-        {
             var coords = _playerInputManager.MouseToGroundPlane;
             _previewLayer.ShowPreview(ActiveBuildable, coords, SpotIsValidForBuidling(coords, ActiveBuildable));
 
@@ -199,75 +171,75 @@ namespace GameSystems.BuildingSystem
 
         private bool SpotIsValidForBuidling(Vector3 position, BuildableTiles buildable)
         {
-            var rectInt = buildable.UseCustomCollisionSpace ? ActiveBuildable.CollisionSpace : default;
-            bool tileIsEmpty = (buildable.IsFloorTile) ? IsMouseWithinBuildableRange()&& AllRelivateTileMapsAreEmptyATCoords(position, rectInt) : IsMouseWithinBuildableRange()&& AllRelivateTileMapsAreEmptyATCoords(position, rectInt) && !IsMousePositionInsidePlayer();
+            if (buildable.IsPlantableOnSoil)return !_tillingConstructionLayer.IsEmpty(position) && IsMouseWithinBuildableRange();
+
+            bool tileIsEmpty = (buildable.IsFloorTile) ? IsMouseWithinBuildableRange() && AllRelivateTileMapsAreEmptyATCoords(position) : IsMouseWithinBuildableRange() && AllRelivateTileMapsAreEmptyATCoords(position) && !IsMousePositionInsidePlayer();
+            
             return tileIsEmpty;
         }
 
-        public void AddToBuildablesDictionary(Vector3Int coords, Buildable builadable, ConstructionLayer layer)
+        private BuildingLayer GetBuildingLayer(ConstructionLayer layer)
         {
-            BuildingLayer buildingLayer = layer == _floorConstructionLayer ? BuildingLayer.OnGround : BuildingLayer.AboveGround;
+            if (layer == _tillingConstructionLayer) return BuildingLayer.TillingLayer;
+
+            else if (layer == _floorConstructionLayer) return BuildingLayer.OnGround;
+
+            else return BuildingLayer.AboveGround;
+
+        }
+        public void AddToBuildablesSaveData(Vector3Int coords, Buildable builadable, ConstructionLayer layer)
+        {
+            BuildingLayer buildingLayer = GetBuildingLayer(layer);
+            builadable.SetBuildingLayer(buildingLayer);
+      
             buildingsSaveData.Add(builadable, buildingLayer);
-            buildablesDictionary.Add(coords, builadable);
         }
-        public void RemoveFromBuildablesList(Vector3Int coords)
+        public void RemoveFromSaveData(Vector3Int coords, ConstructionLayer layer)
         {
-            buildingsSaveData.Remove(coords);
-            buildablesDictionary.Remove(coords);
+            BuildingLayer buildingLayer = GetBuildingLayer(layer);
+            buildingsSaveData.Remove(coords, buildingLayer);
         }
 
-        public bool ContainsCoords(Vector3Int coords)
-        {
-            return buildablesDictionary.ContainsKey(coords);
-        }
-
-        public Buildable GetBuildableFromCoords(Vector3Int coords)
-        {
-            return buildablesDictionary[coords];
-        }
-        public void SetCollisions(Buildable builadable, bool value)
-        {
-            collisionLayer.SetCollisions(builadable, value);
-        }
-
-
-        
         private bool AllRelivateTileMapsAreEmptyATCoords(Vector3 coords, RectInt rectint = default)
         {
-            return _buildingsConstructionLayer.IsEmpty(coords, rectint) && _floorConstructionLayer.IsEmpty(coords, rectint)&& _tillingConstructionLayer.IsEmpty(coords) && BuildiableLayerMask.HasTileAtPosition(coords);
+            bool emptyAtBuildingLayer = _buildingsConstructionLayer.IsEmpty(coords, rectint);
+            bool emptyAtGroundLayer = _floorConstructionLayer.IsEmpty(coords, rectint);
+            bool emptyAtTillingLayer = _tillingConstructionLayer.IsEmpty(coords);
+            bool NotEmptyAtBuidlinLayerMask = BuildiableLayerMask.HasTileAtPosition(coords);
+            return emptyAtBuildingLayer && emptyAtGroundLayer && emptyAtTillingLayer && NotEmptyAtBuidlinLayerMask;
         }
 
         private bool IsMouseWithinBuildableRange()
         {
             return Vector3.Distance(_playerInputManager.MouseToGroundPlane, _playerController.transform.position) <= _maxPlacingDistance;
-          
         }
         private bool IsMousePositionInsidePlayer()
         {
             return Vector3.Distance(_playerInputManager.MouseToGroundPlane, _playerController.transform.position) <= _minPlacingDistance;
         }
 
-        public void SetActiveBuildable(BuildableTiles newBuildable)
-        {
-            ActiveBuildable = newBuildable;
-        }
 
         public void Bind(BuildingsSaveData data)
         {
-            foreach (var position in buildablesDictionary)
+            foreach (var tileSaveData in data.AllBuildingInformationForReference)
             {
-                _floorConstructionLayer.DestroyTile(position.Key);
-                _buildingsConstructionLayer.DestroyTile(position.Key);
-            }
-            foreach (var tileSaveData in data.BuildablesData)
-            {
-                BuildableTiles tile = DataBaseManager.Instance.BuildablesDataBase.GetBuildable(tileSaveData.buildableTileType);
+                BuildableTiles tile = DataBase.GetBuildable(tileSaveData.buildableTileType);
+                   
                 if (tile != null)
                 {
                     BuildingLayer layer = tileSaveData.Layer;
-                    ConstructionLayer constructionLayer = (layer == BuildingLayer.OnGround)? _floorConstructionLayer: _buildingsConstructionLayer;
+                    ConstructionLayer constructionLayer = layer switch
+                    {
+                        BuildingLayer.TillingLayer => _tillingConstructionLayer,
+                        BuildingLayer.OnGround => _floorConstructionLayer,
+                        BuildingLayer.AboveGround => _buildingsConstructionLayer,
+                        _ => null
+                    } ;
+                   
                     Vector3 newpos = TileMap.CellToWorld(tileSaveData.position);
-                    constructionLayer.BuildTile(newpos, tile, out Buildable buildable);
+
+                    BuildingSuggestion buildingSuggestion = new BuildingSuggestion(newpos, tile, tileSaveData.type);
+                    constructionLayer.BuildTile(buildingSuggestion, out Buildable buildable);
                     buildable.SetOrAddGameObjectSerializableGuid(tileSaveData.Id);
                 }
             }
