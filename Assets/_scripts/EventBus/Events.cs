@@ -26,7 +26,7 @@ public struct ClearSpawnForagables : IEvent
 
 }
 
-
+public struct OnGameStart : IEvent { }
 public struct OnTrySpawnFolliage : IEvent
 {
     public Vector3 spawnPosition;

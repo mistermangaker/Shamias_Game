@@ -131,13 +131,12 @@ namespace GameSystems.SaveLoad
             };
             GenerateNewGameStat(gameData);
             SceneManager.LoadScene(gameData.CurrentLevelName);
+           
+            
         }
         private void GenerateNewGameStat(GameData data)
         {
-            Debug.Log(data.metaData.Seed);
             if (data.metaData.Seed != 0) return;
-            Debug.Log("starting NewGame");
-           
             int gameseed = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
 
             GameMetaData metaData = new GameMetaData
@@ -148,6 +147,8 @@ namespace GameSystems.SaveLoad
             };
             data.metaData = metaData;
             Debug.Log("started new game");
+            EventBus<OnGameStart>.Raise(new OnGameStart());
+            Debug.Log("guh");
         }
 
         public void SaveGame()

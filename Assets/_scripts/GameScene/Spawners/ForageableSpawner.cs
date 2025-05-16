@@ -30,16 +30,27 @@ public class ForageableSpawner : MonoBehaviour
         return folliageToSpawn[Random.Range(0, folliageToSpawn.Count)];
     }
 
+    private EventBinding<OnGameStart> onGameStart;
+
     private void OnEnable()
     {
+        onGameStart = new EventBinding<OnGameStart>(SpawnStuff);
+        EventBus<OnGameStart>.Register(onGameStart);    
         TimeManager.OnNewWeek += HandleSpawning;
         TimeManager.OnNewSeason += HandleNewSeason;
     }
 
     private void OnDisable()
     {
+        EventBus<OnGameStart>.Deregister(onGameStart);
         TimeManager.OnNewWeek -= HandleSpawning;
         TimeManager.OnNewSeason -= HandleNewSeason;
+    }
+
+    private void SpawnStuff()
+    {
+        SpawnRandomFolliage();
+        SpawnRandomForageable();
     }
 
 
