@@ -51,5 +51,7 @@ namespace GameSystems.BuildingSystem
 
             return TileMap.GetTile(coords) != null;
         }
+
+       
     }
 }

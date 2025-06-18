@@ -1,13 +1,14 @@
 using GameSystems.Inventory;
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 [Serializable]
 public abstract class ItemSlot 
 {
     protected const string EMPTYITEMNAME = "empty";
+    public UnityAction SlotUpdated;
 
-    
     [SerializeField] protected GameItem _gameItem;
     [SerializeField] protected int _stackSize;
     [SerializeField] protected string itemName => _gameItem.GameItemData != null ? _gameItem.ItemTypeID : EMPTYITEMNAME;
@@ -32,12 +33,14 @@ public abstract class ItemSlot
         // _itemData = null;
         _gameItem = default;
         _stackSize = -1;
+        SlotUpdated?.Invoke();
     }
 
     public void AddItem(GameItem item, int amount)
     {
         _gameItem = item;
         _stackSize = amount;
+        SlotUpdated?.Invoke();
     }
 
 
@@ -52,6 +55,7 @@ public abstract class ItemSlot
     public void AddToStack(int amount)
     {
         _stackSize += amount;
+        SlotUpdated?.Invoke();
     }
     public void RemoveFromStack(int amount)
     {
@@ -60,5 +64,6 @@ public abstract class ItemSlot
         {
             ClearSlot();
         }
+        SlotUpdated?.Invoke();
     }
 }

@@ -1,9 +1,11 @@
 using Callendar;
 using GameSystems.BuildingSystem;
 using GameSystems.Inventory;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
+[Obsolete]
 [RequireComponent(typeof(BuildingSerializableGUID))]
 public abstract class PlantBase : BuildingBase
 {

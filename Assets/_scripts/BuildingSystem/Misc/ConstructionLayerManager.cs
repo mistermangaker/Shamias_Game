@@ -33,9 +33,13 @@ namespace GameSystems.BuildingSystem
         [SerializeField] private ConstructionLayer _floorConstructionLayer;
         [SerializeField] private ConstructionLayer _buildingsConstructionLayer;
         [SerializeField] private ConstructionLayer _tillingConstructionLayer;
+        [SerializeField] private TillingLayer _tillingTerrainLayer;
         [SerializeField] private MaskLayer tillableLayerMask;
+        [SerializeField] private MaskLayer _groundLayerMask;
         [SerializeField] private PreviewLayer _previewLayer;
         [SerializeField] private BuildableTiles _tilingTilePrefab;
+
+
         
 
         private PlayerInputManager _playerInputManager => PlayerInputManager.Instance;
@@ -95,7 +99,7 @@ namespace GameSystems.BuildingSystem
             {
                 if (AllRelivateTileMapsAreEmptyATCoords(foragable.spawnPosition))
                 {
-                    BuildingSuggestion buildingSuggestion = new BuildingSuggestion(foragable.spawnPosition, foragable.BuildableTiles, foragable.BuildingType);
+                    BuildingSuggestion buildingSuggestion = new BuildingSuggestion(foragable.spawnPosition, foragable.BuildableTiles, foragable.BuildingType,true);
                     BuildTile(buildingSuggestion);
                 }
             }
@@ -112,21 +116,37 @@ namespace GameSystems.BuildingSystem
         public bool TryTilGround(Vector3 position)
         {
             bool canTil = _buildingsConstructionLayer.IsEmpty(position) && _floorConstructionLayer.IsEmpty(position) &&  tillableLayerMask.HasTileAtPosition(position);
-            bool _tillingAreaIsEmpty = _tillingConstructionLayer.IsEmpty(position);
+            bool _tillingAreaIsEmpty = _tillingTerrainLayer.IsEmpty(position);
+                //_tillingConstructionLayer.IsEmpty(position);
   
             if (canTil && _tillingAreaIsEmpty)
             {
                 BuildingSuggestion buildingSuggestion = new BuildingSuggestion(position, _tilingTilePrefab,BuildingType.PlayerPlaced);
                 _tillingConstructionLayer.BuildTile(buildingSuggestion);
+                _tillingTerrainLayer.TillSoil(position);
                 return true;
             }
             else if(!_tillingAreaIsEmpty)
             {
                 _tillingConstructionLayer.DestroyTile(position);
+                _tillingTerrainLayer.DestroyTile(position);
                 return true;
             }
             return false;
         }
+
+        public bool TryWaterGround(Vector3 position)
+        {
+            Debug.Log("permission to water sir!!");
+            bool canTill = !_tillingTerrainLayer.IsEmpty(position) && !_tillingTerrainLayer.IsWatered(position);
+            if(canTill)
+            {
+                _tillingTerrainLayer.WaterSoil(position);
+                return true;
+            }
+            return false;
+        }
+
 
         public bool TryBuildBuidling(Vector3 position, BuildableTiles buildable)
         {
@@ -143,7 +163,8 @@ namespace GameSystems.BuildingSystem
         {
             if (!_floorConstructionLayer.IsEmpty(position)) _floorConstructionLayer.DestroyTile(position);
             if (!_buildingsConstructionLayer.IsEmpty(position)) _buildingsConstructionLayer.DestroyTile(position);
-            if (!_tillingConstructionLayer.IsEmpty(position)) _tillingConstructionLayer.DestroyTile(position);
+           // if (!_tillingConstructionLayer.IsEmpty(position)) _tillingConstructionLayer.DestroyTile(position);
+            if (_tillingTerrainLayer.IsEmpty(position)) _tillingTerrainLayer.DestroyTile(position);
         }
         
         private void BuildTile(BuildingSuggestion suggestion)
@@ -164,16 +185,22 @@ namespace GameSystems.BuildingSystem
                 _previewLayer.ClearPreview();
                 return;
             }
+            
             var coords = _playerInputManager.MouseToGroundPlane;
+            if (!_groundLayerMask.HasTileAtPosition(coords))
+            {
+                _previewLayer.ClearPreview();
+                return;
+            }
             _previewLayer.ShowPreview(ActiveBuildable, coords, SpotIsValidForBuidling(coords, ActiveBuildable));
 
         }
 
         private bool SpotIsValidForBuidling(Vector3 position, BuildableTiles buildable)
         {
-            if (buildable.IsPlantableOnSoil)return !_tillingConstructionLayer.IsEmpty(position) && IsMouseWithinBuildableRange();
+            if (buildable.IsPlantableOnSoil)return !_tillingConstructionLayer.IsEmpty(position) ;
 
-            bool tileIsEmpty = (buildable.IsFloorTile) ? IsMouseWithinBuildableRange() && AllRelivateTileMapsAreEmptyATCoords(position) : IsMouseWithinBuildableRange() && AllRelivateTileMapsAreEmptyATCoords(position) && !IsMousePositionInsidePlayer();
+            bool tileIsEmpty =  AllRelivateTileMapsAreEmptyATCoords(position) ;
             
             return tileIsEmpty;
         }
@@ -206,7 +233,8 @@ namespace GameSystems.BuildingSystem
             bool emptyAtGroundLayer = _floorConstructionLayer.IsEmpty(coords, rectint);
             bool emptyAtTillingLayer = _tillingConstructionLayer.IsEmpty(coords);
             bool NotEmptyAtBuidlinLayerMask = BuildiableLayerMask.HasTileAtPosition(coords);
-            return emptyAtBuildingLayer && emptyAtGroundLayer && emptyAtTillingLayer && NotEmptyAtBuidlinLayerMask;
+            bool NotEmptyOnGroundLayer = _groundLayerMask.HasTileAtPosition(coords);
+            return emptyAtBuildingLayer && emptyAtGroundLayer && emptyAtTillingLayer && NotEmptyAtBuidlinLayerMask ;
         }
 
         private bool IsMouseWithinBuildableRange()
@@ -218,7 +246,34 @@ namespace GameSystems.BuildingSystem
             return Vector3.Distance(_playerInputManager.MouseToGroundPlane, _playerController.transform.position) <= _minPlacingDistance;
         }
 
+        public void AddTilledTileToSaveData(Vector3Int position, bool dry)
+        {
+            if (dry)
+            {
+                if (buildingsSaveData.dryTilesSaveData.Contains(position)) return;
+                buildingsSaveData.dryTilesSaveData.Add(position);
 
+            }
+            else
+            {
+                if (buildingsSaveData.wetTilesSaveData.Contains(position)) return;
+                buildingsSaveData.wetTilesSaveData.Add(position);
+            }
+
+        }
+
+        public bool TileIsWatered(Vector3 position)
+        {
+            return _tillingTerrainLayer.IsWatered(position);
+        }
+
+        public void RemoveTilledTileFromSaveData(Vector3Int coords)
+        {
+            buildingsSaveData.wetTilesSaveData.Remove(coords);
+            buildingsSaveData.dryTilesSaveData.Remove(coords);
+            if (!_floorConstructionLayer.IsEmpty(coords)) _floorConstructionLayer.DestroyTile(coords);
+            if (!_buildingsConstructionLayer.IsEmpty(coords)) _buildingsConstructionLayer.DestroyTile(coords);
+        }
         public void Bind(BuildingsSaveData data)
         {
             foreach (var tileSaveData in data.AllBuildingInformationForReference)

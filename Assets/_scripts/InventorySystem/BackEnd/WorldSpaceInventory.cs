@@ -20,7 +20,12 @@ namespace GameSystems.Inventory
         {
             if (interactor1 == null)
                 interactor1 = interactor;
-            OnDynamicInventoryDisplayRequested?.Invoke(InventorySystem, offset);
+            EventBus<OnDynamicInventoryRequested>.Raise(new OnDynamicInventoryRequested
+            {
+                inventorySystem =InventorySystem,
+                offset = offset,
+            });
+            //OnDynamicInventoryDisplayRequested?.Invoke(InventorySystem, offset);
             
         }
 

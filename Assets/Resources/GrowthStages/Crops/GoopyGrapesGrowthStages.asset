@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe861578df40d84e90568238a6e539c, type: 3}
+  m_Name: GoopyGrapesGrowthStages
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: GoopyGrapes_GrowthStages
+  <GrowthStagesList>k__BackingField:
+  - Debug_Id: 
+    viusal: {fileID: 1858956955, guid: c5ac574fd2f88484fac7d004beedd0ca, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 0}
+    AmountToDrop: 0
+  - Debug_Id: 
+    viusal: {fileID: -364450437, guid: c5ac574fd2f88484fac7d004beedd0ca, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 0}
+    AmountToDrop: 0
+  - Debug_Id: 
+    viusal: {fileID: 1189949113, guid: c5ac574fd2f88484fac7d004beedd0ca, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 0}
+    AmountToDrop: 0
+  - Debug_Id: 
+    viusal: {fileID: -1075580374, guid: c5ac574fd2f88484fac7d004beedd0ca, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 11400000, guid: 792a2ca9575bb3a44b107c935a5d3b6c, type: 2}
+    AmountToDrop: 5
+  <DaysBetweenStages>k__BackingField: 2
+  <HarvestableItemToDrop>k__BackingField: {fileID: 0}
+  AmountToDrop: 2

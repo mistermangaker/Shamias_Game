@@ -13,9 +13,9 @@ namespace GameSystems.SaveLoad
     {
         public string Name;
         public string CurrentLevelName;
-        public GameMetaData metaData;
-        public TimeSaveData timeSaveData;
-        public PlayerSaveData playerSaveData;
+        public GameMetaData metaData = new GameMetaData();
+        public TimeSaveData timeSaveData = new TimeSaveData();
+        public PlayerSaveData playerSaveData = new PlayerSaveData();
         //public LevelSaveData levelSaveData;
         //public List<ConstructionLayerSavedata> constructionlayerSaveData = new List<ConstructionLayerSavedata>();
         public WeatherSaveData weatherSaveData;

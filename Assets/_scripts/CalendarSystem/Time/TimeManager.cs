@@ -17,7 +17,8 @@ public class TimeManager : MonoBehaviour, IBind<TimeSaveData>
 {
     public static TimeManager Instance { get; private set; }
 
-    [SerializeField] private AnimationCurve lightintensitiy;
+    [SerializeField] private int playerFallAsleepHour = 2;
+    [SerializeField] private int playerWakeUpHour = 8;
 
     [Header("Time Management")]
     [field: SerializeField] private DateTimeStamp starttime;
@@ -25,8 +26,8 @@ public class TimeManager : MonoBehaviour, IBind<TimeSaveData>
     private float currentTimeBetweenTicks = 0f;
 
     [SerializeField] private int MinutesToAdvanceTicksBy = 10;
-    
-    private DateTimeStamp _currentGameTime;
+
+    [SerializeField] private DateTimeStamp _currentGameTime;
     public DateTimeStamp CurrentGameTime => _currentGameTime;
     public DateTimeStamp TodaysDate => _currentGameTime.GetCurrentDate();
 
@@ -35,11 +36,12 @@ public class TimeManager : MonoBehaviour, IBind<TimeSaveData>
     [SerializeField] public TimeSaveData timeSaveData = new TimeSaveData();
 
 
-   
 
+    public static UnityAction PlayerFallAsleep;
 
 
     public static UnityAction<DateTimeStamp> OnTimeChanged;
+    
     public static UnityAction<DateTimeStamp> OnNewDay;
     public static UnityAction<DateTimeStamp> OnNewWeek;
     public static UnityAction<DateTimeStamp> OnNewSeason;
@@ -64,28 +66,65 @@ public class TimeManager : MonoBehaviour, IBind<TimeSaveData>
         return ((secondsBetweenTicks * (currentTimeBetweenTicks / secondsBetweenTicks)) + (secondsBetweenTicks * _currentGameTime.TotalMinutes)) / (secondsBetweenTicks * 1440);
     }
 
-    public float GetLightInesityForTimeOfDay()
+    public void TransitionToNextMorning()
     {
-        return lightintensitiy.Evaluate(TimeOfDayNormalized());
-    }
+        Debug.Log("Sleeping Till Next Morning");
+        Days dayOfTheWeek = _currentGameTime.Days;
+        Season CurrentSeason = _currentGameTime.Season;
+        int year = _currentGameTime.Year;
+        int day = _currentGameTime.Day;
+        _currentGameTime.JumpToNextDayInHoursAndMinutes(playerWakeUpHour);
+        int dayTwo = _currentGameTime.Day;
+        Season CurrentSeasonTwo = _currentGameTime.Season;
+        int yearTwo = _currentGameTime.Year;
 
+        OnTimeChanged?.Invoke(CurrentGameTime);
+        if (day != dayTwo)
+        {
+            OnNewDay?.Invoke(CurrentGameTime);
+            if (dayOfTheWeek == Days.Sunday)
+            {
+                OnNewWeek?.Invoke(CurrentGameTime);
+            }
+            if (CurrentSeason != CurrentSeasonTwo)
+            {
+                Debug.Log("new season");
+                OnNewSeason?.Invoke(CurrentGameTime);
+
+                if (year != yearTwo)
+                {
+                    OnNewYear?.Invoke(CurrentGameTime);
+                }
+            }
+        }
+
+        timeSaveData.timestamp = CurrentGameTime;
+    }
     private void FixedUpdate()
     {
         currentTimeBetweenTicks -= Time.deltaTime;
         if(currentTimeBetweenTicks < 0)
         {
             currentTimeBetweenTicks = secondsBetweenTicks;
-            Tick();
+            Tick(MinutesToAdvanceTicksBy);
         }
     }
 
-    private void Tick()
+    private void Tick(int minutes)
     {
         Days dayOfTheWeek = _currentGameTime.Days;
         Season CurrentSeason = _currentGameTime.Season;
         int year = _currentGameTime.Year;
         int day = _currentGameTime.Day;
-        _currentGameTime.AdvanceMinute(MinutesToAdvanceTicksBy);
+        _currentGameTime.AdvanceMinute(minutes);
+        if (CurrentGameTime.Hour == playerFallAsleepHour)
+        {
+            PlayerFallAsleep?.Invoke();
+            Debug.Log("falling Asleep now");
+            _currentGameTime.JumpToNextDayInHoursAndMinutes(playerWakeUpHour);
+            //_currentGameTime.AdvanceHour(playerWakeUpHour - playerFallAsleepHour);
+
+        }
         int dayTwo = _currentGameTime.Day;
         Season CurrentSeasonTwo = _currentGameTime.Season;
         int yearTwo = _currentGameTime.Year;
@@ -109,7 +148,7 @@ public class TimeManager : MonoBehaviour, IBind<TimeSaveData>
                 }
             }
         }
-
+       
         timeSaveData.timestamp = CurrentGameTime;
     }
 

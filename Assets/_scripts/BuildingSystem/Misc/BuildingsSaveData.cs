@@ -23,7 +23,8 @@ namespace GameSystems.BuildingSystem
         public List<BuidablesSaveInformation> AllBuildingInformationForReference => _allBuidablesdata;
         public List<BuidablesSaveInformation> TransitoryBuildablesData => transitoryBuildablesData;
 
-       
+        public List<Vector3Int> dryTilesSaveData = new List<Vector3Int>();
+        public List<Vector3Int> wetTilesSaveData = new List<Vector3Int>();
         
         private void RefreshAllBuidablesData()
         {
@@ -35,7 +36,7 @@ namespace GameSystems.BuildingSystem
             
         }
         
-
+        
         public bool Contains(Buildable tile)
         {
             foreach (var data in _allBuidablesdata)

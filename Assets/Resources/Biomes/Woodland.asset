@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 660cc2669ec63a542acb7c31f387d20d, type: 3}
+  m_Name: Woodland
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: Biome_Woodland
+  <ThingTags>k__BackingField: []
+  <AllSeasonForageables>k__BackingField:
+  - Thing: {fileID: 11400000, guid: 89f71473433655f48bf7dc15ea8fda99, type: 2}
+    amount: 2
+  - Thing: {fileID: 11400000, guid: dada119ef8676d4458dff81f502ad7e4, type: 2}
+    amount: 8
+  - Thing: {fileID: 11400000, guid: cc9ce977c82b4d14dbd6bac347312002, type: 2}
+    amount: 8
+  <SpringForageables>k__BackingField:
+  - Thing: {fileID: 11400000, guid: 7c26b065d40b0ce4ea59708e8481373c, type: 2}
+    amount: 4
+  - Thing: {fileID: 11400000, guid: e81abd1f0e927ea4c85351864cf36433, type: 2}
+    amount: 10
+  <SummerForageables>k__BackingField:
+  - Thing: {fileID: 11400000, guid: c02b1e44e4a0eb948bea92a77b2a726d, type: 2}
+    amount: 1
+  <FallForageables>k__BackingField:
+  - Thing: {fileID: 11400000, guid: 326ae16bfe5d4da458d2c519ee49c60c, type: 2}
+    amount: 1
+  <WinterForageables>k__BackingField: []
+  <TypesOfSoulsToSpawn>k__BackingField: []

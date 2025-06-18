@@ -21,17 +21,21 @@ namespace GameSystems.Inventory
 
         [field: SerializeField] public BuildableTiles Buildable {  get; private set; }
 
-        
-        [field: SerializeField] public List<InteractionIntent> SecondaryInteractionIntents { get; private set; } 
-        [field: SerializeField] public List<InteractionIntent> PrimaryInteractionIntents { get; private set; } 
+       
+
+        [field: SerializeField] public InteractionIntent PrimaryInteractionIntent { get; private set; } 
 
         [field: SerializeField] public bool ConsumeableOnUse { get; private set; }
 
-        [field: SerializeField] public int DefaultSellPrice { get; private set; }
-        [field: SerializeField] public Alignment ItemAlignment { get; private set; }
-        [field: SerializeField] public int ItemAttackDamage { get; private set; }
+         public ConsumableEffectsSO Cosnumeables { get; private set; }
 
-        
+        [field: SerializeField] public int DefaultSellPrice { get; private set; }
+       // [field: SerializeField] public Alignment ItemAlignment { get; private set; }
+        [field: SerializeField] public int ItemAttackDamage { get; private set; }
+        [field: SerializeField] public DamageType DamageType { get; private set; }
+        [field: SerializeField] public float WeaponReach { get; private set; } = 1f;
+
+        [field: SerializeField] public List<ItemUse> ItemUses { get; private set; }
     }
 }
 

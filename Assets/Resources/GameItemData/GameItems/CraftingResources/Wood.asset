@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab43f0fd3de0158488443445c60b33c2, type: 3}
+  m_Name: Wood
+  m_EditorClassIdentifier: 
+  <ItemId>k__BackingField: Item_Wood
+  <DisplayName>k__BackingField: wood
+  <Icon>k__BackingField: {fileID: -828702938, guid: 0ef51fc23ddfac5468b5125b24dac502, type: 3}
+  <MaxStackSize>k__BackingField: 16
+  ItemDescription: '*bonk*'
+  <DefaultDurability>k__BackingField: 0
+  <UsesTimeStamps>k__BackingField: 0
+  <Buildable>k__BackingField: {fileID: 0}
+  <SecondaryInteractionIntents>k__BackingField: 
+  <PrimaryInteractionIntents>k__BackingField: 
+  <ConsumeableOnUse>k__BackingField: 0
+  <DefaultSellPrice>k__BackingField: 10
+  <ItemAttackDamage>k__BackingField: 0

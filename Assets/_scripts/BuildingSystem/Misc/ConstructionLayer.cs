@@ -53,6 +53,11 @@ namespace GameSystems.BuildingSystem
                 if (building != null)
                 {
                     building.InitializeBuilding(buildable);
+                    GardenPlantObject gardenPlantObject = buildable.BuildableGameObject.GetComponent<GardenPlantObject>();
+                    if (suggestion.RandomizeInitialConditions && gardenPlantObject!=null)
+                    {
+                        gardenPlantObject.RandomizeGrowthStage(3);
+                    }
                 }
             }
             buildablesDictionary.Add(coords, buildable);

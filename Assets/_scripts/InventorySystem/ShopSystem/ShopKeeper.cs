@@ -7,8 +7,9 @@ using UnityEngine.Events;
 
 namespace GameSystems.ShopSystem
 {
-    public class ShopKeeper : MonoBehaviour, IInteractable , IBind<InventorySavaData>
+    public class ShopKeeper : MonoBehaviour, IInteractable, IBind<InventorySavaData>
     {
+        [SerializeField] private HighlightableSprite sprite;
         [SerializeField] private ShopItemList _shopItemsHeld;
         [field:SerializeField] private ShopSystem _shopSystem;
         public UnityAction<IInteractable> OnInteraction { get; set; }
@@ -30,11 +31,39 @@ namespace GameSystems.ShopSystem
             }
         }
 
+        private void OnEnable()
+        {
+            sprite.OnHoverOver += HandleHovering;
+            sprite.OnHoverOut += HandleUnhovering;
+        }
+       
+        private void OnDisable()
+        {
+            sprite.OnHoverOver -= HandleHovering;
+            sprite.OnHoverOut -= HandleUnhovering;
+        }
+
+        private void HandleHovering()
+        {
+            EventBus<OnIteractableHovered>.Raise(new OnIteractableHovered
+            {
+                interactable = this,
+                name = "shop",
+                interactionPosition = transform.position,
+            });
+        }
+        private void HandleUnhovering()
+        {
+            EventBus<OnIteractableUnHovered>.Raise(new OnIteractableUnHovered());
+        }
+       
+
         public bool Interact(InteractionAttempt interactionAttempt)
         {
             if (interactionAttempt.Intent == InteractionIntent.Interact)
             {
-                OnShopWindowRequested?.Invoke(_shopSystem, PlayerInventory.Instance);
+                EventBus<OnShopScreenRequested>.Raise(new OnShopScreenRequested {Shop = _shopSystem });
+                //OnShopWindowRequested?.Invoke(_shopSystem, PlayerInventory.Instance);
                 return true;
             }
             return false;
@@ -55,33 +84,15 @@ namespace GameSystems.ShopSystem
             else _shopSystem.SetGold(data.heldMoney);
 
 
-            //foreach (var item in data.itemSaveDatas)
-            //{
-            //    Debug.Log(item.name);
-            //}
-
             if (data.itemSaveDatas.Count > 0)
             {
-                //Debug.Log("yep");
                 _shopSystem = new ShopSystem(data.itemSaveDatas.Count, data.heldMoney, _shopItemsHeld.BuyMarkup, _shopItemsHeld.SellMarkup);
                 
                 foreach (var item in data.GetAllItems())
                 {
-                    //Debug.Log($"item to add is {item.item.ItemTypeID}");
                     _shopSystem.AddToShop(item.item, item.amount);
                 }
-                //for (int i = 0; i < data.itemSaveDatas.Count; i++)
-                //{
-                //    GameItem item = _shopSystemSaveData.GetGameItemAtPosition
-                //    //GameItem gameItem = _shopSystemSaveData.itemSaveDatas[i].item;
-                //    //ItemData item = DataBaseManager.Instance.ItemDataBase.GetItem(_shopSystemSaveData.itemSaveDatas[i].name);
-                //    //if (item != null)
-                //    //{
-                //    //    gameItem.SetItemData(item);
-                //    //    _shopSystem.AddToShop(gameItem, _shopSystemSaveData.itemSaveDatas[i].amount);
-                //    //}
-
-                //}
+               
             }
            
 
@@ -99,6 +110,13 @@ namespace GameSystems.ShopSystem
             data.heldMoney = _shopSystem.AvailibleGold;
            
             data.Id = Id;
+        }
+
+
+        public virtual bool CanAcceptInteractionType(InteractionAttempt interactionAttempt)
+        {
+            if(interactionAttempt.Intent == InteractionIntent.Interact) return true;
+            return false;
         }
     }
 }

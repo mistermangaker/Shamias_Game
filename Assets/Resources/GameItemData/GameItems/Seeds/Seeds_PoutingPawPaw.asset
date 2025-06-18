@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab43f0fd3de0158488443445c60b33c2, type: 3}
+  m_Name: Seeds_PoutingPawPaw
+  m_EditorClassIdentifier: 
+  <ItemId>k__BackingField: Seeds_PoutingPawPaw
+  <DisplayName>k__BackingField: Pouting PawPaw Seeds
+  <Icon>k__BackingField: {fileID: -1970100960, guid: 135948c29079e8f478594dca25fe0bfd, type: 3}
+  <MaxStackSize>k__BackingField: 64
+  ItemDescription: 
+  <DefaultDurability>k__BackingField: 0
+  <UsesTimeStamps>k__BackingField: 0
+  <Buildable>k__BackingField: {fileID: 11400000, guid: 88bd412351337584388998ed1101039f, type: 2}
+  <PrimaryInteractionIntent>k__BackingField: 5
+  <ConsumeableOnUse>k__BackingField: 1
+  <DefaultSellPrice>k__BackingField: 10
+  <ItemAlignment>k__BackingField:
+    <chastity_Lust>k__BackingField:
+      _rangeValue: 0
+      _rangeMin: -100
+      _rangeMax: 100
+    <forgiveness_Wrath>k__BackingField:
+      _rangeValue: 0
+      _rangeMin: -100
+      _rangeMax: 100
+    <temperance_Gluttony>k__BackingField:
+      _rangeValue: 0
+      _rangeMin: -100
+      _rangeMax: 100
+    <charity_Greed>k__BackingField:
+      _rangeValue: 0
+      _rangeMin: -100
+      _rangeMax: 100
+    <diligence_Sloth>k__BackingField:
+      _rangeValue: 0
+      _rangeMin: -100
+      _rangeMax: 100
+    <kindness_Envy>k__BackingField:
+      _rangeValue: 0
+      _rangeMin: -100
+      _rangeMax: 100
+    <humility_Pride>k__BackingField:
+      _rangeValue: 0
+      _rangeMin: -100
+      _rangeMax: 100
+  <ItemAttackDamage>k__BackingField: 0

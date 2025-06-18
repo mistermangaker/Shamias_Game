@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace GameSystems.Inventory
 {
+    
     [Serializable]
     public class ItemComponents
     {
@@ -30,8 +31,22 @@ namespace GameSystems.Inventory
         [field: SerializeField] public ItemData GameItemData { get; private set; }
         [field: SerializeField] public int Durability { get; private set; } 
         [field: SerializeField] public DateTimeStamp CreationTime { get; private set; }
+        [field: SerializeField] public SoulData SoulData { get; private set; }
 
-        public List<InteractionIntent> InteractionIntents =>  GameItemData != null? GameItemData.PrimaryInteractionIntents : new List<InteractionIntent>();
+        public bool IsFoodItem
+        {
+            get
+            {
+                return GameItemData != null && GameItemData.Cosnumeables !=null;
+            }
+        }
+        public void SetSoulData(SoulData data)
+        {
+            SoulData = data;
+        }
+
+        public InteractionIntent PrimaryInteractionIntent =>GameItemData !=null? GameItemData.PrimaryInteractionIntent : InteractionIntent.None;
+       
         public bool IsConsumeable => GameItemData != null? GameItemData.ConsumeableOnUse : false;
 
         public void SetItemData(ItemData data)
@@ -59,7 +74,18 @@ namespace GameSystems.Inventory
             return HashCode.Combine(this.ItemTypeID, this.CreationTime, this.Durability);
         }
 
-
+        public static void UseItem(InventorySlot slot)
+        {
+            GameItem item = slot.GameItem;
+            foreach(var use in item.GameItemData.ItemUses)
+            {
+                use.Use(item);
+            }
+            if (item.GameItemData.ConsumeableOnUse)
+            {
+                slot.RemoveFromStack(1);
+            }
+        }
         public class Builder
         {
             int durability =-1;
@@ -75,6 +101,7 @@ namespace GameSystems.Inventory
                 this.itemComponents = itemComponents;
                 return this;
             }
+            
 
             public Builder WithDurability(int durability)
             {

@@ -7,9 +7,9 @@ public class BuildingTree : BuildingBase
 
     public override bool Interact(InteractionAttempt interactor)
     {
-        if (interactor.Intents.Contains(InteractionIntent.Harvest_Wood))
+        if (interactor.Intent == InteractionIntent.Harvest_Wood)
         {
-            int damage = interactor.Item.GameItemData?.ItemAttackDamage ?? 0;
+            int damage = interactor.Slot.GameItem.GameItemData?.ItemAttackDamage ?? 0;
             DamageBuilding(damage);
             return true;
         }
@@ -26,6 +26,7 @@ public class BuildingTree : BuildingBase
     public override void UpdateVisuals()
     {
         visuals.sprite = building.BuildableData.GrowthStage.GrowthStagesList[0].viusal;
+        base.UpdateVisuals();
         
     }
 
@@ -34,5 +35,39 @@ public class BuildingTree : BuildingBase
         
     }
 
-   
+    protected override void HandleHighLighting()
+    {
+        EventBus<OnIteractableHovered>.Raise(new OnIteractableHovered
+        {
+            interactable = this,
+            interactionPosition = transform.position,
+        });
+    }
+
+
+    public override bool CanAcceptInteractionType(InteractionAttempt interactionAttempt)
+    {
+        if(interactionAttempt.Intent == InteractionIntent.Harvest_Wood) return true;
+        
+        return base.CanAcceptInteractionType(interactionAttempt);
+    }
+
+    public override OnToolTipRequested GetToolTip()
+    {
+       string name = building.BuildableData?.DisplayName?? "Tree";
+        OnToolTipRequested tooltip = new OnToolTipRequested
+        {
+            toolTipHeader = name,
+            intent = InteractionIntent.Harvest_Wood,
+        };
+        return tooltip;
+    }
+
+    public override void Damage(int damage, DamageType damageType)
+    {
+        if(damageType == DamageType.Harvest_Wood)
+        {
+            DamageBuilding(damage);
+        }
+    }
 }

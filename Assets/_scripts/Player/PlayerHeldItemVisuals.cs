@@ -22,13 +22,12 @@ public class PlayerHeldItemVisuals : MonoBehaviour
             Destroy(this);
             return;
         }
-        //heldItemVisuals = GetComponent<SpriteRenderer>();
         controller = GetComponentInParent<PlayerController>();
     }
 
     private void Update()
     {
-        heldItem = controller.BuildableForVisuals;
+        heldItem = PlayerActionHandler.Instance.BuildableForVisuals;
         if (heldItem != null && heldItem.DisplaySprite != null)
         {
             if(controller.LookDirection.y > 0)

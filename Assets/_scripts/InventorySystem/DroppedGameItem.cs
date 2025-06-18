@@ -23,19 +23,19 @@ public class DroppedGameItem : MonoBehaviour
         Id = id;
     }
 
-    public void SpawnNewItem(GameItem item,int amount, bool value = false)
+    public void SpawnNewItem(GameItem item,int amount, bool instantlyPickupable = false)
     {
-        Init(item, amount, value); 
+        Init(item, amount, instantlyPickupable); 
         Id = SerializableGuid.NewGuid();
         OnGroundItemManager.Instance.RegisterDroppedItem(Id, GameItem, transform.position, amount);
     }
 
-    public void Init(GameItem item, int amount, bool value =false)
+    public void Init(GameItem item, int amount, bool pickupable =false)
     {
         ItemData = item.GameItemData;
         GameItem = item;
         this.amount = amount;
-        CanBePickedUp = value;
+        CanBePickedUp = pickupable;
         IsWorldSpawnItem = false;
         OnInitialized?.Invoke();
     }

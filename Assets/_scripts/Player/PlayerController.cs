@@ -1,48 +1,56 @@
 using GameSystems.BuildingSystem;
 using GameSystems.Inventory;
 using GameSystems.SaveLoad;
-using System;
-using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
-using static UnityEngine.InputSystem.InputAction;
+
+
+public enum PlayerMovementActionOrders
+{
+    None,
+    GoToLocationAndDoAction,
+    GoToLocationAndInteract,
+    GoToLocationAndAttack
+}
+
+public struct PlayerMovementOrders : IEvent
+{
+    public PlayerMovementActionOrders actionOrders;
+    public Vector3 destination;
+    public IInteractable interactable;
+    public InteractionAttempt interactionAttempt;
+}
+
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour, IBind<PlayerSaveData>, IInteractor
 {
-    public static UnityAction<InventorySlot> OnItemUsed;
 
-    public static UnityAction<InteractionIntent> OnPlayerAction;
+    //public static UnityAction<InventorySlot> OnItemUsed;
+
 
     public static PlayerController Instance;
-    public BuildableTiles BuildableForVisuals => CurrentlyHeldItem.GameItemData?.Buildable;
-    private GameItem CurrentlyHeldItem;
-    private InventorySlot inventorySlot;
 
     private Rigidbody rb;
 
-    [SerializeField] private float movespeed =5f;
     private Vector3 _lookDirection;
     public Vector3 LookDirection => _lookDirection;
 
     [field: SerializeField] private PlayerSaveData _saveData;
+    [SerializeField] private Transform interactionSpot;
+    [SerializeField] public float MaxPlayerInteractionDistance { get; private set; } = 2f;
+
+    private bool canMove = true;
 
     private Vector3 _moveDirection;
     public Vector3 MoveDirection => _moveDirection;
 
-    [SerializeField] private float interactCircleSize = 1f;
-    [SerializeField] private float cameraLookOffset = 0.5f;
-    [SerializeField] private Transform interactionSpot;
-    [SerializeField] private Transform cameraLookSpot;
-    [SerializeField] private LayerMask interactLayerMask;
+    private PlayerMovementOrders currentPlayerOrders;
 
     [field: SerializeField] public SerializableGuid Id { get; set; } = SerializableGuid.NewGuid();
 
-   // public BuildingPlacer buildingPlacer;
+    public UnityAction<PlayerMovementOrders> OnPatherReachedDestination;
 
-    private IInteractable currentlySelectedInteractable;
-
-    EventBinding<OnPlayerEquipedItemChanged> playerItemChanged;
 
     private void Awake()
     {
@@ -53,188 +61,223 @@ public class PlayerController : MonoBehaviour, IBind<PlayerSaveData>, IInteracto
         }
 
         Instance = this;
+       
     }
+
+    EventBinding<PlayerMovementOrders> MovementOrders;
 
     private void Start()
     {
+ 
         PlayerInputManager.OnPlayerMovement += AssignMoveDirection;
         PlayerInputManager.OnPlayerLookDirection += AssignLookDirection;
-        PlayerInputManager.OnInteractionPerformed += PerFormInteraction;
-        PlayerInputManager.OnAlternateInteractionPerformed += PerFormAltInteraction;
+        //PlayerInputManager.OnMouseButtonPerformed += HandleLocalPlayerInteraction;
 
-
-        PlayerInputManager.OnMouseButtonPerformed += OnMouseAction;
-
-        // PlayerInputManager.UnityActionMouseButtonPerformed += 
 
         rb = GetComponent<Rigidbody>();
-        //buildingPlacer = GetComponent<BuildingPlacer>();
 
-        playerItemChanged = new EventBinding<OnPlayerEquipedItemChanged>(HandleNewItemEquiped);
-        EventBus<OnPlayerEquipedItemChanged>.Register(playerItemChanged);
+        MovementOrders = new EventBinding<PlayerMovementOrders>(HandleNewMovementOrders);
+        EventBus<PlayerMovementOrders>.Register(MovementOrders);
     }
 
     private void OnDestroy()
     {
         PlayerInputManager.OnPlayerMovement -= AssignMoveDirection;
         PlayerInputManager.OnPlayerLookDirection -= AssignLookDirection;
-        PlayerInputManager.OnInteractionPerformed -= PerFormInteraction;
-        PlayerInputManager.OnAlternateInteractionPerformed -= PerFormAltInteraction;
+        //PlayerInputManager.OnMouseButtonPerformed -= HandleLocalPlayerInteraction;
 
-        PlayerInputManager.OnMouseButtonPerformed -= OnMouseAction;
-        EventBus<OnPlayerEquipedItemChanged>.Deregister(playerItemChanged);
+        EventBus<PlayerMovementOrders>.Deregister(MovementOrders);
 
     }
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = _moveDirection * movespeed;
-        interactionSpot.transform.position = transform.position + _lookDirection;
-        cameraLookSpot.position = transform.position + _lookDirection * cameraLookOffset;
-        Collider collider = Physics.OverlapSphere(interactionSpot.position, interactCircleSize, interactLayerMask).FirstOrDefault();
-        if (collider != null)
+        interactionSpot.position = transform.position+LookDirection;
+        HandleMovement();
+    }
+
+  
+    public bool PatherAtLocation
+    {
+        get
         {
-            
-            currentlySelectedInteractable = collider.gameObject.GetComponent<IInteractable>();
-        }
-        else
-        {
-            currentlySelectedInteractable = null;
+            if (currentPlayerOrders.destination == Vector3.zero) return true;
+            else
+            {
+                return Vector3.Distance(transform.position, currentPlayerOrders.destination) < MaxPlayerInteractionDistance;
+            } 
         }
     }
 
-    private void AssignMoveDirection(Vector2 dir)
+    
+
+    private bool PatherHasDestinationSet => currentPlayerOrders.destination != Vector3.zero;
+    private void HandleMovement()
     {
-        _moveDirection = new Vector3(dir.x, 0f, dir.y);
+        if (PatherHasDestinationSet)
+        {
+            if (PatherAtLocation)
+            {
+
+                HandleLocationInteraction(currentPlayerOrders);
+              
+                ClearPatherMoveDestination();
+                
+            }
+            else
+            {
+                Vector3 dir = GetDirectionTo(currentPlayerOrders.destination);
+                AssignLookDirection(dir);
+                MoveTowards(dir);
+            }
+        }
+        else
+        {
+            AssignLookDirection(_moveDirection);
+            MoveTowards(_moveDirection);
+        }
     }
-    private void AssignLookDirection(Vector2 dir)
+
+    
+   
+    private void HandleNewMovementOrders(PlayerMovementOrders orders)
+    {
+        currentPlayerOrders = orders;
+    }
+
+    private void ClearPatherMoveDestination()
+    {
+        currentPlayerOrders = new();
+    }
+
+    private void MoveTowards(Vector3 direction)
+    {
+        if(canMove) rb.linearVelocity = direction * PlayerInternalState.Instance.PlayerMoveSpeed;
+        else rb.angularVelocity = Vector3.zero;
+    }
+
+    private Vector3 GetDirectionTo(Vector3 destination)
+    {
+        Vector3 temp = (destination - transform.position).normalized;
+        temp.y = 0;
+        return temp;
+    }
+
+    public void AssignMoveDirection(Vector2 dir)
+    {
+        Vector3 inputdir = new Vector3(dir.x, 0, dir.y);
+        _moveDirection = transform.TransformDirection(inputdir);
+        _moveDirection.Normalize();
+        ClearPatherMoveDestination();
+
+    }
+    public void AssignLookDirection(Vector2 dir)
     {
         _lookDirection = new Vector3(dir.x, 0f, dir.y);
     }
 
 
 
-    public void OnMouseAction()
+    private void HandleLocationInteraction(PlayerMovementOrders orders)
     {
-        if(CurrentlyHeldItem.GameItemData != null)
+        if(orders.actionOrders == PlayerMovementActionOrders.GoToLocationAndDoAction)
         {
-            if (CurrentlyHeldItem.GameItemData.PrimaryInteractionIntents.Contains(InteractionIntent.TillSoil))
+            if (orders.interactionAttempt.Intent == InteractionIntent.Build)
             {
-                _lookDirection = Vector3.MoveTowards(transform.position, PlayerInputManager.Instance.MouseToGroundPlane, 1f);
-                
-                ConstructionLayerManager.Instance.TryTilGround(interactionSpot.position);
+                DoConstruction(orders.interactionAttempt.Slot, orders.destination);
             }
-            
-            if (CurrentlyHeldItem.GameItemData.Buildable != null)
+            else if (orders.interactionAttempt.Intent == InteractionIntent.TillSoil)
             {
-                if (CurrentlyHeldItem.GameItemData.PrimaryInteractionIntents.Contains(InteractionIntent.Build))
+                TillSoil(orders.interactionAttempt.Slot, orders.destination);
+            }
+            if(orders.interactionAttempt.Intent == InteractionIntent.InsertItem && orders.interactable == null)
+            {
+                DropItemOnGround(orders.interactionAttempt.Slot, orders.destination);
+            }
+        }
+        else if(orders.actionOrders == PlayerMovementActionOrders.GoToLocationAndInteract)
+        {
+            if(orders.interactable != null)
+            {
+                orders.interactable.Interact(orders.interactionAttempt);
+                HandleItemUseage(orders.interactionAttempt.Slot);
+            }
+        }
+       
+    }
+
+    private void DropItemOnGround(InventorySlot slot, Vector3 position)
+    {
+        if (slot == null || slot.ItemData == null) return;
+
+        EventBus<OnDropItemAtPositionRequested>.Raise(new OnDropItemAtPositionRequested(slot.GameItem, PlayerController.Instance.transform.position, slot.StackSize));
+
+        slot.ClearSlot();
+       // OnItemUsed?.Invoke(slot);
+    }
+
+    private void DoConstruction(InventorySlot slot, Vector3 position)
+    {
+        Debug.Log("building");
+        if(slot == null || slot.IsEmpty) return;
+        GameItem item = slot.GameItem;
+        if (ConstructionLayerManager.Instance.TryBuildBuidling(position, item.GameItemData.Buildable))
+        {
+            _lookDirection = Vector3.MoveTowards(transform.position, position, 1f);
+            slot.RemoveFromStack(1);
+            
+        }
+    }
+
+    private void TillSoil(InventorySlot slot, Vector3 position)
+    {
+        _lookDirection = Vector3.MoveTowards(transform.position, position, 1f);
+        ConstructionLayerManager.Instance.TryTilGround(position);
+        HandleItemUseage(slot);
+    }
+
+    private void HandleItemUseage(InventorySlot slot)
+    {
+        if (slot.GameItem.IsConsumeable)
+        {
+            PlayerInventory.Instance.InventorySystem.RemoveFromInventory(slot, 1);
+           // OnItemUsed?.Invoke(slot);
+        }
+    }
+
+
+    private void HandleLocalPlayerInteraction()
+    {
+        //Debug.Log("click");
+        IInteractable interactable = null;
+        foreach(var collider in Physics.OverlapSphere(interactionSpot.position, 0.5f))
+        {
+            interactable = collider.gameObject.GetComponent<IInteractable>();
+            if (interactable != null)
+            {
+                InteractionAttempt newAttempt = PlayerActionHandler.Instance.TryInteractingWithInteractable(interactable);
                 {
-                    if (ConstructionLayerManager.Instance.TryBuildBuidling(PlayerInputManager.Instance.MouseToGroundPlane, CurrentlyHeldItem.GameItemData.Buildable))
+                    if(newAttempt != null)
                     {
-                        _lookDirection = Vector3.MoveTowards(transform.position, PlayerInputManager.Instance.MouseToGroundPlane, 1f);
-                        PlayerInventory.Instance.InventorySystem.RemoveFromInventory(inventorySlot, 1);
-                        OnItemUsed?.Invoke(inventorySlot);
+                        interactable.Interact(newAttempt);
+                        return;
                     }
                 }
-               
             }
-           
-            
         }
-        if(currentlySelectedInteractable != null )
-        {
-            Debug.Log(currentlySelectedInteractable);
-            HandleInteraction();
-        }
-        
         
     }
 
-    public void HandleInteraction()
+
+    public void EnableMovement()
     {
-        InteractionAttempt interaction = new InteractionAttempt();
-        interaction.interactor = this;
-       
-        if (CurrentlyHeldItem.GameItemData != null)
-        {
-            interaction.Item = CurrentlyHeldItem;
-            //interaction.Intent = CurrentlyHeldItem.InteractionIntent;
-            interaction.Intents = CurrentlyHeldItem.InteractionIntents;
-        }
-        else
-        {
-            interaction.Item = CurrentlyHeldItem;
-            interaction.Intents.Add(InteractionIntent.Interact);
-        }
-        if (currentlySelectedInteractable.Interact(interaction))
-        {
-            if (CurrentlyHeldItem.IsConsumeable)
-            {
-                Debug.Log("using item");
-                PlayerInventory.Instance.InventorySystem.RemoveFromInventory(inventorySlot, 1);
-                //inventorySlot.RemoveFromStack(1);
-                OnItemUsed?.Invoke(inventorySlot);
-            }
-        }
+        canMove = true;
     }
 
-
-    private void PerFormInteraction()
+    public void DisableMovement()
     {
-        if (currentlySelectedInteractable != null)
-        {
-            InteractionAttempt interactionAttempt = new InteractionAttempt();
-            interactionAttempt.Item = CurrentlyHeldItem;
-            if (CurrentlyHeldItem.GameItemData != null)
-            {
-                interactionAttempt.Intents = CurrentlyHeldItem.GameItemData.PrimaryInteractionIntents;
-            }
-            else
-            {
-                interactionAttempt.Intents.Add(InteractionIntent.Interact);
-            }
-            interactionAttempt.Intent = InteractionIntent.Interact;
-            interactionAttempt.interactor = this;
-            currentlySelectedInteractable.Interact(interactionAttempt);
-        }
+        canMove = false;
     }
-    private void PerFormAltInteraction()
-    {
-        if (currentlySelectedInteractable != null)
-        {
-            InteractionAttempt interactionAttempt = new InteractionAttempt();
-            interactionAttempt.Item = CurrentlyHeldItem;
-            if(CurrentlyHeldItem.GameItemData != null)
-            {
-                interactionAttempt.Intents = CurrentlyHeldItem.GameItemData.PrimaryInteractionIntents;
-            }
-            else
-            {
-                interactionAttempt.Intents.Add(InteractionIntent.Interact);
-            }
-            
-            interactionAttempt.Intent = InteractionIntent.Interact;
-            interactionAttempt.interactor = this;
-            currentlySelectedInteractable.Interact(interactionAttempt);
-        }
-    }
-
-
-    [Obsolete]
-    public void SetCurrentlyHeldItem(InventorySlot slot)
-    {
-        
-        inventorySlot = slot;
-        CurrentlyHeldItem = slot.GameItem;
-        
-    }
-    private void HandleNewItemEquiped(OnPlayerEquipedItemChanged item)
-    {
-        inventorySlot = item.Slot;
-        CurrentlyHeldItem = item.Item;
-        //ActiveBuildable = item.Item.GameItemData?.Buildable;
-    }
-
 
     public void Bind(PlayerSaveData data)
     {
@@ -255,6 +298,7 @@ public class PlayerController : MonoBehaviour, IBind<PlayerSaveData>, IInteracto
 
     private void OnDrawGizmos()
     {
+        Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(interactionSpot.position, 0.5f);
     }
 

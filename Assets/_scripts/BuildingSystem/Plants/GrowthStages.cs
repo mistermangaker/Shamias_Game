@@ -9,28 +9,22 @@ public class GrowthStages : ScriptableObject
 {
     [field: SerializeField] public string ID { get; private set; }
     [field: SerializeField] public List<GrowthStage> GrowthStagesList {  get; private set; }
-    [field: SerializeField] public int HarvestableGrowDays { get; private set; }
-    [field: SerializeField]public ItemData harvestableItemToDrop { get; private set; }
+    [field: SerializeField] public int DaysBetweenStages { get; private set; }
+    [field: SerializeField]public ItemData HarvestableItemToDrop { get; private set; }
+    public int AmountToDrop;
 
-    public GameItem harvestableGameItemToDrop
+    public GameItem HarvestableGameItemToDrop
     {
         get
         {
-            return GameItem.DefaultItem(harvestableItemToDrop);
+            return GameItem.DefaultItem(HarvestableItemToDrop);
         }
     }
 
     public GrowthStage GetGrowthStageAtIndex(int index)
     {
-        foreach (GrowthStage stage in GrowthStagesList)
-        {
-            if(stage.growthStageIndex == index) return stage;
-        }
-        if(GrowthStagesList.Count > index)
-        {
-            return GrowthStagesList[index];
-        }
-        return GrowthStagesList[0];
+        if (GrowthStagesList.Count > index) return GrowthStagesList[index];
+        else return GrowthStagesList[GrowthStagesList.Count-1];
     }
 
 }
@@ -39,14 +33,9 @@ public class GrowthStages : ScriptableObject
 [Serializable()]
 public struct GrowthStage
 {
-    [field: SerializeField] public string GrowthStageName { get; private set; }
-    [TextArea(4, 4)]
-    public string GrowthStageDescriptionForViewing;
-
+    public string Debug_Id;
     public Sprite viusal;
-    public GameObject newGameObject;
-    public int daysForNextStage;
-    public int growthStageIndex;
-
-
+    [field: SerializeField] public ItemData harvestABleItemToDropThisStage;
+    public bool CanBeHarvestedByHand;
+    public int AmountToDrop;
 }

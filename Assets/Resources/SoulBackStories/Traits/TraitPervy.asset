@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717e0d498e7537d47a0bad29d925e492, type: 3}
+  m_Name: TraitPervy
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: Trait_Pervy
+  <HasMultipleTraits>k__BackingField: 1
+  <StatStages>k__BackingField:
+  - <DisplayName>k__BackingField: Saintly
+    <Description>k__BackingField: '[SoulFirstName] was a saint all through [SoulPossessive]
+      life. [SoulPossessive] never once thought of anything lewd.'
+    Value:
+    - applicationType: 0
+      TypeToModify: 0
+      amountToModify: 50
+    - applicationType: 1
+      TypeToModify: 0
+      amountToModify: 10
+    - applicationType: 1
+      TypeToModify: 1
+      amountToModify: -30
+  - <DisplayName>k__BackingField: Innocent
+    <Description>k__BackingField: '[SoulFirstName] was a not perverted much through
+      [SoulPossessive] life. [SoulPossessive] are very innocent as a result.'
+    Value:
+    - applicationType: 0
+      TypeToModify: 0
+      amountToModify: 10
+    - applicationType: 1
+      TypeToModify: 0
+      amountToModify: 10
+  - <DisplayName>k__BackingField: Repentant Perv
+    <Description>k__BackingField: '[SoulFirstName] was a pervert through [SoulPossessive]
+      life. as a result [SoulPossessive] has a dirty mind, but in their deathbed
+      they have repented for their sins and vow to never again be like that'
+    Value:
+    - applicationType: 0
+      TypeToModify: 1
+      amountToModify: 10
+    - applicationType: 1
+      TypeToModify: 1
+      amountToModify: 10
+  - <DisplayName>k__BackingField: Pervy
+    <Description>k__BackingField: '[SoulFirstName] was a pervert through [SoulPossessive]
+      life. as a result [SoulPossessive] has a dirty mind.'
+    Value:
+    - applicationType: 0
+      TypeToModify: 1
+      amountToModify: 15
+    - applicationType: 1
+      TypeToModify: 1
+      amountToModify: 10
+    - applicationType: 1
+      TypeToModify: 0
+      amountToModify: -10
+  - <DisplayName>k__BackingField: Degenerate
+    <Description>k__BackingField: '[SoulFirstName] was a a massively down bad pervert
+      all throughout their life [SoulPossessive] life. [SoulPossessive] honestly
+      cant control themselves.'
+    Value:
+    - applicationType: 0
+      TypeToModify: 1
+      amountToModify: 30
+    - applicationType: 1
+      TypeToModify: 1
+      amountToModify: 25
+    - applicationType: 1
+      TypeToModify: 0
+      amountToModify: -70
+    - applicationType: 0
+      TypeToModify: 9
+      amountToModify: 10
+  <ThingTags>k__BackingField: []

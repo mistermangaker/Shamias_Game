@@ -15,7 +15,7 @@ public class StaticInventoryDisplay : InventoryDisplayUI
     }
     public override void AssignSlots(InventorySystem InvToDisplay, int offset)
     {
-        slotDictionary = new Dictionary<InventorySlotUI, InventorySlot>();
+        slotDictionary = new Dictionary<ItemSlotUI, InventorySlot>();
         for (int i = 0; i < slots.Length; i++)
         {
             slotDictionary.Add(slots[i], inventorySystem.InventorySlots[i]);

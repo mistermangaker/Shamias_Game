@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe861578df40d84e90568238a6e539c, type: 3}
+  m_Name: CarnivoriousCarrotGrowthStages
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: CarnivoriousCarrot_GrowthStages
+  <GrowthStagesList>k__BackingField:
+  - Debug_Id: 
+    viusal: {fileID: -631188572, guid: 5b9f382a40f6257428aa6d2201682470, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 0}
+    CanBeHarvestedByHand: 0
+    AmountToDrop: 0
+  - Debug_Id: 
+    viusal: {fileID: 1554156038, guid: 5b9f382a40f6257428aa6d2201682470, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 11400000, guid: f66d67937b4f6d644a50f89ca528cdbf, type: 2}
+    CanBeHarvestedByHand: 1
+    AmountToDrop: 2
+  - Debug_Id: 
+    viusal: {fileID: -1960724469, guid: 5b9f382a40f6257428aa6d2201682470, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 11400000, guid: 0aa20f436411fc44780c2b08801148eb, type: 2}
+    CanBeHarvestedByHand: 1
+    AmountToDrop: 2
+  - Debug_Id: 
+    viusal: {fileID: -1073176229, guid: 5b9f382a40f6257428aa6d2201682470, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 11400000, guid: 0aa20f436411fc44780c2b08801148eb, type: 2}
+    CanBeHarvestedByHand: 0
+    AmountToDrop: 4
+  <DaysBetweenStages>k__BackingField: 2
+  <HarvestableItemToDrop>k__BackingField: {fileID: 11400000, guid: eee8178336ce64f4faa066193e361342, type: 2}
+  AmountToDrop: 2

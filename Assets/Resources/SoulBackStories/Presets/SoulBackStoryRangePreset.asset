@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bf3c2063a3ec349b9e2e8b5eae1097, type: 3}
+  m_Name: SoulBackStoryRangePreset
+  m_EditorClassIdentifier: 
+  <PotentialFullNames>k__BackingField:
+  - 'hhh jjj lll '
+  - 'mikey davey darek '
+  PrioritizeFullNamesPercentage: 0.542
+  <PotentialFirstNames>k__BackingField:
+  - 'Marvin '
+  - Dave
+  <PotentialNickNames>k__BackingField:
+  - yep
+  - mhm
+  - ahhhh
+  emptyNickNamePercentageChance: 0
+  <PotentialLastNames>k__BackingField:
+  - hello
+  - there
+  - morning
+  <PotentialChildHoodParts>k__BackingField:
+  - {fileID: 11400000, guid: 149b04a9d03300a439ce1af8022443c2, type: 2}
+  - {fileID: 11400000, guid: dbc82444a5a502d469eeed4919bb0def, type: 2}
+  <PotentialAdultHoodParts>k__BackingField:
+  - {fileID: 11400000, guid: 6ab27404a1c5d0a42a749d1fd04d35dc, type: 2}
+  - {fileID: 11400000, guid: 628343e0acb3e314980bbc80bd91db05, type: 2}
+  <PotentialDeathCauseParts>k__BackingField:
+  - {fileID: 11400000, guid: 8830d4030abc1e44a91af13c0dc48e85, type: 2}
+  - {fileID: 11400000, guid: 8ea6fc28a4aa39a42b0da54baf4888c6, type: 2}
+  <PotentialGenders>k__BackingField: 2
+  FemaleLikelyHoodPercent: 0.5
+  <ThingTags>k__BackingField: []
+  <UseThingTagsForTraits>k__BackingField: 0
+  <AdditionalTraits>k__BackingField: []
+  AdditionalTraitsBiasInRandomGenerationBias: 0
+  <UseThingTagsForBackStories>k__BackingField: 0
+  BackGroundPresetBiasInRandomGeneration: 0

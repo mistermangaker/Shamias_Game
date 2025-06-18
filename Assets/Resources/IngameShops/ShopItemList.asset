@@ -1,0 +1,1956 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce55d8495a12c14f811413320bafad1, type: 3}
+  m_Name: ShopItemList
+  m_EditorClassIdentifier: 
+  _items:
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 90a4b4598e0251841b5221a214db6767, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 10
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 7c68183d0153c474fa678ce0239fdc37, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 10
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 9f1d67b98214af04180203e99f89982e, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 10
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: c90d232edb7ba6643b839025acae3a10, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 10
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: bc5b58d1ff90552429c7fe2ed8c2603a, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 10
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 25436a7f0b19f7d4bb7c0d317e5f1f0b, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 10
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 3d0f4348e05109247bbaee17b565be2c, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 10
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 548539c1d6b4abc418e0f1445c4922dd, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 10
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 78d0792fb3dddeb4c8fdc125b954ee25, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 10
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: e5297186c1a76e54eb26aa5a2beaf878, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 10
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: cb3b75f81c69f8c49ba72a3f67900e0d, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: fa1f752db6ff8b04a98a279b5ceba2f2, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: e9241e12832da5c4a85ecaabdb0bdbd7, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 07e0cd29e3cabc5498927c06076fe969, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 6a329ad30f8dbea40a8fbe55da09852e, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 62f5695a12693ef4baffda2d71e68c57, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 282b0805df933e647a6a284c11173a5a, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 20265d1b536d652468c8cf8a971875fb, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 18e403eddb1f335459e26c174a484a17, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 8841d6688e06198409039777d7e68fa8, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 9ab6df7ae1717c24880e100a98c4ed88, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 7429b58109fe1cd428580191d69b25cc, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 6b2e227e46ae60948a6f5d627d7fcbbd, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 079dee2435ee2aa4b9b240f753af4b30, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 9651af229ad4de34a8eb50deb1c7278e, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 296ffd1d2161f984888c5908165b7d3d, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: f9940eb7424766746b291f293763bb72, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 6db5affbce88a4f46bf0f7a536a4bade, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: d0857f0843e3620428b0cc8619a045bd, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 9324406fa3f564745b23a729861fe44f, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 9fb73fac45d6cf547a21892f4ca3edca, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: a3ab8e7e10514b4408687db575cc8e18, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 2518aba1406ec6a4f8b49a5c7d9bf811, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  - purchasesOnly: 0
+    BasicItem: {fileID: 11400000, guid: 1186e75352e3669419de787a48473d0a, type: 2}
+    Item:
+      <GameItemData>k__BackingField: {fileID: 0}
+      <Durability>k__BackingField: 0
+      <CreationTime>k__BackingField:
+        <Day>k__BackingField: 0
+        <Days>k__BackingField: 0
+        <Year>k__BackingField: 0
+        <Season>k__BackingField: 0
+        <Hour>k__BackingField: 0
+        <Minute>k__BackingField: 0
+        <TotalMinutes>k__BackingField: 0
+        <DayOfTheYear>k__BackingField: 0
+      <SoulData>k__BackingField:
+        <BackStory>k__BackingField:
+          <SoulFullName>k__BackingField: 
+          <SoulFirstName>k__BackingField: 
+          <SoulLastName>k__BackingField: 
+          <SoulNickName>k__BackingField: 
+          <ChildHoodID>k__BackingField: 
+          <AdultHoodID>k__BackingField: 
+          <DeathCauseID>k__BackingField: 
+          <Gender>k__BackingField: 0
+          ConnectedAlignments: []
+        <SoulAlignment>k__BackingField:
+          <chastity_Lust>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <forgiveness_Wrath>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <temperance_Gluttony>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <charity_Greed>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <diligence_Sloth>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <kindness_Envy>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+          <humility_Pride>k__BackingField:
+            _rangeValue: 0
+            _rangeMin: -100
+            _rangeMax: 100
+        <SoulTraits>k__BackingField: []
+    amount: 20
+    price: 1
+  _maxAllowedGold: 1000
+  _sellMarkup: 0.25
+  _buyMarkup: 0.75

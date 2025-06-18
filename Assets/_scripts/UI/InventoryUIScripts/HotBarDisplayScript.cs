@@ -24,11 +24,11 @@ public class HotBarDisplayScript : StaticInventoryDisplay
         
         _currentIndex = 0;
         _maxIndexSize = slots.Length -1;
-        PlayerController.OnItemUsed += UpdateSlot;
+        //PlayerController.OnItemUsed += UpdateSlot;
     }
     private void OnDisable()
     {
-        PlayerController.OnItemUsed -= UpdateSlot;
+      //  PlayerController.OnItemUsed -= UpdateSlot;
     }
 
 

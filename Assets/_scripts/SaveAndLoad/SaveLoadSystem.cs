@@ -13,6 +13,7 @@ using UnityEngine.SceneManagement;
 
 namespace GameSystems.SaveLoad
 {
+    [Serializable]
     public struct GameSaveUIInformation
     {
         public string Name;
@@ -148,7 +149,7 @@ namespace GameSystems.SaveLoad
             data.metaData = metaData;
             Debug.Log("started new game");
             EventBus<OnGameStart>.Raise(new OnGameStart());
-            Debug.Log("guh");
+            
         }
 
         public void SaveGame()

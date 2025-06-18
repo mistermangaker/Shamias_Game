@@ -1,56 +1,51 @@
 using GameSystems.Inventory;
 using GameSystems.ShopSystem;
-using System;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
-    [SerializeField] private InventoryUIController _InventoryUIController;
-    [SerializeField] private PauseMenuManager _PauseMenuManager;
-    [SerializeField] private ShopKeeperDisplayUI _shopKeeperDisplayUI;
-    [SerializeField] private HotBarDisplayScript _hotBarDisplayScript;
- 
+
     public bool AnyInteractionBlockingWindowsOpen
     {
         get
         {
-            //return true;
-            return InventoryUIController.Instance.InventoryPanelIsOpen || ShopKeeperDisplayUI.Instance.IsShopScreenOpen;
+            return InventoryUIController.Instance.InventoryPanelIsOpen || ShopKeeperDisplayUI.Instance.IsShopScreenOpen || CraftingBenchUI.Instance.CraftingScreenIsOpen;
         }
     }
+
+
+    private EventBinding<OnWorkbenchScreenRequested> onCraftingScreenRequested;
+    private EventBinding<OnDynamicInventoryRequested> onDynamicInventoryRequested;
+    private EventBinding<OnShopScreenRequested> onShopScreenRequested;
+  
 
     private void Awake()
     {
         Instance = this;
     }
-    private void Start()
-    {
-        //_InventoryUIController = InventoryUIController.Instance;
-        //_PauseMenuManager = PauseMenuManager.Instance;
-        //_shopKeeperDisplayUI = ShopKeeperDisplayUI.Instance;
-        //_hotBarDisplayScript = HotBarDisplayScript.Instance;
-        //Debug.Log(_InventoryUIController);
-        //Debug.Log(_PauseMenuManager);
-        //Debug.Log(_shopKeeperDisplayUI);
-        //Debug.Log(_hotBarDisplayScript);
-    }
+
 
     private void OnEnable()
     {
-        ShopKeeper.OnShopWindowRequested += DisplayShowWindow;
+        onShopScreenRequested = new EventBinding<OnShopScreenRequested>(DisplayShowWindow);
+        EventBus<OnShopScreenRequested>.Register(onShopScreenRequested);
+            
+        onDynamicInventoryRequested = new EventBinding<OnDynamicInventoryRequested>(HandleDynamicInventoryRequest);
+        EventBus<OnDynamicInventoryRequested>.Register(onDynamicInventoryRequested);
 
-        InventoryHolder.OnDynamicInventoryDisplayRequested += DisplayWorldSpaceInventory;
-        PlayerInventory.OnPlayerBackPackDisplayRequested += DisplayPlayerBackPack;
+        onCraftingScreenRequested = new EventBinding<OnWorkbenchScreenRequested>(PopulateCraftingScreen);
+        EventBus<OnWorkbenchScreenRequested>.Register(onCraftingScreenRequested);
     }
 
     private void OnDisable()
     {
-        ShopKeeper.OnShopWindowRequested -= DisplayShowWindow;
+        EventBus<OnShopScreenRequested>.Deregister(onShopScreenRequested);
 
-        InventoryHolder.OnDynamicInventoryDisplayRequested += DisplayWorldSpaceInventory;
-        PlayerInventory.OnPlayerBackPackDisplayRequested += DisplayPlayerBackPack;
+        EventBus<OnWorkbenchScreenRequested>.Deregister(onCraftingScreenRequested);
+
+        EventBus<OnDynamicInventoryRequested>.Deregister(onDynamicInventoryRequested);
     }
 
     private void Update()
@@ -58,7 +53,22 @@ public class UIManager : MonoBehaviour
         TryScrollHotBar(PlayerInputManager.Instance.MouseScrollWheelDirection);
     }
 
-
+   
+    private void HandleDynamicInventoryRequest(OnDynamicInventoryRequested arg)
+    {
+        InventoryUIController.Instance.DisplayInventory(arg.inventorySystem, arg.offset);
+    }
+    private void PopulateCraftingScreen(OnWorkbenchScreenRequested arg)
+    {
+        if (CraftingBenchUI.Instance.CraftingScreenIsOpen)
+        {
+            InventoryUIController.Instance.ClosePlayerBackBack();
+            CraftingBenchUI.Instance.HandleIsOpen();
+            return;
+        }
+        CraftingBenchUI.Instance.PopulateCraftingScreen(arg);
+        DisplayPlayerBackPack();
+    }
 
     public void DisplayWorldSpaceInventory(InventorySystem invToDisplay, int offset)
     {
@@ -66,31 +76,29 @@ public class UIManager : MonoBehaviour
     }
 
 
-    private void DisplayPlayerBackPack(InventorySystem inventory, int offset)
+    private void DisplayPlayerBackPack()
     {
 
-        InventoryUIController.Instance.DisplayBackPack(inventory, offset);
+        InventoryUIController.Instance.DisplayBackPack(PlayerInventory.Instance.InventorySystem, PlayerInventory.Instance.Offset);
     }
 
 
-    private void DisplayShowWindow(ShopSystem shopSystem, PlayerInventory playerInventory)
+    private void DisplayShowWindow(OnShopScreenRequested shopSystem)
     {
-        if(_shopKeeperDisplayUI.IsShopScreenOpen) return;
-        PlayerInventory.Instance.RequestPlayerInventory();
-        _shopKeeperDisplayUI.HandleShopKeeperDisplayOpening(shopSystem, playerInventory);
-    }
-
-    public bool IsBuildingScreenOpen
-    {
-        get
-        {
-            return InventoryUIController.Instance.InventoryPanelIsOpen;
+        if (ShopKeeperDisplayUI.Instance.IsShopScreenOpen) 
+        { 
+            InventoryUIController.Instance.ClosePlayerBackBack(); 
+            return; 
         }
+
+        DisplayPlayerBackPack();
+        ShopKeeperDisplayUI.Instance.HandleShopKeeperDisplayOpening(shopSystem.Shop, PlayerInventory.Instance);
     }
+
+    
 
     public void TryScrollHotBar(float amount)
     {
-        //if(amount == 0) return;
         if (CanScrollMouseWheel())
         {
             HotBarDisplayScript.Instance.ChangeIndex((int) amount);
@@ -99,9 +107,9 @@ public class UIManager : MonoBehaviour
 
     public bool CanScrollMouseWheel()
     {
-        if (_PauseMenuManager.GameIsPaused) return false;
-        if (_PauseMenuManager.OptionsMenuIsOpen) return false;
-        if(_shopKeeperDisplayUI.IsShopScreenOpen) return false;
+        if (PauseMenuManager.Instance.GameIsPaused) return false;
+        if (PauseMenuManager.Instance.OptionsMenuIsOpen) return false;
+        if (ShopKeeperDisplayUI.Instance.IsShopScreenOpen) return false;
         return true;
     }
 
@@ -117,6 +125,11 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("closing backpack");
             InventoryUIController.Instance.ClosePlayerBackBack();
+            return false;
+        }
+        if (CraftingBenchUI.Instance.CraftingScreenIsOpen)
+        {
+            CraftingBenchUI.Instance.HandleIsOpen();
             return false;
         }
         if(ShopKeeperDisplayUI.Instance.IsShopScreenOpen)
@@ -156,7 +169,8 @@ public class UIManager : MonoBehaviour
         }
         if (!InventoryUIController.Instance.PlayerBackPackIsOpen)
         {
-            PlayerInventory.Instance?.RequestPlayerInventory();
+            DisplayPlayerBackPack();
+            //PlayerInventory.Instance?.RequestPlayerInventory();
             return true;
         }
 

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b61635e17356c6409b5932ed500c59d, type: 3}
+  m_Name: HeartBreakFruitPlant
+  m_EditorClassIdentifier: 
+  <TileName>k__BackingField: HeartBreakFruit
+  <DisplayName>k__BackingField: Heart Break Fruit
+  <TileToPlace>k__BackingField: {fileID: 0}
+  <IsFloorTile>k__BackingField: 0
+  <DisplaySprite>k__BackingField: {fileID: 0}
+  <TileOffset>k__BackingField: {x: 0, y: 0}
+  <BuildableGameObject>k__BackingField: {fileID: 8230003213010988237, guid: 39d6a54142df276428753dbac00b4ae4, type: 3}
+  <GrowthStage>k__BackingField: {fileID: 11400000, guid: 4d557a9b93f6a7c4790dccce6a0c73c3, type: 2}
+  <IsPlantableOnSoil>k__BackingField: 1
+  <ItemsToDropOnDestroy>k__BackingField:
+  - {fileID: 11400000, guid: eee8178336ce64f4faa066193e361342, type: 2}
+  - {fileID: 11400000, guid: eee8178336ce64f4faa066193e361342, type: 2}
+  <BuildingHealth>k__BackingField: 30

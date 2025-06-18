@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe861578df40d84e90568238a6e539c, type: 3}
+  m_Name: HeartBreakFruitGrowthStages
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 
+  <GrowthStagesList>k__BackingField:
+  - Debug_Id: 
+    viusal: {fileID: 799596177, guid: 7d95c4b73fb81714e8e8115783486ea7, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 0}
+    AmountToDrop: 0
+  - Debug_Id: 
+    viusal: {fileID: 625049852, guid: 7d95c4b73fb81714e8e8115783486ea7, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 0}
+    AmountToDrop: 0
+  - Debug_Id: 
+    viusal: {fileID: -607224056, guid: 7d95c4b73fb81714e8e8115783486ea7, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 0}
+    AmountToDrop: 0
+  - Debug_Id: 
+    viusal: {fileID: -61408632, guid: 7d95c4b73fb81714e8e8115783486ea7, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 11400000, guid: 8c8f244aa69beb34fae3d46d4f3303e8, type: 2}
+    AmountToDrop: 1
+  <DaysBetweenStages>k__BackingField: 1
+  <HarvestableItemToDrop>k__BackingField: {fileID: 11400000, guid: eee8178336ce64f4faa066193e361342, type: 2}
+  AmountToDrop: 1

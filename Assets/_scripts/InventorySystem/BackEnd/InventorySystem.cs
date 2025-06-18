@@ -16,6 +16,11 @@ namespace GameSystems.Inventory
 
         public UnityAction<InventorySlot> OnInventorySlotChanged;
         
+        public void AddAdditionalSlot(InventorySlot slot)
+        {
+            _inventorySlots.Add(slot);
+        }
+        
         
         public InventorySystem(int size) 
         { 
@@ -45,6 +50,7 @@ namespace GameSystems.Inventory
         public void SetSlot(GameItem item, int amount, int position)
         {
             _inventorySlots[position].AddItem(item, amount);
+            OnInventorySlotChanged?.Invoke(_inventorySlots[position]);
         }
 
         public void RemoveItemsFromInventory(GameItem item, int amount)

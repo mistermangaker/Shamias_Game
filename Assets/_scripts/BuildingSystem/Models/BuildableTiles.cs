@@ -7,7 +7,9 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(fileName = "BuildableTiles", menuName = "Building System/BuildableTiles")]
 public class BuildableTiles : ScriptableObject
 {
+    
     [field:SerializeField] public string TileName {  get; private set; }
+    [field:SerializeField] public string DisplayName {  get; private set; }
     [field:SerializeField] public TileBase TileToPlace {  get; private set; }
     [field:SerializeField] public bool IsFloorTile { get; private set; }
     [field:SerializeField] public Sprite DisplaySprite { get; private set; }
@@ -18,6 +20,7 @@ public class BuildableTiles : ScriptableObject
     [field: SerializeField] public bool IsPlantableOnSoil { get; private set; }
     [field: SerializeField] public List<ItemData> ItemsToDropOnDestroy { get; private set; }
     [field: SerializeField] public int BuildingHealth { get; private set; }
+    [field: SerializeField] public List<ValuePair<DamageType,float>> DamageFactors { get; private set; }
     
 }
 

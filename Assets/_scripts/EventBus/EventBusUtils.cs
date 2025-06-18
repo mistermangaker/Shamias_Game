@@ -40,7 +40,7 @@ public static class EventBusUtils
         {
             var bustype = typeOfType.MakeGenericType(eventType);
             list.Add(bustype);
-            Debug.Log($"Initialized EventBus<{eventType.Name}>");
+            //Debug.Log($"Initialized EventBus<{eventType.Name}>");
         }
         return list;
     }

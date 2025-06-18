@@ -8,41 +8,40 @@ using System;
 using UnityEngine.Events;
 
 
-public class InventorySlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
+public class InventorySlotUI : ItemSlotUI, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
-   
-    [SerializeField] private TextMeshProUGUI quantityText;
-    [SerializeField] private Image itemRenderer;
-    [SerializeField] private GameObject selectedItemRenderer;
-    //[SerializeField] private GameObject itemSlotVisuals;
-    [SerializeField] private GameObject hoverVisual;
-    [SerializeField] private InventorySlot assignedInventorySlot;
 
-    private MouseObjectUI mouseObject;
+    //[SerializeField] private TextMeshProUGUI quantityText;
+    //[SerializeField] private Image itemRenderer;
+    //[SerializeField] private GameObject selectedItemRenderer;
+    //[SerializeField] private GameObject hoverVisual;
+    //[SerializeField] private InventorySlot assignedInventorySlot;
 
-    public InventorySlot AssignedInventorySlot => assignedInventorySlot;
+    //private MouseObjectUI mouseObject;
 
+    //public InventorySlot AssignedInventorySlot => assignedInventorySlot;
+    [SerializeField] protected GameObject selectedItemRenderer;
     public static UnityAction<GameItem> OnHoverRequested;
     public static UnityAction OnHoverExited;
 
-    public GameItem SlotItem => assignedInventorySlot.GameItem;
+   // public GameItem SlotItem => assignedInventorySlot.GameItem;
 
-    public int ItemAmount => assignedInventorySlot.StackSize;
+   // public int ItemAmount => assignedInventorySlot.StackSize;
 
-    public InventoryDisplayUI parentDisplay { get; private set; }
+   // public InventoryDisplayUI parentDisplay { get; private set; }
 
     private bool _isSelected=false;
 
     private bool _pointerHasEntered=false;
 
-    public bool IsEmpty
-    {
-        get
-        {
-            return SlotItem.GameItemData == null;
-           // return ItemData == null;
-        }
-    }
+    //public bool IsEmpty
+    //{
+    //    get
+    //    {
+    //        return SlotItem.GameItemData == null;
+    //       // return ItemData == null;
+    //    }
+    //}
 
 
     private void Awake()
@@ -77,91 +76,95 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnte
         hoverTextTimer = 0;
         _pointerHasEntered = false;
     }
-    public void Init(InventorySlot slot)
-    {
-        assignedInventorySlot = slot;
-        parentDisplay = GetComponentInParent<InventoryDisplayUI>();
-        UpdateUI();
-    }
+    //public void Init(InventorySlot slot)
+    //{
+    //    assignedInventorySlot = slot;
+    //    parentDisplay = GetComponentInParent<InventoryDisplayUI>();
+    //    UpdateUI();
+    //}
 
-    public void ClearSlot()
-    {
-        assignedInventorySlot.ClearSlot();
-        UpdateUI();
-    }
+    //public void ClearSlot()
+    //{
+    //    assignedInventorySlot.ClearSlot();
+    //    UpdateUI();
+    //}
 
-   
-    public void ToggleHightLight()
+
+    //public void ToggleHightLight()
+    //{
+    //    selectedItemRenderer.SetActive(!selectedItemRenderer.activeSelf);
+    //    //selectedItemRenderer.enabled = !selectedItemRenderer.enabled;
+    //}
+
+    //public void UpdateSlot(InventorySlot slot)
+    //{
+    //    if (slot.StackSize <= 0) { ClearSlot(); return; }
+    //    assignedInventorySlot.AddItem(slot.GameItem, slot.StackSize);
+    //    UpdateUI();
+    //}
+
+    //public void SetItem(GameItem item, int amount)
+    //{
+    //    assignedInventorySlot.AddItem(item, amount);
+    //    UpdateUI();
+    //}
+
+
+    //public void AddToItemStack(int amount)
+    //{
+    //    assignedInventorySlot.AddToStack(amount);
+    //    UpdateUI();
+    //}
+    //public void RemoveFromItemStack(int amount)
+    //{
+    //    assignedInventorySlot.RemoveFromStack(amount);
+    //    if (assignedInventorySlot.StackSize <= 0)
+    //    {
+    //        ClearSlot();
+    //        return;
+    //    }
+    //    UpdateUI();
+    //}
+    public virtual void ToggleHightLight()
     {
         selectedItemRenderer.SetActive(!selectedItemRenderer.activeSelf);
-        //selectedItemRenderer.enabled = !selectedItemRenderer.enabled;
-    }
-
-    public void UpdateSlot(InventorySlot slot)
-    {
-        if (slot.StackSize <= 0) { ClearSlot(); return; }
-        assignedInventorySlot.AddItem(slot.GameItem, slot.StackSize);
-        UpdateUI();
-    }
-
-    public void SetItem(GameItem item, int amount)
-    {
-        assignedInventorySlot.AddItem(item, amount);
-        UpdateUI();
-    }
-    
-
-    public void AddToItemStack(int amount)
-    {
-        assignedInventorySlot.AddToStack(amount);
-        UpdateUI();
-    }
-    public void RemoveFromItemStack(int amount)
-    {
-        assignedInventorySlot.RemoveFromStack(amount);
-        if (assignedInventorySlot.StackSize <= 0)
-        {
-            ClearSlot();
-            return;
-        }
-        UpdateUI();
     }
 
 
-    public void UpdateUI()
+    public override void UpdateUI()
     {
         if (_isSelected) quantityText.faceColor = Color.white;
             else quantityText.faceColor = Color.black;
+        base.UpdateUI();
+        //if (SlotItem.GameItemData != null)
+        //{
+        //    quantityText.text = (assignedInventorySlot.StackSize > 1) ? AssignedInventorySlot.StackSize.ToString() : string.Empty;
+        //    itemRenderer.sprite = SlotItem.GameItemData.Icon;
+        //    itemRenderer.color = Color.white;
 
-        if (SlotItem.GameItemData != null)
-        {
-            quantityText.text = (assignedInventorySlot.StackSize > 1) ? AssignedInventorySlot.StackSize.ToString() : string.Empty;
-            itemRenderer.sprite = SlotItem.GameItemData.Icon;
-            itemRenderer.color = Color.white;
+        //}
+        //else
+        //{
 
-        }
-        else
-        {
-
-            quantityText.text = string.Empty;
-            itemRenderer.sprite = null;
-            itemRenderer.color = Color.clear;
-        }
+        //    quantityText.text = string.Empty;
+        //    itemRenderer.sprite = null;
+        //    itemRenderer.color = Color.clear;
+        //}
     }
 
  
 
-    public void HoverSlot()
+    //public void HoverSlot()
+    //{
+    //    hoverVisual.SetActive(true);
+    //    UpdateUI();
+    //}
+    public override void UnHoverSlot()
     {
-        hoverVisual.SetActive(true);
-        UpdateUI();
-    }
-    public void UnHoverSlot()
-    {
-        hoverVisual.SetActive(false);
+        //hoverVisual.SetActive(false);
         ResetTimer();
-        
-        UpdateUI();
+        base.UnHoverSlot();
+        //UpdateUI();
     }
 
     public void SelectSlot()
@@ -185,13 +188,13 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnte
     }
     
 
-    public void OnPointerClick(PointerEventData eventData)
+    public override void OnPointerClick(PointerEventData eventData)
     {
         MouseButton button = (eventData.button == PointerEventData.InputButton.Right) ? MouseButton.Right : MouseButton.Left;
         parentDisplay?.SlotClicked(this, button);
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public override void OnPointerEnter(PointerEventData eventData)
     {
         _pointerHasEntered = true;  
         if (mouseObject.DraggingSlots && (eventData.button == PointerEventData.InputButton.Right || eventData.button == PointerEventData.InputButton.Left))
@@ -208,7 +211,7 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnte
         else HoverSlot();
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public override void OnPointerExit(PointerEventData eventData)
     {
         _pointerHasEntered = false;
         OnHoverExited?.Invoke();
@@ -233,4 +236,11 @@ public class InventorySlotUI : MonoBehaviour, IPointerClickHandler, IPointerEnte
         }
         
     }
+
+    public override bool CanRecieveItemPlacementofThisType(GameItem item)
+    {
+        return true;
+    }
+
+    
 }

@@ -7,8 +7,9 @@ public class PauseMenuManager : MonoBehaviour
 {
     public static PauseMenuManager Instance;
     [SerializeField] private Button resumeButton, loadButton, saveButton, optionsButton, quitToMenuButton;
-    [SerializeField] private GameObject pauseMenu, saveLoadMenu, optionsMenu, saveMenu;
+    [SerializeField] private GameObject pauseMenu, saveLoadMenu, saveMenu;
     [SerializeField] private SaveAndLoadScreenUI SaveAndLoadScreenUI;
+    [SerializeField] private OptionsMenuUI optionsMenuUI;
     [SerializeField] private SavePopUpSingleUI savePopup;
 
     public bool hasSaved;
@@ -43,7 +44,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         get
         {
-            return optionsMenu.gameObject.activeSelf;
+            return optionsMenuUI.IsOpen;
         }
     }
 
@@ -147,11 +148,11 @@ public class PauseMenuManager : MonoBehaviour
 
     private void ShowOptionsMenu()
     {
-        optionsMenu.SetActive(true);
+        optionsMenuUI.ShowOptionsMenu();
     }
     private void HideOptionsMenu()
     {
-        optionsMenu.SetActive(false);
+        optionsMenuUI.HandleHidingOptionMenu();
     }
 
 

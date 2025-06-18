@@ -23,7 +23,7 @@ public class DynamicInventoryDisplay : InventoryDisplayUI
 
     public override void AssignSlots(InventorySystem InvToDisplay, int offset)
     {
-        slotDictionary = new Dictionary<InventorySlotUI, InventorySlot>();
+        slotDictionary = new Dictionary<ItemSlotUI, InventorySlot>();
         if (inventorySystem == null ) return;
         for (int i = offset; i < InvToDisplay.InventorySize; i++)
         {

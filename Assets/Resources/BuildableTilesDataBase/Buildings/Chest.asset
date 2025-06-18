@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b61635e17356c6409b5932ed500c59d, type: 3}
+  m_Name: Chest
+  m_EditorClassIdentifier: 
+  <TileName>k__BackingField: Building_Chest
+  <DisplayName>k__BackingField: 
+  <TileToPlace>k__BackingField: {fileID: 0}
+  <IsFloorTile>k__BackingField: 0
+  <DisplaySprite>k__BackingField: {fileID: 21300000, guid: 64469362da876af4ca09363a50e5d395, type: 3}
+  <TileOffset>k__BackingField: {x: 0, y: 0}
+  <BuildableGameObject>k__BackingField: {fileID: 4339509541164654450, guid: f82db76c448ab9647a38b9d9f86b4430, type: 3}
+  <GrowthStage>k__BackingField: {fileID: 0}
+  <IsPlantableOnSoil>k__BackingField: 0
+  <ItemsToDropOnDestroy>k__BackingField:
+  - {fileID: 11400000, guid: 4ee39d85c26a26940bcae91fa730c740, type: 2}
+  <BuildingHealth>k__BackingField: 50

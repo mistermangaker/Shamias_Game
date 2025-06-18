@@ -33,6 +33,7 @@ namespace Callendar
         [field: SerializeField]
         public int DayOfTheYear { get; private set; }
 
+
         public float GetProgressOfTheYearNormalized()
         {
             return (float)DayOfTheYear / 112f;
@@ -41,6 +42,13 @@ namespace Callendar
         public DateTimeStamp GetCurrentDate()
         {
             return new DateTimeStamp(Year, (int)Season, Day, 0, 0);
+        }
+        public DateTimeStamp Never
+        {
+            get
+            {
+                return new DateTimeStamp(9999,0 ,0, 0, 0);
+            }
         }
 
         public DateTimeStamp(int year, int season, int day, int hour, int minute)
@@ -77,6 +85,7 @@ namespace Callendar
             Minute = minutes;
         }
 
+      
         public void AdvanceHour(int HoursToAdvanceBy)
         {
             var hours = Hour + HoursToAdvanceBy;
@@ -101,7 +110,7 @@ namespace Callendar
             Days = (Days)(Day % 7);
             if (Day == 0) Days = (Days)7;
            
-            TotalMinutes = 0;
+            TotalMinutes = (Hour * 60 + Minute);
         }
 
         private void AdvanceSeason()
@@ -116,6 +125,36 @@ namespace Callendar
                 Season++;
             }
         }
+
+        public void JumpToNextDayInHoursAndMinutes(int hours,int minutes = 0)
+        {
+            Day++;
+            Hour = hours;
+            Minute = minutes;
+            TotalMinutes = ((Hour * 60) + Minute);
+        }
+
+        public int CalulateTotalMinutes() => ((((Year * 112) + DayOfTheYear) * 24) * 60) + TotalMinutes;
+
+        public static float TimeBetweenDateTimeStampsNormalized(DateTimeStamp a, DateTimeStamp b)
+        {
+            return (float)a.CalulateTotalMinutes() / (float)b.CalulateTotalMinutes();
+        }
+
+        public static bool operator ==(DateTimeStamp left , DateTimeStamp right) => left.Equals(right);
+        public static bool operator !=(DateTimeStamp left , DateTimeStamp right) => !(left.Equals(right));
+
+        public static bool operator <=(DateTimeStamp left, DateTimeStamp right) => !(left.GreaterThan(right));
+        public static bool operator >=(DateTimeStamp left, DateTimeStamp right) => (left.GreaterThan(right));
+
+        public bool GreaterThan(DateTimeStamp other)
+        {
+            if(other.Year>this.Year) return false;
+            if(other.DayOfTheYear >  this.DayOfTheYear) return false;
+            if(other.TotalMinutes > this.TotalMinutes) return false;
+            return true;
+        }
+
         private void AdvanceYear(int YearsToAdvanceBy)
         {
             Year += YearsToAdvanceBy;

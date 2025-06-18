@@ -3,28 +3,193 @@ using System;
 using UnityEditor.Playables;
 using UnityEngine;
 
+
+public enum AlignmentType
+{
+    Chastity,Lust, Forgivness,Wrath, Temperance,Gluttony, Charity,Greed, Diligence,Sloth, Kindness,Envy, Humility,Pride
+}
 [Serializable]
 public class Alignment
 {
     
-    private Alignment_Range chastity_Lust { get; set; }
+   [field: SerializeField] private Alignment_Range chastity_Lust { get; set; }
     public Alignment_Range Chastity_Lust => chastity_Lust;
-   
-    private Alignment_Range forgiveness_Wrath { get; set; }
+
+    [field: SerializeField] private Alignment_Range forgiveness_Wrath { get; set; }
     public Alignment_Range Forgivness_Wrath => forgiveness_Wrath;
-    
-    private Alignment_Range temperance_Gluttony { get; set; }
+
+    [field: SerializeField] private Alignment_Range temperance_Gluttony { get; set; }
     public Alignment_Range Temperance_Gluttony => temperance_Gluttony;
-   
-    private Alignment_Range charity_Greed { get; set; }
+
+    [field: SerializeField] private Alignment_Range charity_Greed { get; set; }
     public Alignment_Range Charity_Greed => charity_Greed;
-    
-    private Alignment_Range diligence_Sloth { get; set; }
+
+    [field: SerializeField] private Alignment_Range diligence_Sloth { get; set; }
     public Alignment_Range Diligence_Sloth => diligence_Sloth;
-    private Alignment_Range kindness_Envy { get; set; }
+    [field: SerializeField] private Alignment_Range kindness_Envy { get; set; }
     public Alignment_Range Kindness_Envy => kindness_Envy;
-    private Alignment_Range humility_Pride { get; set; }
+    [field: SerializeField] private Alignment_Range humility_Pride { get; set; }
     public Alignment_Range Humility_Pride => humility_Pride;
+
+    public void EffectRangeTowards(int amount, AlignmentType type)
+    {
+        switch (type)
+        {
+            default:
+            case AlignmentType.Lust:
+                chastity_Lust.ChangeAlignment(-amount);
+                break;
+            case AlignmentType.Chastity:
+                chastity_Lust.ChangeAlignment(amount);
+                break;
+            case AlignmentType.Forgivness:
+                forgiveness_Wrath.ChangeAlignment(amount);
+                break;
+            case AlignmentType.Wrath:
+                forgiveness_Wrath.ChangeAlignment(-amount);
+                break;
+            case AlignmentType.Temperance:
+                temperance_Gluttony.ChangeAlignment(amount);
+                break;
+            case AlignmentType.Gluttony:
+                temperance_Gluttony.ChangeAlignment(-amount);
+                break;
+            case AlignmentType.Charity:
+                charity_Greed.ChangeAlignment(amount);
+                break;
+            case AlignmentType.Greed:
+                charity_Greed.ChangeAlignment(-amount);
+                break;
+            case AlignmentType.Diligence:
+                diligence_Sloth.ChangeAlignment(amount);
+                break;
+            case AlignmentType.Sloth:
+                diligence_Sloth.ChangeAlignment(-amount);
+                break;
+            case AlignmentType.Kindness:
+                kindness_Envy.ChangeAlignment(amount);
+                break;
+            case AlignmentType.Envy:
+                kindness_Envy.ChangeAlignment(-amount);
+                break;
+            case AlignmentType.Humility:
+                humility_Pride.ChangeAlignment(amount);
+                break;
+            case AlignmentType.Pride:
+                humility_Pride.ChangeAlignment(-amount);
+                break;
+        }
+    }
+    public int GetDirectionOfTypeForCalculations(AlignmentType type)
+    {
+        switch (type)
+        {
+            default:
+            case AlignmentType.Chastity:
+                return 1;
+            case AlignmentType.Lust:
+                return -1;
+            case AlignmentType.Forgivness:
+                return 1;
+            case AlignmentType.Wrath:
+                return -1;
+            case AlignmentType.Temperance:
+                return 1;
+            case AlignmentType.Gluttony:
+                return -1;
+            case AlignmentType.Charity:
+                return 1;
+            case AlignmentType.Greed:
+                return -1;
+            case AlignmentType.Diligence:
+                return 1;
+            case AlignmentType.Sloth:
+                return -1;
+            case AlignmentType.Kindness:
+                return 1;
+            case AlignmentType.Envy:
+                return -1;
+            case AlignmentType.Humility:
+                return 1;
+            case AlignmentType.Pride:
+                return -1;
+        }
+    }
+
+    public int GetRelativeValueOfType(AlignmentType type)
+    {
+        switch (type)
+        {
+            default:
+            case AlignmentType.Chastity:
+                return chastity_Lust.RangeValue;
+            case AlignmentType.Lust:
+                return -chastity_Lust.RangeValue;
+            case AlignmentType.Forgivness:
+                return forgiveness_Wrath.RangeValue; 
+            case AlignmentType.Wrath:
+                return -forgiveness_Wrath.RangeValue;
+            case AlignmentType.Temperance:
+                return temperance_Gluttony.RangeValue;
+            case AlignmentType.Gluttony:
+                return -temperance_Gluttony.RangeValue;
+            case AlignmentType.Charity:
+                return charity_Greed.RangeValue;
+            case AlignmentType.Greed:
+                return -charity_Greed.RangeValue;
+            case AlignmentType.Diligence:
+                return Diligence_Sloth.RangeValue;
+            case AlignmentType.Sloth:
+                return -Diligence_Sloth.RangeValue;
+            case AlignmentType.Kindness:
+                return kindness_Envy.RangeValue;
+            case AlignmentType.Envy:
+                return -kindness_Envy.RangeValue;
+            case AlignmentType.Humility:
+                return humility_Pride.RangeValue;
+            case AlignmentType.Pride:
+                return -humility_Pride.RangeValue;
+        }
+    }
+    public int GetValueOfAlignment(AlignmentType type)
+    {
+        return GetAlignmentRange(type).RangeValue;
+    }
+    public Alignment_Range GetAlignmentRange(AlignmentType type)
+    {
+        switch (type)
+        {
+            default:
+            case AlignmentType.Lust:
+                return chastity_Lust;
+            case AlignmentType.Chastity:
+                return chastity_Lust;
+            case AlignmentType.Forgivness:
+                return forgiveness_Wrath;
+            case AlignmentType.Wrath:
+                return forgiveness_Wrath;
+            case AlignmentType.Temperance:
+                return temperance_Gluttony;
+            case AlignmentType.Gluttony:
+                return temperance_Gluttony;
+            case AlignmentType.Charity:
+                return charity_Greed;
+            case AlignmentType.Greed:
+                return charity_Greed;
+            case AlignmentType.Diligence:
+                return diligence_Sloth;
+            case AlignmentType.Sloth:
+                return diligence_Sloth;
+            case AlignmentType.Kindness:
+                return kindness_Envy;
+            case AlignmentType.Envy:
+                return kindness_Envy;
+            case AlignmentType.Humility:
+                return humility_Pride;
+            case AlignmentType.Pride:
+                return humility_Pride;
+        }
+    }
 
     public Alignment(int range, int chasity, int forgiveness, int temperance,int charity, int dilligence , int kindness , int humility)
     {
@@ -81,24 +246,14 @@ public class Alignment
 }
 
 [Serializable]
-public struct Alignment_Range
+public class Alignment_Range
 {
-    private int _rangeValue;
-  
-    public int RangeValue
-    {
-        get
-        {
-            return Mathf.Clamp(_rangeValue, _rangeMin, _rangeMax);
-        }
-        set
-        {
-            _rangeValue = Mathf.Clamp(value, _rangeMin, _rangeMax);
-        }
-    }
+    [SerializeField] private int _rangeValue;
 
-    private int _rangeMin;
-    private int _rangeMax;
+    public int RangeValue => _rangeValue;
+ 
+    [SerializeField] private int _rangeMin;
+    [SerializeField] private int _rangeMax;
 
     public Alignment_Range(int range,int rangeValue =0)
     {
@@ -112,6 +267,12 @@ public struct Alignment_Range
         _rangeMin = min;
         _rangeMax = max;
         _rangeValue = rangeValue;
+    }
+
+    public void ChangeAlignment(int amount)
+    {
+        _rangeValue += amount;
+        _rangeValue = Mathf.Clamp(_rangeValue, _rangeMin, _rangeMax);
     }
 
     public static bool operator ==(Alignment_Range left, Alignment_Range right) => left.Equals(right);

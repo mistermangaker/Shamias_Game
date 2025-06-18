@@ -5,19 +5,7 @@ using static UnityEditor.PlayerSettings;
 [RequireComponent(typeof(BoxCollider))]
 public class BoundingBoxes : MonoBehaviour
 {
-    public List<string> tags;
-
-    public bool HasTag(string tag)
-    {
-        foreach (var item in tags)
-        {
-            if(item == tag) return true;
-        }
-        return false;
-    }
-    [SerializeField]
-    private BoxCollider boxcollider;
-
+    [SerializeField] private BoxCollider boxcollider;
     private void Start()
     {
         boxcollider = GetComponent<BoxCollider>();

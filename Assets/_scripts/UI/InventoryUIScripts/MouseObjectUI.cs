@@ -70,11 +70,13 @@ public class MouseObjectUI : MonoBehaviour
     private void Start()
     {
         PlayerInputManager.OnPause += DropItemOnPause;
+        InventorySlot.SlotUpdated += UpdateUI;
     }
 
     private void OnDestroy()
     {
         PlayerInputManager.OnPause -= DropItemOnPause;
+        InventorySlot.SlotUpdated -= UpdateUI;
     }
     private void DropItemOnPause()
     {
@@ -219,15 +221,11 @@ public class MouseObjectUI : MonoBehaviour
 
     private void DropItem(int amount)
     {
-        if (SlotItem.GameItemData == null) return;
-        OnGroundItemManager.Instance.DropItem(SlotItem, PlayerController.Instance.transform.position, amount);
-        //DroppedGameItem item = Instantiate(ItemContainer, PlayerController.Instance.transform.position, Quaternion.identity).GetComponent<DroppedGameItem>();
-        //if (item != null)
-        //{
-        //    GameItem itemtoAdd = SlotItem;
-        //    item.SpawnNewItem(itemtoAdd, amount);
-        //}
-        RemoveFromItemStack(amount);
+        //if (SlotItem.GameItemData == null) return;
+   
+        //EventBus<OnDropItemAtPositionRequested>.Raise(new OnDropItemAtPositionRequested(SlotItem, PlayerController.Instance.transform.position, amount));
+
+        //RemoveFromItemStack(amount);
     }
 
     public static bool IsPointerOverUIObject()

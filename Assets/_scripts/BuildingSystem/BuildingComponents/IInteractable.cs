@@ -5,9 +5,9 @@ using UnityEngine.Events;
 
 public interface IInteractable
 {
-
-    //public UnityAction<IInteractable> OnInteraction { get; set; }
-    //public UnityAction<IInteractable> OnInteractionEnd { get; set; }
+  
+    bool CanAcceptInteractionType(InteractionAttempt interactionAttempt);
+    
 
     bool Interact(InteractionAttempt interactionAttempt);
 
@@ -21,9 +21,9 @@ public interface IInteractor
 
 public enum InteractionIntent
 {
+    None,
     InsertItem,
     RemoveItem,
-    Inspect,
     Interact,
     Attack,
     Build,
@@ -32,22 +32,15 @@ public enum InteractionIntent
     Harvest_Plants,
     TillSoil,
     Water,
-    None,
-    Any,
 }
 
 public class InteractionAttempt
 {
     public IInteractor interactor;
     public GameItem Item { get; set; }
+    public InventorySlot Slot { get; set; }
     public InteractionIntent Intent { get; set;}
     public List<InteractionIntent> Intents { get; set; } = new List<InteractionIntent>();
 }
 
-public class InteractionResponse
-{
-    public IInteractable interactable;
-    public GameItem Item { get; set; }
 
-    public bool InteractionSuccess;
-}

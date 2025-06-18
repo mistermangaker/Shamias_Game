@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe861578df40d84e90568238a6e539c, type: 3}
+  m_Name: SickleShroomGrowthStages
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 
+  <GrowthStagesList>k__BackingField:
+  - Debug_Id: 
+    viusal: {fileID: -18503194, guid: b581df9079d30e142abe924dcb6dd0f7, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 0}
+    AmountToDrop: 0
+  - Debug_Id: 
+    viusal: {fileID: -1050425165, guid: b581df9079d30e142abe924dcb6dd0f7, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 0}
+    AmountToDrop: 0
+  - Debug_Id: 
+    viusal: {fileID: -1248032318, guid: b581df9079d30e142abe924dcb6dd0f7, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 11400000, guid: 131c97432e7c83d46b4983731b02fcd5, type: 2}
+    AmountToDrop: 1
+  - Debug_Id: 
+    viusal: {fileID: -1020743810, guid: b581df9079d30e142abe924dcb6dd0f7, type: 3}
+    harvestABleItemToDropThisStage: {fileID: 11400000, guid: 2e2b8ed8e98fd5840873bca855578606, type: 2}
+    AmountToDrop: 1
+  <DaysBetweenStages>k__BackingField: 1
+  <HarvestableItemToDrop>k__BackingField: {fileID: 11400000, guid: eee8178336ce64f4faa066193e361342, type: 2}
+  AmountToDrop: 3

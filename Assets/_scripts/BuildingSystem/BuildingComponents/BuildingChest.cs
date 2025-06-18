@@ -1,17 +1,30 @@
 using GameSystems.Inventory;
 using UnityEngine;
 
+
 public class BuildingChest : BuildingBase
 {
+   
+
+    protected override void HandleHighLighting()
+    {
+        EventBus<OnIteractableHovered>.Raise(new OnIteractableHovered
+        {
+            name = "Chest",
+            interactable = this,
+            interactionPosition = transform.position
+        });
+    }
 
     public override bool Interact(InteractionAttempt interactor)
     {
-        if (interactor.Intents.Contains(InteractionIntent.Attack)||interactor.Intents.Contains(InteractionIntent.Harvest_Wood))
+        Debug.Log("interact");
+        if (interactor.Intent == InteractionIntent.Attack||interactor.Intent == InteractionIntent.Harvest_Wood)
         {
-            int damage = interactor.Item.GameItemData?.ItemAttackDamage ?? 0;
+            int damage = interactor.Slot.GameItem.GameItemData?.ItemAttackDamage ?? 0;
             DamageBuilding(damage);
         }
-        else if (interactor.Intents.Contains(InteractionIntent.InsertItem))
+        else if (interactor.Intent == InteractionIntent.InsertItem)
         {
             if (buildingInventory != null)
             {
@@ -22,7 +35,7 @@ public class BuildingChest : BuildingBase
                 return false;
             }
         }
-        else if (interactor.Intents.Contains(InteractionIntent.Interact))
+        else if (interactor.Intent == InteractionIntent.Interact)
         {
             if (buildingInventory != null)
             {
@@ -53,5 +66,23 @@ public class BuildingChest : BuildingBase
             
         }
         base.RemoveBuilding();
+    }
+
+    public override OnToolTipRequested GetToolTip()
+    {
+        return new OnToolTipRequested
+        {
+            toolTipHeader = "Chest",
+            intent = InteractionIntent.Interact,
+            toolTipBody = "",
+        };
+    }
+
+    public override void Damage(int damage, DamageType damageType)
+    {
+        if(damageType == DamageType.Harvest_Wood)
+        {
+            DamageBuilding(damage);
+        }
     }
 }

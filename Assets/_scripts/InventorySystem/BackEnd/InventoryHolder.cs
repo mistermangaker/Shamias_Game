@@ -70,11 +70,11 @@ namespace GameSystems.Inventory
 
         public ItemStack GetItemStackAtPosition(int position)
         {
-            GameItem? item = GetGameItemAtPosition(position);
+            GameItem item = GetGameItemAtPosition(position);
             int amount = itemSaveDatas[position].amount;
             if(item != null)
             {
-                return new ItemStack((GameItem)item, amount);
+                return new ItemStack(item, amount);
             }
             return null;
         }
@@ -194,20 +194,7 @@ namespace GameSystems.Inventory
             {
                 GameItem item = _inventoryData.GetGameItemAtPosition(i);
                 _inventorySystem.SetSlot(item, _inventoryData.itemSaveDatas[i].amount, i);
-                //ItemStack stack = _inventoryData.GetItemStackAtPosition(i);
-                // if(stack != null)
-                // {
-                //     _inventorySystem.SetSlot(stack.item, stack.amount, i);
-                // }
-
-                //GameItem gameItem = _inventoryData.itemSaveDatas[i].item;
-                //ItemData item = DataBase.GetItem(_inventoryData.itemSaveDatas[i].name);
-                //if (item != null)
-                //{
-                //    gameItem.SetItemData(item);
-                //}
-                //_inventorySystem.SetSlot(gameItem, _inventoryData.itemSaveDatas[i].amount, i);
-
+               
             }
             OnInventoryChanged?.Invoke();
         }

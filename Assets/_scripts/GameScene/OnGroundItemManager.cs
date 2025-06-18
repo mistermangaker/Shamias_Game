@@ -66,9 +66,17 @@ public class OnGroundItemManager : MonoBehaviour, IBind<DroppedItemSaveData>
 
     [field: SerializeField] public SerializableGuid Id { get; set; } = SerializableGuid.NewGuid();
 
+    private EventBinding<OnDropItemAtPositionRequested> onDropItemAtPositionRequested;
+
     private void Awake()
     {
         Instance = this;
+        onDropItemAtPositionRequested = new EventBinding<OnDropItemAtPositionRequested>(DropRequestedItems);
+        EventBus<OnDropItemAtPositionRequested>.Register(onDropItemAtPositionRequested);
+    }
+    private void OnDisable()
+    {
+        EventBus<OnDropItemAtPositionRequested>.Deregister(onDropItemAtPositionRequested);
     }
     public void AddToAlreadyCollectedWorldSpawnItems(SerializableGuid id)
     {
@@ -83,6 +91,11 @@ public class OnGroundItemManager : MonoBehaviour, IBind<DroppedItemSaveData>
         return droppedItemSaveData.Contains(id);
     }
 
+
+    private void DropRequestedItems(OnDropItemAtPositionRequested request)
+    {
+        DropItem(request.item, request.position, request.amount, request.pickupable);
+    }
     public void RegisterDroppedItem(SerializableGuid id,GameItem item, Vector3 position, int amount)
     {
         droppedItemSaveData.AddItem(id, item, position, amount);
@@ -93,12 +106,12 @@ public class OnGroundItemManager : MonoBehaviour, IBind<DroppedItemSaveData>
         droppedItemSaveData.RemoveItem(guid);
     }
 
-    public void DropItem(GameItem item, Vector3 position, int amount, bool value = true)
+    public void DropItem(GameItem item, Vector3 position, int amount, bool instantlyPickupable = true)
     {
         DroppedGameItem newitem = Instantiate(droppedItemPrefab, position, Quaternion.identity).GetComponent<DroppedGameItem>();
         if (newitem != null)
         {
-            newitem.SpawnNewItem(item, amount, value);
+            newitem.SpawnNewItem(item, amount, instantlyPickupable);
         }
     }
 

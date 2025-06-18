@@ -28,7 +28,7 @@ public class ToDoList : MonoBehaviour
 
     // priority:
     // event bus - added - needs expanding
-    // interaction system rework -- after more work it seems fine
+    // interaction system rework --  done
     // construction layer manager rework -- done
     // database rework -- done
     // weather and lighting fix -- waiting a bit more for this
@@ -36,5 +36,5 @@ public class ToDoList : MonoBehaviour
     // sceneloading manager
     // UI and Mangers bootstrapping
     // make sure loading new/ different scenes dont break everything
-    // start screen and new game options
+    // start screen and new game options -done
 }
